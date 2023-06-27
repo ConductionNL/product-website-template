@@ -1,29 +1,43 @@
 import * as React from "react";
 import * as styles from "./HeaderTemplate.module.css";
-import { Container, PrimaryTopNav, SecondaryTopNav } from "@conduction/components";
+import { Container, PrimaryTopNav } from "@conduction/components";
 import { navigate } from "gatsby";
-import { Heading1 } from "@utrecht/component-library-react/dist/css-module";
+import { useGitHub } from "../../../hooks/gitHub";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export const HeaderTemplate: React.FC = () => {
-  const primaryTopNavItems = [{ label: "Home", handleClick: () => navigate("/") }];
-  const secondaryTopNavItems = [{ label: "Common ground", handleClick: () => window.open("https://commonground.nl/") }];
+  const [navItems, setNavItems] = React.useState<any[]>([]);
+  const getDirectoryItems = useGitHub().getDirectoryItems("/docs/features");
+
+  React.useEffect(() => {
+    if (!getDirectoryItems.data) return;
+
+    console.log(getDirectoryItems.data);
+
+    setNavItems([
+      { label: "Home", handleClick: () => navigate("/") },
+      {
+        label: "Functionaliteiten",
+        handleClick: () => navigate("/"),
+        subItems: getDirectoryItems.data.map((item, idx) => ({
+          label: item.name,
+          icon: <FontAwesomeIcon icon={faArrowRight} />,
+        })),
+      },
+      { label: "Documentatie", handleClick: () => navigate("/") },
+      { label: "Slack", handleClick: () => navigate("/") },
+      { label: "GitHub", handleClick: () => navigate("/") },
+    ]);
+  }, [getDirectoryItems.data]);
 
   return (
     <header className={styles.header}>
-      <div className={styles.top}>
-        <Container layoutClassName={styles.secondaryNavContainer}>
-          <SecondaryTopNav items={secondaryTopNavItems} />
+      <section className={styles.navigation}>
+        <Container>
+          <PrimaryTopNav items={navItems} />
         </Container>
-      </div>
-
-      <Container layoutClassName={styles.headingContainer}>
-        <Heading1>Title</Heading1>
-        <span className={styles.subTitle}>Sub title</span>
-      </Container>
-
-      <Container>
-        <PrimaryTopNav items={primaryTopNavItems} />
-      </Container>
+      </section>
     </header>
   );
 };

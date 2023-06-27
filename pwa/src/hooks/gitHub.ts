@@ -14,7 +14,7 @@ export const useGitHub = () => {
     });
 
   const getDirectoryItems = (directoryPath: string) =>
-    useQuery<any, Error>(["directory-items", directoryPath], () => API?.GitHub.getDirectoryItems(directoryPath), {
+    useQuery<any[], Error>(["directory-items", directoryPath], () => API?.GitHub.getDirectoryItems(directoryPath), {
       onError: (error) => {
         console.warn(error.message);
       },
