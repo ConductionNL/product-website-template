@@ -1,82 +1,67 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
+import toast from "react-hot-toast";
 
-export default class APIService {
-  public removeAuthentication(): void {
-    window.sessionStorage.removeItem("JWT");
-  }
+import GitHub from "./resources/gitHub";
 
-  public setAuthentication(_JWT: string): void {
-    window.sessionStorage.setItem("JWT", _JWT);
-  }
-
-  public get authenticated(): boolean {
-    return window.sessionStorage.getItem("JWT") ? true : false;
-  }
-
-  private getJWT(): string | null {
-    return window.sessionStorage.getItem("JWT");
-  }
-
-  public get apiClient(): AxiosInstance {
-    return axios.create({
-      baseURL: window.sessionStorage.getItem("GATSBY_API_URL") ?? "",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + this.getJWT(),
-      },
-    });
-  }
-
-  public get halApiClient(): AxiosInstance {
-    return axios.create({
-      baseURL: window.sessionStorage.getItem("GATSBY_API_URL") ?? "",
-      headers: {
-        Accept: "application/json+hal",
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + this.getJWT(),
-      },
-    });
-  }
-
-  public get LoginClient(): AxiosInstance {
-    return axios.create({
-      baseURL: window.sessionStorage.getItem("GATSBY_API_URL") ?? "",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-  }
-
-  public get BaseClient(): AxiosInstance {
-    return axios.create({
-      baseURL: window.sessionStorage.getItem("GATSBY_BASE_URL") ?? "",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + this.getJWT(),
-      },
-    });
-  }
+interface PromiseMessage {
+  loading?: string;
+  success?: string;
 }
 
-export const Send = (
+export type TSendFunction = (
   instance: AxiosInstance,
   method: "GET" | "POST" | "PUT" | "DELETE",
   endpoint: string,
   payload?: JSON,
-): Promise<AxiosResponse> => {
-  const _payload = JSON.stringify(payload);
+  promiseMessage?: PromiseMessage,
+) => Promise<AxiosResponse>;
 
-  switch (method) {
-    case "GET":
-      return instance.get(endpoint);
-    case "POST":
-      return instance.post(endpoint, _payload);
-    case "PUT":
-      return instance.put(endpoint, _payload);
-    case "DELETE":
-      return instance.delete(endpoint);
+export default class APIService {
+  public get gitHubClient(): AxiosInstance {
+    return axios.create({
+      baseURL: window.sessionStorage.getItem("GITHUB_BASE_URL") ?? "",
+      headers: {
+        Accept: "application/vnd.github.html",
+      },
+    });
   }
-};
+
+  public get GitHub(): GitHub {
+    return new GitHub(this.gitHubClient, this.Send);
+  }
+
+  // Send method
+  public Send: TSendFunction = (instance, method, endpoint, payload, promiseMessage) => {
+    const _payload = JSON.stringify(payload);
+
+    switch (method) {
+      case "GET":
+        const response = instance.get(endpoint);
+
+        response.catch((err) => toast.error(err.message));
+
+        return response;
+
+      case "POST":
+        return toast.promise(instance.post(endpoint, _payload), {
+          loading: promiseMessage?.loading ?? "Creating item...",
+          success: promiseMessage?.success ?? "Succesfully created item",
+          error: (err: Error) => err.message,
+        });
+
+      case "PUT":
+        return toast.promise(instance.put(endpoint, _payload), {
+          loading: promiseMessage?.loading ?? "Updating item...",
+          success: promiseMessage?.success ?? "Succesfully updated item",
+          error: (err: Error) => err.message,
+        });
+
+      case "DELETE":
+        return toast.promise(instance.delete(endpoint), {
+          loading: promiseMessage?.loading ?? "Deleting item...",
+          success: promiseMessage?.success ?? "Succesfully deleted item",
+          error: (err: Error) => err.message,
+        });
+    }
+  };
+}

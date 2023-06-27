@@ -7,6 +7,7 @@ import { GatsbyProvider, IGatsbyContext } from "../context/gatsby";
 import { Head } from "./Head";
 import { Content } from "../Content";
 import { Document } from "@utrecht/component-library-react/dist/css-module";
+import { Toaster } from "react-hot-toast";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -24,10 +25,6 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
 
   React.useEffect(() => {
     setGatsbyContext({ ...{ pageContext, location } });
-
-    const JWT = sessionStorage.getItem("JWT");
-
-    !API.authenticated && JWT && API.setAuthentication(JWT);
   }, [pageContext, location]);
 
   return (
@@ -37,6 +34,8 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
       <GatsbyProvider value={gatsbyContext}>
         <APIProvider value={API}>
           <Document className="utrecht-theme">
+            <Toaster position="bottom-right" />
+
             <div className={styles.container}>
               <Content {...{ children }} />
             </div>
