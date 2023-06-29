@@ -3,6 +3,7 @@ require("dotenv").config({
 });
 
 module.exports = {
+  pathPrefix: "/product-website-template",
   plugins: [
     {
       resolve: `gatsby-plugin-layout`,
