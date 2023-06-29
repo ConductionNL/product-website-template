@@ -24,5 +24,10 @@ jobs:
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
 
+      - name: Set up git identity
+        run: |
+          git config --global user.email "contact@lencodes.com"
+          git config --global user.name "Lencodes"
+
       - name: Build and deploy application
         run: cd pwa && npm run deploy
