@@ -27,6 +27,8 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
     setGatsbyContext({ ...{ pageContext, location } });
   }, [pageContext, location]);
 
+  if (!API) return <></>; // env.js variables have not yet been initiated
+
   return (
     <>
       <Head crumbs={pageContext.breadcrumb?.crumbs} />
