@@ -24,7 +24,7 @@ jobs:
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
 
-      - name: Build and deploy application
+      - name: Build application
         run: cd pwa && npm run build
 
       - name: Deploy to GitHub Pages
