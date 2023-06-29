@@ -1,5 +1,5 @@
 import * as React from "react";
-import { QueryClient, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import APIService from "../apiService/apiService";
 import APIContext from "../apiService/apiContext";
 
