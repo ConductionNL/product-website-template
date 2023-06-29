@@ -13,6 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "lint": "npm-run-all lint:** ",
     "lint:eslint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint:prettier": "prettier --check .",
