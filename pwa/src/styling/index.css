@@ -2,7 +2,7 @@
 @import "./global.css";
 
 /* Design Tokens */
-@import "@utrecht/design-tokens/dist/index.css";
+@import "../../node_modules/@utrecht/design-tokens/dist/theme.css";
 
 /* Package includes */
 @import "react-loading-skeleton/dist/skeleton.css";
