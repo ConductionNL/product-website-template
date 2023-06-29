@@ -16,18 +16,18 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
-  const [API, setAPI] = React.useState<APIService | null>(React.useContext(APIContext));
+  const [API, setAPI] = React.useState<APIService>(React.useContext(APIContext));
   const [gatsbyContext, setGatsbyContext] = React.useState<IGatsbyContext>({ ...{ pageContext, location } });
 
   React.useEffect(() => {
+    if (!window.sessionStorage.getItem("GITHUB_API_BASE_URL")) return;
+
     setAPI(new APIService());
-  }, []);
+  }, [pageContext]);
 
   React.useEffect(() => {
     setGatsbyContext({ ...{ pageContext, location } });
   }, [pageContext, location]);
-
-  if (!API) return <></>; // env.js variables have not yet been initiated
 
   return (
     <>
