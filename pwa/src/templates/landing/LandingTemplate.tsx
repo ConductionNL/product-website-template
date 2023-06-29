@@ -1,11 +1,14 @@
 import * as React from "react";
 import { Container } from "@conduction/components";
-import { Heading1 } from "@utrecht/component-library-react/dist/css-module";
+import { useGitHub } from "../../hooks/gitHub";
+import { ParsedHTML } from "../../components/ParsedHTML/ParsedHTML";
 
 export const LandingTemplate: React.FC = () => {
+  const getContent = useGitHub().getContent("/README.md");
+
   return (
     <Container>
-      <Heading1>Title</Heading1>
+      <ParsedHTML contentQuery={getContent} />
     </Container>
   );
 };
