@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - development
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm install
+        run: cd pwa && npm install
 
       - name: Build Gatsby application
         run: npm run build
