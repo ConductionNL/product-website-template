@@ -24,11 +24,5 @@ jobs:
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
 
-      - name: Build Gatsby application
-        run: cd pwa && gatsby build --prefix-paths && gh-pages -d public
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          branch: gh-pages
-          folder: pwa/public
+      - name: Build and deploy application
+        run: cd pwa && npm run deploy
