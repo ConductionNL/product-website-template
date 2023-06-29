@@ -24,6 +24,9 @@ jobs:
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
 
+      - name: Set Gatsby pathPrefix env. variable
+        run: export GATSBY_PATH_PREFIX="/product-website-template"
+
       - name: Build and deploy application
         run: cd pwa && npm run build
 

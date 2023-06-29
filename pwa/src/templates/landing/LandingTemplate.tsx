@@ -5,7 +5,7 @@ import { Heading1 } from "@utrecht/component-library-react/dist/css-module";
 export const LandingTemplate: React.FC = () => {
   return (
     <Container>
-      <Heading1>Title</Heading1>
+      <Heading1>Title +1</Heading1>
     </Container>
   );
 };

@@ -3,7 +3,7 @@ require("dotenv").config({
 });
 
 module.exports = {
-  pathPrefix: `/${process.env.GITHUB_REPOSITORY_NAME}`,
+  pathPrefix: process.env.GATSBY_PATH_PREFIX || "",
   plugins: [
     {
       resolve: `gatsby-plugin-layout`,
