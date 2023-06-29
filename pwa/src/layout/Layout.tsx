@@ -29,7 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
 
   return (
     <>
-      <Head crumbs={pageContext.breadcrumb?.crumbs} />
+      <Head />
 
       <GatsbyProvider value={gatsbyContext}>
         <APIProvider value={API}>
