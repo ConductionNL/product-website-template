@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: cd pwa && npm install
 
+      - name: Remove old Gatsby cache
+        run: rm -rf pwa/.cache
+
       - name: Build Gatsby application
         run: cd pwa && npm run build
 
