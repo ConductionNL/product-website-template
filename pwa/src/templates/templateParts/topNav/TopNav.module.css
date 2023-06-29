@@ -45,4 +45,5 @@
   margin-block-start: 14px !important;
   max-height: 430px;
   overflow-y: scroll;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
