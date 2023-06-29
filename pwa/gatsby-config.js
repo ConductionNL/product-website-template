@@ -1,9 +1,9 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: "static/.env",
 });
 
 module.exports = {
-  pathPrefix: "/product-website-template",
+  pathPrefix: `/${process.env.GITHUB_REPOSITORY_NAME}`,
   plugins: [
     {
       resolve: `gatsby-plugin-layout`,
