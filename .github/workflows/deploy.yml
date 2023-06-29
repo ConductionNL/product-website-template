@@ -27,6 +27,9 @@ jobs:
       - name: Build Gatsby application
         run: cd pwa && npm run build
 
+      - name: Serve Gatsby application
+        run: cd pwa && npm run serve
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
