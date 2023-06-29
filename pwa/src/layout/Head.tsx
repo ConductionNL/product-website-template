@@ -13,7 +13,7 @@ export const Head: React.FC<HeadProps> = ({ crumbs }) => {
   return (
     <Helmet>
       <title>{`Common Gateway | ${title ?? "Error"}`}</title>
-      <script src="env.js"></script>
+      <script src="/env.js"></script>
     </Helmet>
   );
 };
