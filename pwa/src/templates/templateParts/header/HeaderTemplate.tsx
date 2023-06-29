@@ -17,7 +17,7 @@ export const HeaderTemplate: React.FC = () => {
       </div>
 
       <Container layoutClassName={styles.headingContainer}>
-        <Heading1>Title +1</Heading1>
+        <Heading1>Title +2</Heading1>
         <span className={styles.subTitle}>Sub title</span>
       </Container>
 
