@@ -1,8 +1,7 @@
 .container {
   top: 0;
   position: sticky;
-  padding-inline: 32px;
-  padding-block: 32px;
+  padding-block: 14px;
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
