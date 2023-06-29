@@ -23,7 +23,7 @@ export default class GitHub {
 
     const filteredData = data.filter((item: any) => item.name.includes(".md")); // remove all non .md files
     const mappedData = filteredData?.map((item: any) => ({
-      ...item,
+      href: item.name.replace(".md", ""),
       name: item.name.replace("_", " ").replace(".md", ""),
     }));
 
