@@ -25,7 +25,7 @@ jobs:
         run: rm -rf pwa/.cache
 
       - name: Set Gatsby pathPrefix env. variable
-        run: export GATSBY_PATH_PREFIX="/product-website-template"
+        run: cd pwa && export GATSBY_PATH_PREFIX="/product-website-template"
 
       - name: Build and deploy application
         run: cd pwa && npm run build
