@@ -6,12 +6,14 @@ import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 import { navigate } from "gatsby";
 import { useGitHub } from "../../../hooks/gitHub";
 import Skeleton from "react-loading-skeleton";
+import { GitHubLogo } from "../../../assets/svgs/Github";
+import { SlackLogo } from "../../../assets/svgs/Slack";
 
 export const TopNav: React.FC = () => {
   return (
     <nav className={styles.container}>
       <UnorderedList className={styles.list}>
-        <section>
+        <section className={styles.section}>
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
 
           <UnorderedListItem onClick={() => navigate("/features")}>
@@ -20,17 +22,17 @@ export const TopNav: React.FC = () => {
           </UnorderedListItem>
         </section>
 
-        <section>
+        <section className={styles.section}>
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("READ_THE_DOCS_URL") ?? "#")}>
             <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("SLACK_URL") ?? "#")}>
-            <FontAwesomeIcon icon={faExternalLinkSquare} /> Slack
+            <SlackLogo />
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("GITHUB_REPOSITORY_URL") ?? "#")}>
-            <FontAwesomeIcon icon={faExternalLinkSquare} /> GitHub
+            <GitHubLogo />
           </UnorderedListItem>
         </section>
       </UnorderedList>
@@ -57,6 +59,13 @@ const FeaturesDropDown: React.FC = () => {
             {feature.name}
           </UnorderedListItem>
         ))}
+
+      {/* This code is for dev purposes only, it ensures that the develop does not go above the Github api limit */}
+      {/* {features.map((feature, idx) => (
+        <UnorderedListItem key={idx} onClick={(e) => handleClick(e, feature.href)}>
+          {feature.name}
+        </UnorderedListItem>
+      ))} */}
     </UnorderedList>
   );
 };

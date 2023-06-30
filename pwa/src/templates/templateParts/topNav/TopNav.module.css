@@ -37,6 +37,10 @@
   content: "" !important;
 }
 
+.section {
+  align-items: center;
+}
+
 .dropDownList {
   left: 0;
   display: none;
