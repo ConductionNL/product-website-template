@@ -13,6 +13,7 @@
 
 .list > section {
   display: flex;
+  align-items: center;
 }
 
 .list > section > *:hover > .dropDownList {
