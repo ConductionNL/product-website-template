@@ -4,11 +4,7 @@
   padding-block: 14px;
   background-color: #4376fc;
   margin-block-end: unset !important;
-}
-
-.jumbotronContainer {
-  padding-block-start: 48px;
-  background-color: #4376fc;
+  padding-inline: 18px;
 }
 
 .topNav {

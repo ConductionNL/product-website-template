@@ -16,13 +16,6 @@ export const HeaderTemplate: React.FC = () => {
     setPathname(gatsbyContext.location?.pathname);
   }, [gatsbyContext]);
 
-  React.useEffect(() => {
-    // setWindowExist(false);
-    if (!window) return;
-
-    setWindowExist(true);
-  }, [windowExist]);
-
   return (
     <>
       <div className={styles.container}>
@@ -30,13 +23,6 @@ export const HeaderTemplate: React.FC = () => {
           <TopNav layoutClassName={styles.topNav} />
         </Container>
       </div>
-      {windowExist && pathname === "/" && (
-        <div className={styles.jumbotronContainer}>
-          <Container>
-            <JumbotronTemplate />
-          </Container>
-        </div>
-      )}
     </>
   );
 };

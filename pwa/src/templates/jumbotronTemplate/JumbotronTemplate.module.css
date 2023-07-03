@@ -1,3 +1,8 @@
+.wrapper {
+  padding-block: 48px;
+  background-color: #4376fc;
+}
+
 .container {
   display: flex;
 }
