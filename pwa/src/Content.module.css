@@ -1,4 +1,13 @@
+.container {
+  position: relative;
+}
+
+.header {
+  z-index: 2;
+}
+
 .pageContent {
+  z-index: 1;
   min-height: 100vh;
 }
 
