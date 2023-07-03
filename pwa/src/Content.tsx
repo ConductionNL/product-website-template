@@ -11,7 +11,9 @@ export const Content: React.FC<ContentProps> = ({ children }) => {
   return (
     <div className={styles.container}>
       <HeaderTemplate />
+
       <div className={styles.pageContent}>{children}</div>
+
       <FooterTemplate />
     </div>
   );
