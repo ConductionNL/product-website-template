@@ -8,12 +8,13 @@ import { useGitHub } from "../../../hooks/gitHub";
 import Skeleton from "react-loading-skeleton";
 import { GitHubLogo } from "../../../assets/svgs/Github";
 import { SlackLogo } from "../../../assets/svgs/Slack";
+import { ToolTip } from "@conduction/components";
 
 export const TopNav: React.FC = () => {
   return (
     <nav className={styles.container}>
       <UnorderedList className={styles.list}>
-        <section className={styles.section}>
+        <section>
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
 
           <UnorderedListItem onClick={() => navigate("/features")}>
@@ -22,17 +23,21 @@ export const TopNav: React.FC = () => {
           </UnorderedListItem>
         </section>
 
-        <section className={styles.section}>
+        <section>
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("READ_THE_DOCS_URL") ?? "#")}>
             <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("SLACK_URL") ?? "#")}>
-            <SlackLogo />
+            <ToolTip tooltip="Slack">
+              <SlackLogo />
+            </ToolTip>
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("GITHUB_REPOSITORY_URL") ?? "#")}>
-            <GitHubLogo />
+            <ToolTip tooltip="Github">
+              <GitHubLogo />
+            </ToolTip>
           </UnorderedListItem>
         </section>
       </UnorderedList>

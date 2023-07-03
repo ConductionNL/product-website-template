@@ -13,6 +13,7 @@
 
 .list > section {
   display: flex;
+  align-items: center;
 }
 
 .list > section > *:hover > .dropDownList {
@@ -35,10 +36,6 @@
 .list > section > *::marker,
 .dropDownList > *::marker {
   content: "" !important;
-}
-
-.section {
-  align-items: center;
 }
 
 .dropDownList {
