@@ -17,7 +17,6 @@ export const HeaderTemplate: React.FC = () => {
   }, [gatsbyContext]);
 
   React.useEffect(() => {
-    console.log(!window);
     // setWindowExist(false);
     if (!window) return;
 
