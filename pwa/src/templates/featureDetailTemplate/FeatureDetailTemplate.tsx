@@ -3,11 +3,11 @@ import { Container } from "@conduction/components";
 import { useGitHub } from "../../hooks/gitHub";
 import { ParsedHTML } from "../../components/ParsedHTML/ParsedHTML";
 
-interface FeaturesDetailTemplateProps {
+interface FeatureDetailTemplateProps {
   featureName: string;
 }
 
-export const FeaturesDetailTemplate: React.FC<FeaturesDetailTemplateProps> = ({ featureName }) => {
+export const FeatureDetailTemplate: React.FC<FeatureDetailTemplateProps> = ({ featureName }) => {
   const getContent = useGitHub().getContent(`/docs/features/${featureName}.md`);
 
   return (

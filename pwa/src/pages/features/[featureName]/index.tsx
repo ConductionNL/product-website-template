@@ -1,3 +1,3 @@
-import FeaturesDetailPage from "./FeaturesDetailPage";
+import FeatureDetailPage from "./FeatureDetailPage";
 
-export default FeaturesDetailPage;
+export default FeatureDetailPage;
