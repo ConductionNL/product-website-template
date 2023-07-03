@@ -42,6 +42,7 @@
   display: none;
   position: absolute;
   background-color: white;
+  color: black;
   margin-block-start: 14px !important;
   max-height: 430px;
   overflow-y: scroll;

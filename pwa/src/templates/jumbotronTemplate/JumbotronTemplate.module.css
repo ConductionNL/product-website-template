@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+}
+
+.content > * {
+  color: white !important;
+}
+
+.image {
+  width: 480px !important;
+  height: 292px !important;
+}

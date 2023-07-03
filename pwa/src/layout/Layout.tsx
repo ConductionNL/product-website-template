@@ -3,7 +3,7 @@ import * as styles from "./Layout.module.css";
 import "../translations/i18n";
 import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
-import { GatsbyProvider, IGatsbyContext } from "../context/gatsby";
+import { defaultGlobalContext, GlobalProvider, IGlobalContext } from "../context/global";
 import { Head } from "./Head";
 import { Content } from "../Content";
 import { Document } from "@utrecht/component-library-react/dist/css-module";
@@ -17,7 +17,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   const [API, setAPI] = React.useState<APIService>(React.useContext(APIContext));
-  const [gatsbyContext, setGatsbyContext] = React.useState<IGatsbyContext>({ ...{ pageContext, location } });
+  const [globalContext, setGlobalContext] = React.useState<IGlobalContext>(defaultGlobalContext);
 
   React.useEffect(() => {
     if (!window.sessionStorage.getItem("GITHUB_API_BASE_URL")) return;
@@ -26,14 +26,19 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   }, [pageContext]);
 
   React.useEffect(() => {
-    setGatsbyContext({ ...{ pageContext, location } });
+    setGlobalContext((context) => ({
+      ...context,
+      gatsby: {
+        ...{ pageContext, location, previousPath: location.pathname },
+      },
+    }));
   }, [pageContext, location]);
 
   return (
     <>
       <Head crumbs={pageContext.breadcrumb?.crumbs} />
 
-      <GatsbyProvider value={gatsbyContext}>
+      <GlobalProvider value={[globalContext, setGlobalContext]}>
         <APIProvider value={API}>
           <Document className="utrecht-theme">
             <Toaster position="bottom-right" />
@@ -43,7 +48,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
             </div>
           </Document>
         </APIProvider>
-      </GatsbyProvider>
+      </GlobalProvider>
     </>
   );
 };

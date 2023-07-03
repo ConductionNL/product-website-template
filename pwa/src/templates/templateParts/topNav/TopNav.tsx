@@ -6,10 +6,15 @@ import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 import { navigate } from "gatsby";
 import { useGitHub } from "../../../hooks/gitHub";
 import Skeleton from "react-loading-skeleton";
+import clsx from "clsx";
 
-export const TopNav: React.FC = () => {
+interface TopNavProps {
+  layoutClassName?: string;
+}
+
+export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
   return (
-    <nav className={styles.container}>
+    <nav className={clsx(styles.container, layoutClassName && layoutClassName)}>
       <UnorderedList className={styles.list}>
         <section>
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
