@@ -16,6 +16,11 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
+
+  const lastSlash = location.pathname.lastIndexOf("/");
+  const locationTitle = location.pathname.substring(lastSlash + 1);
+  const headTitle = locationTitle.replace("_", " ");
+
   const [API, setAPI] = React.useState<APIService>(React.useContext(APIContext));
   const [gatsbyContext, setGatsbyContext] = React.useState<IGatsbyContext>({ ...{ pageContext, location } });
 
@@ -31,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
 
   return (
     <>
-      <Head crumbs={pageContext.breadcrumb?.crumbs} />
+      <Head crumbs={pageContext.breadcrumb?.crumbs} headTitle={headTitle} />
 
       <GatsbyProvider value={gatsbyContext}>
         <APIProvider value={API}>

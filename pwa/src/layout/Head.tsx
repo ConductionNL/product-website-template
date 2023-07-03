@@ -5,10 +5,17 @@ import { Helmet } from "react-helmet";
 
 interface HeadProps {
   crumbs: any[];
+  headTitle: string;
 }
 
-export const Head: React.FC<HeadProps> = ({ crumbs }) => {
-  const title = crumbs && _.capitalize(_.last(crumbs).crumbLabel);
+export const Head: React.FC<HeadProps> = ({ crumbs, headTitle }) => {
+  let title = "";
+
+  if (crumbs && _.last(crumbs).crumbLabel.includes("[")) {
+    title = headTitle;
+  } else {
+    title = crumbs && _.capitalize(_.last(crumbs).crumbLabel);
+  }
 
   return (
     <Helmet>
