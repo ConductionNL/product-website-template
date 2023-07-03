@@ -6,6 +6,9 @@ import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 import { navigate } from "gatsby";
 import { useGitHub } from "../../../hooks/gitHub";
 import Skeleton from "react-loading-skeleton";
+import { GitHubLogo } from "../../../assets/svgs/Github";
+import { SlackLogo } from "../../../assets/svgs/Slack";
+import { ToolTip } from "@conduction/components";
 import clsx from "clsx";
 
 interface TopNavProps {
@@ -31,11 +34,15 @@ export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("SLACK_URL") ?? "#")}>
-            <FontAwesomeIcon icon={faExternalLinkSquare} /> Slack
+            <ToolTip tooltip="Slack">
+              <SlackLogo />
+            </ToolTip>
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("GITHUB_REPOSITORY_URL") ?? "#")}>
-            <FontAwesomeIcon icon={faExternalLinkSquare} /> GitHub
+            <ToolTip tooltip="Github">
+              <GitHubLogo />
+            </ToolTip>
           </UnorderedListItem>
         </section>
       </UnorderedList>
@@ -62,6 +69,13 @@ const FeaturesDropDown: React.FC = () => {
             {feature.name}
           </UnorderedListItem>
         ))}
+
+      {/* This code is for dev purposes only, it ensures that the develop does not go above the Github api limit */}
+      {/* {features.map((feature, idx) => (
+        <UnorderedListItem key={idx} onClick={(e) => handleClick(e, feature.href)}>
+          {feature.name}
+        </UnorderedListItem>
+      ))} */}
     </UnorderedList>
   );
 };

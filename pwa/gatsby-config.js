@@ -25,6 +25,13 @@ module.exports = {
           separator: ".",
         },
         autoGenHomeLabel: "Home",
+
+        crumbLabelUpdates: [
+          {
+            pathname: "/features/[featureName]",
+            crumbLabel: "feature",
+          },
+        ],
       },
     },
   ],
