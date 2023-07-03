@@ -8,10 +8,10 @@
 
 .list {
   display: flex;
-  margin-block-start: 0;
   justify-content: space-between;
-}
 
+  --utrecht-unordered-list-margin-block-start: 0;
+}
 .list > section {
   display: flex;
 }
