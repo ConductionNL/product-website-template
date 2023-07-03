@@ -20,8 +20,6 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   const [globalContext, setGlobalContext] = React.useState<IGlobalContext>(defaultGlobalContext);
 
   React.useEffect(() => {
-    if (!window.sessionStorage.getItem("GITHUB_API_BASE_URL")) return;
-
     setAPI(new APIService());
   }, [pageContext]);
 
