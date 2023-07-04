@@ -3,13 +3,11 @@ import _ from "lodash";
 import "../styling/index.css";
 import { Helmet } from "react-helmet";
 import { registerEnvironment } from "./../../static/env";
+import { getPageTitle } from "../services/getPageTitle";
+import { useGatsbyContext } from "../context/gatsby";
 
-interface HeadProps {
-  crumbs: any[];
-}
-
-export const Head: React.FC<HeadProps> = ({ crumbs }) => {
-  const title = crumbs && _.capitalize(_.last(crumbs).crumbLabel);
+export const Head: React.FC = () => {
+  const { gatsbyContext } = useGatsbyContext();
 
   React.useEffect(() => {
     registerEnvironment();
@@ -17,7 +15,9 @@ export const Head: React.FC<HeadProps> = ({ crumbs }) => {
 
   return (
     <Helmet>
-      <title>{`Common Gateway | ${title ?? "Error"}`}</title>
+      <title>{`Common Gateway | ${
+        getPageTitle(gatsbyContext.pageContext?.breadcrumb.crumbs, gatsbyContext.location) ?? "Error"
+      }`}</title>
     </Helmet>
   );
 };

@@ -26,17 +26,19 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   React.useEffect(() => {
     setGlobalContext((context) => ({
       ...context,
+      initiated: true,
       gatsby: {
         ...{ pageContext, location, previousPath: location.pathname },
       },
     }));
   }, [pageContext, location]);
 
+  if (!globalContext.initiated) return <></>;
+
   return (
     <>
-      <Head crumbs={pageContext.breadcrumb?.crumbs} />
-
       <GlobalProvider value={[globalContext, setGlobalContext]}>
+        <Head />
         <APIProvider value={API}>
           <Document className="utrecht-theme">
             <Toaster position="bottom-right" />

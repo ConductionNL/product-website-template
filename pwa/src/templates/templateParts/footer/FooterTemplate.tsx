@@ -9,6 +9,12 @@ import { SlackLogo } from "../../../assets/svgs/Slack";
 import { GitHubLogo } from "../../../assets/svgs/Github";
 
 export const FooterTemplate: React.FC = () => {
+  const [logoUrl, setLogoUrl] = React.useState<string>("");
+
+  React.useEffect(() => {
+    setLogoUrl(window.sessionStorage.getItem("LOGO_URL") ?? "");
+  });
+
   return (
     <footer className={styles.footer}>
       <Container>
@@ -38,7 +44,7 @@ export const FooterTemplate: React.FC = () => {
           </section>
 
           <section>
-            <img onClick={() => open("https://conduction.nl")} src={window.sessionStorage.getItem("LOGO_URL") ?? ""} />
+            <img onClick={() => open("https://conduction.nl")} src={logoUrl} />
           </section>
         </UnorderedList>
       </Container>
