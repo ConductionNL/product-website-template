@@ -79,8 +79,9 @@ const FeaturesDropDown: React.FC<FeaturesDropDownProps> = ({ directory }) => {
 
   return (
     <UnorderedList className={styles.dropDownList}>
-      {getDetailPages.data &&
-        getDetailPages.data.map((detailPage, idx) => (
+      {getDetailPages.data
+        ?.filter((detailPage) => detailPage.name !== "README")
+        .map((detailPage, idx) => (
           <UnorderedListItem key={idx} onClick={(e) => handleClick(e, detailPage.href)}>
             {detailPage.name}
           </UnorderedListItem>

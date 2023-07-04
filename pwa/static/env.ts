@@ -15,7 +15,7 @@ export const registerEnvironment = () => {
 
   window.sessionStorage.setItem(
     "GITHUB_DOCS_DIRECTORY_PATHS",
-    '[{"name": "Features", "location": "/docs/features"}, {"name": "CoreBundle Services", "location": "/docs/classes/CommonGateway/CoreBundle/Service"}]',
+    '[{"name": "Features", "location": "/docs/features"}, {"name": "CoreBundle Services", "location": "/docs/classes/CommonGateway/CoreBundle/Service"}, {"name": "Docs", "location": "/docs"}, {"name": "Classes", "location": "/docs/classes"}]',
   );
 
   //Jumbotron
