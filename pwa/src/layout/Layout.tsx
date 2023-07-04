@@ -32,11 +32,14 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
     }));
   }, [pageContext, location]);
 
+  if (globalContext.gatsby.pageContext === null || globalContext.gatsby.location === null) {
+    return <></>;
+  }
+
   return (
     <>
       <GlobalProvider value={[globalContext, setGlobalContext]}>
         <Head />
-
         <APIProvider value={API}>
           <Document className="utrecht-theme">
             <Toaster position="bottom-right" />
