@@ -4,24 +4,31 @@ import { Heading, Paragraph, Image } from "@utrecht/component-library-react/dist
 import { Container } from "@conduction/components";
 
 export const JumbotronTemplate: React.FC = () => {
-  const jumbotronTitle = window.sessionStorage.getItem("JUMBOTRON_TITLE");
-  const jumbotronSubtitle = window.sessionStorage.getItem("JUMBOTRON_SUBTITLE");
-  const jumbotronDescription = window.sessionStorage.getItem("JUMBOTRON_DESCRIPTION");
-  const jumbotronSVG = window.sessionStorage.getItem("JUMBOTRON_SVG");
+  const [title, setTitle] = React.useState<string>("");
+  const [subtitle, setSubtitle] = React.useState<string>("");
+  const [description, setDescription] = React.useState<string>("");
+  const [svg, setSvg] = React.useState<string>("");
+
+  React.useEffect(() => {
+    setTitle(window.sessionStorage.getItem("JUMBOTRON_TITLE") ?? "");
+    setSubtitle(window.sessionStorage.getItem("JUMBOTRON_SUBTITLE") ?? "");
+    setDescription(window.sessionStorage.getItem("JUMBOTRON_DESCRIPTION") ?? "");
+    setSvg(window.sessionStorage.getItem("JUMBOTRON_SVG") ?? "");
+  }, []);
 
   return (
     <div className={styles.wrapper}>
       <Container layoutClassName={styles.container}>
         <div className={styles.content}>
-          <Heading level={1}>{jumbotronTitle}</Heading>
+          <Heading level={1}>{title}</Heading>
 
-          <span className={styles.subtitle}>{jumbotronSubtitle}</span>
+          <span className={styles.subtitle}>{subtitle}</span>
 
-          <Paragraph>{jumbotronDescription} </Paragraph>
+          <Paragraph>{description}</Paragraph>
         </div>
 
         <div className={styles.imageContainer}>
-          <Image src={jumbotronSVG ?? ""} alt={`${jumbotronTitle}-image`} className={styles.image} />
+          <Image src={svg ?? ""} alt={`${title}-image`} className={styles.image} />
         </div>
       </Container>
     </div>
