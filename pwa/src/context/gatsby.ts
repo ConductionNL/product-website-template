@@ -1,10 +1,20 @@
 import * as React from "react";
+import { GlobalContext } from "./global";
 
 export interface IGatsbyContext {
   pageContext: any;
   location: any;
 }
 
-export const GatsbyContext = React.createContext<IGatsbyContext>({ pageContext: null, location: null });
+export const defaultGatsbyContext: IGatsbyContext = {
+  pageContext: null,
+  location: null,
+};
 
-export const GatsbyProvider = GatsbyContext.Provider;
+export const useGatsbyContext = () => {
+  const [globalContext] = React.useContext(GlobalContext);
+
+  const gatsbyContext: IGatsbyContext = globalContext.gatsby;
+
+  return { gatsbyContext };
+};

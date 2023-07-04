@@ -9,10 +9,15 @@ import Skeleton from "react-loading-skeleton";
 import { GitHubLogo } from "../../../assets/svgs/Github";
 import { SlackLogo } from "../../../assets/svgs/Slack";
 import { ToolTip } from "@conduction/components";
+import clsx from "clsx";
 
-export const TopNav: React.FC = () => {
+interface TopNavProps {
+  layoutClassName?: string;
+}
+
+export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
   return (
-    <nav className={styles.container}>
+    <nav className={clsx(styles.container, layoutClassName && layoutClassName)}>
       <UnorderedList className={styles.list}>
         <section>
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
