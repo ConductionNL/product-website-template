@@ -26,15 +26,14 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   React.useEffect(() => {
     setGlobalContext((context) => ({
       ...context,
+      initiated: true,
       gatsby: {
         ...{ pageContext, location, previousPath: location.pathname },
       },
     }));
   }, [pageContext, location]);
 
-  if (globalContext.gatsby.pageContext === null || globalContext.gatsby.location === null) {
-    return <></>;
-  }
+  if (!globalContext.initiated) return <></>;
 
   return (
     <>
