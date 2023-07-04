@@ -38,7 +38,7 @@ export const FooterTemplate: React.FC = () => {
           </section>
 
           <section>
-            <img src={window.sessionStorage.getItem("LOGO_URL") ?? ""} />
+            <img onClick={() => open("https://conduction.nl")} src={window.sessionStorage.getItem("LOGO_URL") ?? ""} />
           </section>
         </UnorderedList>
       </Container>

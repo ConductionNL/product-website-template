@@ -1,0 +1,33 @@
+.wrapper {
+  padding-block: 48px;
+  background-color: #4376fc;
+}
+
+.container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+}
+
+.content > * {
+  color: white !important;
+}
+
+.subtitle {
+  font-style: italic;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
