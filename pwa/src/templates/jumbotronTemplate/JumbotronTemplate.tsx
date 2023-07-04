@@ -4,24 +4,24 @@ import { Heading, Paragraph, Image } from "@utrecht/component-library-react/dist
 import { Container } from "@conduction/components";
 
 export const JumbotronTemplate: React.FC = () => {
-  const JumbotronTitle = window.sessionStorage.getItem("JUMBOTRON_TITLE");
-  const JumbotronSubtitle = window.sessionStorage.getItem("JUMBOTRON_SUBTITLE");
-  const JumbotronDescription = window.sessionStorage.getItem("JUMBOTRON_DESCRIPTION");
-  const JumbotronSVG = window.sessionStorage.getItem("JUMBOTRON_SVG");
+  const jumbotronTitle = window.sessionStorage.getItem("JUMBOTRON_TITLE");
+  const jumbotronSubtitle = window.sessionStorage.getItem("JUMBOTRON_SUBTITLE");
+  const jumbotronDescription = window.sessionStorage.getItem("JUMBOTRON_DESCRIPTION");
+  const jumbotronSVG = window.sessionStorage.getItem("JUMBOTRON_SVG");
 
   return (
     <div className={styles.wrapper}>
       <Container layoutClassName={styles.container}>
         <div className={styles.content}>
-          <Heading level={1}>{JumbotronTitle}</Heading>
+          <Heading level={1}>{jumbotronTitle}</Heading>
 
-          <span className={styles.subtitle}>{JumbotronSubtitle}</span>
+          <span className={styles.subtitle}>{jumbotronSubtitle}</span>
 
-          <Paragraph>{JumbotronDescription} </Paragraph>
+          <Paragraph>{jumbotronDescription} </Paragraph>
         </div>
 
         <div className={styles.imageContainer}>
-          <Image src={JumbotronSVG ?? ""} alt={`${JumbotronTitle}-image`} className={styles.image} />
+          <Image src={jumbotronSVG ?? ""} alt={`${jumbotronTitle}-image`} className={styles.image} />
         </div>
       </Container>
     </div>
