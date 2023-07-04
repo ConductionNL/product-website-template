@@ -16,8 +16,17 @@ interface TopNavProps {
 }
 
 export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
+  const [logoUrl, setLogoUrl] = React.useState<string>("");
+
+  React.useEffect(() => {
+    setLogoUrl(window.sessionStorage.getItem("NAVBAR_LOGO_URL") ?? "");
+  });
+
   return (
     <nav className={clsx(styles.container, layoutClassName && layoutClassName)}>
+      <div className={styles.imageContainer}>
+        <img className={styles.image} src={logoUrl} alt={"Navbar-logo"} />
+      </div>
       <UnorderedList className={styles.list}>
         <section>
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>

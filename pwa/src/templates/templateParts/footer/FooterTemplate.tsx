@@ -12,7 +12,7 @@ export const FooterTemplate: React.FC = () => {
   const [logoUrl, setLogoUrl] = React.useState<string>("");
 
   React.useEffect(() => {
-    setLogoUrl(window.sessionStorage.getItem("LOGO_URL") ?? "");
+    setLogoUrl(window.sessionStorage.getItem("FOOTER_LOGO_URL") ?? "");
   });
 
   return (
@@ -44,7 +44,7 @@ export const FooterTemplate: React.FC = () => {
           </section>
 
           <section>
-            <img onClick={() => open("https://conduction.nl")} src={logoUrl} />
+            <img onClick={() => open("https://conduction.nl")} src={logoUrl} alt={"Footer-logo"} />
           </section>
         </UnorderedList>
       </Container>

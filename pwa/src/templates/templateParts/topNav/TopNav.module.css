@@ -9,6 +9,7 @@
 .list {
   display: flex;
   justify-content: space-between;
+  flex: 3;
 
   --utrecht-unordered-list-margin-block-start: 0;
 }
@@ -49,4 +50,24 @@
   max-height: 430px;
   overflow-y: scroll;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  float: left;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
