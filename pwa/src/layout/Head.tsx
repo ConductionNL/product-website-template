@@ -2,7 +2,7 @@ import * as React from "react";
 import _ from "lodash";
 import "../styling/index.css";
 import { Helmet } from "react-helmet";
-import { registerEnvironment } from "../../static/env";
+import { registerEnvironment } from "./../../static/env";
 
 interface HeadProps {
   crumbs: any[];
