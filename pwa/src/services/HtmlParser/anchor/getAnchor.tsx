@@ -46,14 +46,19 @@ export const getAnchor = (props: any, children: any, getOptions: any) => {
   };
 
   const handleRelativeLink = () => {
-    // linking to a feature, from a feature
     if (!props.href.includes("/") && currentPath.includes("features")) {
       navigate(`/features/${props.href.replace(".md", "")}`);
 
       return;
     }
 
-    open(`${window.sessionStorage.getItem("GITHUB_REPOSITORY_URL")}/tree/master${props.href}`);
+    if (props.href.includes("features/")) {
+      navigate(`/${props.href}`);
+
+      return;
+    }
+
+    open(`${window.sessionStorage.getItem("GITHUB_REPOSITORY_URL")}/tree/master${props.href}`); // default to the GitHub page
   };
 
   const attributes = {
