@@ -21,7 +21,7 @@ export const registerEnvironment = () => {
 
   window.sessionStorage.setItem(
     "JUMBOTRON_DESCRIPTION",
-    "Wij zijn wat je zou kunnen noemen Digital Socials, wij ontwikkelen techniek volgens de Common Ground principes, waarbij mens en community centraal staan. Graag dragen we dan ook bij aan het ontwikkelen van digitale oplossingen voor maatschappelijke vraagstukken:",
+    "Wij zijn wat je zou kunnen noemen Digital Socials, wij ontwikkelen techniek volgens de Common Ground principes, waarbij mens en community centraal staan. Graag dragen we dan ook bij aan het ontwikkelen van digitale oplossingen voor maatschappelijke vraagstukken",
   );
 
   window.sessionStorage.setItem(

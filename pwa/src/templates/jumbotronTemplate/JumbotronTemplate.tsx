@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as styles from "./JumbotronTemplate.module.css";
 import { Heading, Paragraph, Image } from "@utrecht/component-library-react/dist/css-module";
-import clsx from "clsx";
 import { Container } from "@conduction/components";
 
 export const JumbotronTemplate: React.FC = () => {
@@ -16,12 +15,14 @@ export const JumbotronTemplate: React.FC = () => {
         <div className={styles.content}>
           <Heading level={1}>{JumbotronTitle}</Heading>
 
-          <span>{JumbotronSubtitle}</span>
+          <span className={styles.subtitle}>{JumbotronSubtitle}</span>
 
           <Paragraph>{JumbotronDescription} </Paragraph>
         </div>
 
-        <Image src={JumbotronSVG ?? ""} alt={`${JumbotronTitle}-image`} className={styles.image} />
+        <div className={styles.imageContainer}>
+          <Image src={JumbotronSVG ?? ""} alt={`${JumbotronTitle}-image`} className={styles.image} />
+        </div>
       </Container>
     </div>
   );
