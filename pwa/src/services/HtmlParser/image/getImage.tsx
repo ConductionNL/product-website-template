@@ -22,6 +22,11 @@ export const getImage = (props: any) => {
     ...props,
     src,
     alt,
+    href: "",
+    onClick: (e: MouseEvent) => {
+      e.stopPropagation();
+      open(src);
+    },
   };
   return <Image {...attributes} />;
 };

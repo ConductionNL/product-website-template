@@ -10,10 +10,10 @@ interface HeaderTemplateProps {
 
 export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName }) => {
   return (
-    <header className={clsx(styles.container, [layoutClassName && layoutClassName])}>
-        <Container>
-          <TopNav layoutClassName={styles.topNav} />
-        </Container>
+    <header id="header" className={clsx(styles.container, [layoutClassName && layoutClassName])}>
+      <Container>
+        <TopNav layoutClassName={styles.topNav} />
+      </Container>
     </header>
   );
 };
