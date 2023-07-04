@@ -3,10 +3,8 @@ import { navigate } from "gatsby";
 import { domToReact } from "html-react-parser";
 
 export const getAnchor = (props: any, children: any, getOptions: any) => {
-  const currentPath = window.location.pathname;
+  const currentPath = window?.location.pathname;
   const _id = props.id?.replace("user-content-", "");
-
-  console.log({ props });
 
   const handleClick = (e: any) => {
     e.preventDefault();
