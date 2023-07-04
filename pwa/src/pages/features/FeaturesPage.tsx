@@ -1,12 +1,8 @@
 import * as React from "react";
-import { navigate } from "gatsby";
+import { FeaturesTemplate } from "../../templates/featureTemplate/FeatureTemplate";
 
 const FeaturesPage: React.FC = () => {
-  React.useEffect(() => {
-    navigate("/");
-  });
-
-  return <></>;
+  return <FeaturesTemplate />;
 };
 
 export default FeaturesPage;
