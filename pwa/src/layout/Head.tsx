@@ -2,7 +2,7 @@ import * as React from "react";
 import _ from "lodash";
 import "../styling/index.css";
 import { Helmet } from "react-helmet";
-import { registerEnvironment } from "../../static/env";
+import { registerEnvironment } from "./../../static/env";
 import { getPageTitle } from "../services/getPageTitle";
 import { useGatsbyContext } from "../context/gatsby";
 
