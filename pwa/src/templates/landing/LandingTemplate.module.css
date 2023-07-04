@@ -1,3 +1,0 @@
-.container > *:not(:last-child) {
-  margin-block-end: 64px;
-}
