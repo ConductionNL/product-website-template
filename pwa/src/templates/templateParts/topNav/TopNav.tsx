@@ -16,16 +16,27 @@ interface TopNavProps {
 }
 
 export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
+  const [dynamicTopNavItems, setDynamicTopNavItems] = React.useState<{ name: string; location: string }[] | null>(null);
+
+  React.useEffect(() => {
+    const GITHUB_DOCS_DIRECTORY_PATHS = window.sessionStorage.getItem("GITHUB_DOCS_DIRECTORY_PATHS") ?? "";
+
+    setDynamicTopNavItems(JSON.parse(GITHUB_DOCS_DIRECTORY_PATHS));
+  }, []);
+
   return (
     <nav className={clsx(styles.container, layoutClassName && layoutClassName)}>
       <UnorderedList className={styles.list}>
         <section>
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
 
-          <UnorderedListItem onClick={() => navigate("/features")}>
-            Features
-            <FeaturesDropDown />
-          </UnorderedListItem>
+          {dynamicTopNavItems?.map((directory, idx) => (
+            <UnorderedListItem key={idx} onClick={() => navigate(`/pages/${directory.name.replace(" ", "-")}`)}>
+              {directory.name}
+
+              <FeaturesDropDown {...{ directory }} />
+            </UnorderedListItem>
+          ))}
         </section>
 
         <section>
@@ -50,32 +61,30 @@ export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
   );
 };
 
-const FeaturesDropDown: React.FC = () => {
-  const getFeatures = useGitHub().getDirectoryItems("/docs/features");
+interface FeaturesDropDownProps {
+  directory: {
+    name: string;
+    location: string;
+  };
+}
+
+const FeaturesDropDown: React.FC<FeaturesDropDownProps> = ({ directory }) => {
+  const getDetailPages = useGitHub().getDirectoryItems(directory.location);
 
   const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>, target: string) => {
     e.stopPropagation();
 
-    navigate(`/features/${target}`);
+    navigate(`/pages/${directory.name.replace(" ", "-")}/${target}`);
   };
 
   return (
     <UnorderedList className={styles.dropDownList}>
-      {getFeatures.isLoading && [1, 2, 3].map((item) => <Skeleton key={item} />)}
-
-      {getFeatures.data &&
-        getFeatures.data.map((feature, idx) => (
-          <UnorderedListItem key={idx} onClick={(e) => handleClick(e, feature.href)}>
-            {feature.name}
+      {getDetailPages.data &&
+        getDetailPages.data.map((detailPage, idx) => (
+          <UnorderedListItem key={idx} onClick={(e) => handleClick(e, detailPage.href)}>
+            {detailPage.name}
           </UnorderedListItem>
         ))}
-
-      {/* This code is for dev purposes only, it ensures that the develop does not go above the Github api limit */}
-      {/* {features.map((feature, idx) => (
-        <UnorderedListItem key={idx} onClick={(e) => handleClick(e, feature.href)}>
-          {feature.name}
-        </UnorderedListItem>
-      ))} */}
     </UnorderedList>
   );
 };
