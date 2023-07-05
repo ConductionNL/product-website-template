@@ -15,8 +15,11 @@ import { getTableHeaderCell } from "./tableHeaderCell/getTableHeaderCell";
 import { getTableBody } from "./tableBody/getTableBody";
 import { getTableCell } from "./tableCell/getTableCell";
 import { getCode } from "./code/getCode";
+import { useGitHubDirectories } from "../useGitHubDirectories";
 
-export const useHtmlParser = () => {
+export const useHtmlParser = (location: string) => {
+  const { directories } = useGitHubDirectories();
+
   const options = {
     replace: ({ attribs, parent, children, name }: any) => {
       if (!attribs) {
@@ -34,7 +37,7 @@ export const useHtmlParser = () => {
       }
 
       if (attribs && name === "a") {
-        return getAnchor(props, children, options);
+        return getAnchor(props, children, options, directories, location);
       }
 
       if (attribs && (name === "ol" || name === "ul")) {

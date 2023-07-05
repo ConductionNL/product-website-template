@@ -11,11 +11,12 @@ import { useHtmlParser } from "../../hooks/htmlParser/useHtmlParser";
 
 interface ParsedHTMLProps {
   contentQuery: UseQueryResult<any, Error>;
+  location: string;
   layoutClassName?: string;
 }
 
-export const ParsedHTML: React.FC<ParsedHTMLProps> = ({ contentQuery, layoutClassName }) => {
-  const { options } = useHtmlParser();
+export const ParsedHTML: React.FC<ParsedHTMLProps> = ({ contentQuery, location, layoutClassName }) => {
+  const { options } = useHtmlParser(location);
 
   if (contentQuery.isLoading)
     return (

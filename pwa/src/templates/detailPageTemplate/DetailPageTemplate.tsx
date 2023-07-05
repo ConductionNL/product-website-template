@@ -12,11 +12,13 @@ interface DetailPageTemplateProps {
 export const DetailPageTemplate: React.FC<DetailPageTemplateProps> = ({ pageSlug, detailPageSlug }) => {
   const { getDetailMdLocation } = useGitHubDirectories();
 
-  const getContent = useGitHub().getContent(getDetailMdLocation(pageSlug, detailPageSlug));
+  const location = getDetailMdLocation(pageSlug, detailPageSlug);
+
+  const getContent = useGitHub().getContent(location);
 
   return (
     <Container>
-      <ParsedHTML contentQuery={getContent} />
+      <ParsedHTML contentQuery={getContent} {...{ location }} />
     </Container>
   );
 };
