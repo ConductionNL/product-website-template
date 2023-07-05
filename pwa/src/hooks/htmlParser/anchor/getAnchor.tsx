@@ -2,7 +2,7 @@ import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
 import { domToReact } from "html-react-parser";
 
-export const getAnchor = (props: any, children: any, getOptions: any) => {
+export const getAnchor = (props: any, children: any, options: any) => {
   const currentPath = window?.location.pathname;
   const _id = props.id?.replace("user-content-", "");
 
@@ -65,5 +65,5 @@ export const getAnchor = (props: any, children: any, getOptions: any) => {
     onClick: handleClick,
   };
 
-  return <Link {...attributes}>{domToReact(children, getOptions)}</Link>;
+  return <Link {...attributes}>{domToReact(children, options)}</Link>;
 };
