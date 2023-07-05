@@ -1,0 +1,46 @@
+/* :root {
+  --utrecht-heading-1-font-family: "Aldritch" !important;
+} */
+.utrecht-theme,
+.utrecht-theme ::backdrop {
+  --conduction-color-blue: #4376fc;
+  --conduction-color-white: white;
+  --conduction-color-grey: #f5f5f5;
+  --conduction-color-black: black;
+  --conduction-typography-sans-serif-font-family: "Noto Sans", Arial, sans-serif;
+  --conduction-typography-header-font-family: "Aldritch", "Noto Sans", Arial,
+    sans-serif;
+
+  --utrecht-typography-sans-serif-font-family: var(
+    --conduction-typography-sans-serif-font-family
+  );
+  --utrecht-page-header-color: var(--conduction-color-white);
+  --utrecht-page-header-background-color: var(--conduction-color-blue);
+  --utrecht-heading-1-font-family: var(
+    --conduction-typography-header-font-family
+  ) !important;
+  --utrecht-heading-2-font-family: var(
+    --conduction-typography-header-font-family
+  ) !important;
+  --utrecht-heading-3-font-family: var(
+    --conduction-typography-header-font-family
+  ) !important;
+  --utrecht-heading-4-font-family: var(
+    --conduction-typography-header-font-family
+  ) !important;
+  --utrecht-heading-5-font-family: var(
+    --conduction-typography-header-font-family
+  ) !important;
+  --utrecht-page-footer-background-color: var(
+    --conduction-color-grey
+  ) !important;
+  --utrecht-page-footer-color: var(--conduction-color-black) !important;
+
+  --utrecht-page-footer-background-image: unset !important;
+}
+
+@font-face {
+  font-family: "Aldritch";
+  src: url("//db.onlinewebfonts.com/t/8adb01f8db81e96685a037d275971bed.woff2")
+    format("woff2");
+}
