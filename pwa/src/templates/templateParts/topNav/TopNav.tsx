@@ -56,7 +56,14 @@ interface DetailPagesDropDownProps {
 
 const DetailPagesDropDown: React.FC<DetailPagesDropDownProps> = ({ directory }) => {
   const { getSlugFromName } = useGitHubDirectories();
+  const [detailPages, setDetailPages] = React.useState<any[]>([]);
   const getDetailPages = useGitHub().getDirectoryItems(directory.location);
+
+  React.useEffect(() => {
+    if (!getDetailPages.data) return;
+
+    setDetailPages(getDetailPages.data.filter((detailPage) => detailPage.name !== "README"));
+  }, [getDetailPages.data]);
 
   const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>, target: string) => {
     e.stopPropagation();
@@ -64,15 +71,15 @@ const DetailPagesDropDown: React.FC<DetailPagesDropDownProps> = ({ directory }) 
     navigate(`/pages/${getSlugFromName(directory.name)}/${target}`);
   };
 
+  if (!detailPages.length) return <></>;
+
   return (
     <UnorderedList className={styles.dropDownList}>
-      {getDetailPages.data
-        ?.filter((detailPage) => detailPage.name !== "README")
-        .map((detailPage, idx) => (
-          <UnorderedListItem key={idx} onClick={(e) => handleClick(e, detailPage.href)}>
-            {detailPage.name}
-          </UnorderedListItem>
-        ))}
+      {detailPages.map((detailPage, idx) => (
+        <UnorderedListItem key={idx} onClick={(e) => handleClick(e, detailPage.href)}>
+          {detailPage.name}
+        </UnorderedListItem>
+      ))}
     </UnorderedList>
   );
 };
