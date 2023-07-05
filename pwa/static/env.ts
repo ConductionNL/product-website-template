@@ -13,10 +13,7 @@ export const registerEnvironment = () => {
     "https://api.github.com/repos/CommonGateway/CoreBundle/contents",
   );
 
-  window.sessionStorage.setItem(
-    "GITHUB_DOCS_DIRECTORY_PATHS",
-    '[{"name": "Features", "location": "/docs/features"}, {"name": "CoreBundle Services", "location": "/docs/classes/CommonGateway/CoreBundle/Service"}, {"name": "Docs", "location": "/docs"}, {"name": "Classes", "location": "/docs/classes"}, {"name": "Service", "location":"/docs/classes/Service"}]',
-  );
+  window.sessionStorage.setItem("GITHUB_DOCS_DIRECTORY_PATHS", '[{"name": "Features", "location": "/docs/features"}]');
 
   //Jumbotron
 

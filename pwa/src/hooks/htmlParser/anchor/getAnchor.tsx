@@ -80,12 +80,14 @@ const handleInternalLinks = (props: any, targetFile: string, location: string, d
 
     // Internal Link exists: redirect to page
     if (directoryFound) {
-      navigate(`/pages/${targetDirectory}/${targetFile}`);
+      navigate(`/pages/${_.upperFirst(targetDirectory)}/${targetFile}`);
     }
 
     // Internal Link does not exist: redirect to online GitHub environment (TODO)
     if (!directoryFound) {
-      open("https://github.com");
+      const hrefWithLeadingSlash = !props.href.startsWith("/") ? `/${props.href}` : props.href;
+
+      open(`${window.sessionStorage.getItem("GITHUB_REPOSITORY_URL")}/blob/master${hrefWithLeadingSlash}`);
     }
 
     return; // ensure no other flow is triggered
