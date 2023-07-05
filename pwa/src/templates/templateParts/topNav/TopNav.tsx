@@ -23,7 +23,7 @@ export const TopNav: React.FC = () => {
             <UnorderedListItem key={idx} onClick={() => navigate(`/pages/${getSlugFromName(directory.name)}`)}>
               {directory.name}
 
-              <FeaturesDropDown {...{ directory }} />
+              <DetailPagesDropDown {...{ directory }} />
             </UnorderedListItem>
           ))}
         </section>
@@ -50,11 +50,11 @@ export const TopNav: React.FC = () => {
   );
 };
 
-interface FeaturesDropDownProps {
+interface DetailPagesDropDownProps {
   directory: TGitHubDirectory;
 }
 
-const FeaturesDropDown: React.FC<FeaturesDropDownProps> = ({ directory }) => {
+const DetailPagesDropDown: React.FC<DetailPagesDropDownProps> = ({ directory }) => {
   const { getSlugFromName } = useGitHubDirectories();
   const getDetailPages = useGitHub().getDirectoryItems(directory.location);
 
