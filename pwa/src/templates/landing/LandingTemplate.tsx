@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Container } from "@conduction/components";
-import { useGitHub } from "../../hooks/gitHub";
+import { useGitHub } from "../../hooks/resources/gitHub";
 import { ParsedHTML } from "../../components/ParsedHTML/ParsedHTML";
 import { JumbotronTemplate } from "../jumbotronTemplate/JumbotronTemplate";
 

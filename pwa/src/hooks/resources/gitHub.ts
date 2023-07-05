@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useQuery } from "react-query";
-import APIService from "../apiService/apiService";
-import APIContext from "../apiService/apiContext";
+import APIService from "../../apiService/apiService";
+import APIContext from "../../apiService/apiContext";
 
 export const useGitHub = () => {
   const API: APIService | null = React.useContext(APIContext);

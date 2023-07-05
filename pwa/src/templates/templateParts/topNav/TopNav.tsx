@@ -4,7 +4,7 @@ import { UnorderedList, UnorderedListItem } from "@utrecht/component-library-rea
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 import { navigate } from "gatsby";
-import { useGitHub } from "../../../hooks/gitHub";
+import { useGitHub } from "../../../hooks/resources/gitHub";
 import { GitHubLogo } from "../../../assets/svgs/Github";
 import { SlackLogo } from "../../../assets/svgs/Slack";
 import { ToolTip } from "@conduction/components";
