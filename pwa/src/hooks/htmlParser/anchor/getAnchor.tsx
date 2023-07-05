@@ -16,6 +16,13 @@ export const getAnchor = (
 
     const targetFile = _.upperFirst(props.href.substring(props.href.lastIndexOf("/") + 1).replace(".md", ""));
 
+    // No link
+    if (!props.href) {
+      navigate("#");
+
+      return;
+    }
+
     // Anchor Links
     if (props.className === "anchor" || Array.from(props.href)[0] === "#") {
       handleAnchorClick(props); // handles on-page scroll anchors
