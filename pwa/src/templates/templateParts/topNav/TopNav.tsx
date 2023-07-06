@@ -16,15 +16,16 @@ export const TopNav: React.FC = () => {
   const [logoUrl, setLogoUrl] = React.useState<string>("");
   React.useEffect(() => {
     setLogoUrl(window.sessionStorage.getItem("NAVBAR_LOGO_URL") ?? "");
-  });
+  }, []);
 
   return (
     <nav className={styles.container}>
-      <div className={styles.imageContainer}>
-        <img className={styles.image} src={logoUrl} alt={"Navbar-logo"} />
-      </div>
       <UnorderedList className={styles.list}>
         <section>
+          <UnorderedListItem>
+            <img className={styles.image} onClick={() => navigate("/")} src={logoUrl} alt={"Navbar-logo"} />
+          </UnorderedListItem>
+
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
 
           {directories?.map((directory, idx) => (
