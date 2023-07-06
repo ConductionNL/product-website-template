@@ -13,7 +13,6 @@
 .list {
   display: flex;
   justify-content: space-between;
-  flex: 3;
 
   --utrecht-unordered-list-margin-block-start: 0;
 }
