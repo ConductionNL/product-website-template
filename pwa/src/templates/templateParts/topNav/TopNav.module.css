@@ -1,3 +1,7 @@
+.container {
+  color: white;
+}
+
 .container,
 .dropDownList {
   --utrecht-unordered-list-item-padding-inline-start: 0;

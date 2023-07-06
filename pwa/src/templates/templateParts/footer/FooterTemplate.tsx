@@ -7,9 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 import { SlackLogo } from "../../../assets/svgs/Slack";
 import { GitHubLogo } from "../../../assets/svgs/Github";
+import { useGitHubDirectories } from "../../../hooks/useGitHubDirectories";
 
 export const FooterTemplate: React.FC = () => {
   const [logoUrl, setLogoUrl] = React.useState<string>("");
+
+  const { directories, getSlugFromName } = useGitHubDirectories();
 
   React.useEffect(() => {
     setLogoUrl(window.sessionStorage.getItem("FOOTER_LOGO_URL") ?? "");
@@ -22,7 +25,11 @@ export const FooterTemplate: React.FC = () => {
           <section className={styles.linksContainer}>
             <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
 
-            <UnorderedListItem onClick={() => navigate("/features")}>Features</UnorderedListItem>
+            {directories?.map((directory, idx) => (
+              <UnorderedListItem key={idx} onClick={() => navigate(`/pages/${getSlugFromName(directory.name)}`)}>
+                {directory.name}
+              </UnorderedListItem>
+            ))}
 
             <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("READ_THE_DOCS_URL") ?? "#")}>
               <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
