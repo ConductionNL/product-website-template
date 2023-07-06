@@ -1,8 +1,6 @@
-import * as React from "react";
-
 import { attributesToProps } from "html-react-parser";
 import { getHeader } from "./header/getHeader";
-import { getAnchor } from "../../hooks/htmlParser/anchor/getAnchor";
+import { getAnchor } from "./anchor/getAnchor";
 import { getListItem } from "./listItem/getListItem";
 import { getImage } from "./image/getImage";
 import { getList } from "./list/getList";
