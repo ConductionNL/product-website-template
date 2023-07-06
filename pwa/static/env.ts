@@ -19,10 +19,7 @@ export const registerEnvironment = () => {
     "https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg",
   );
 
-  window.sessionStorage.setItem(
-    "GITHUB_DOCS_DIRECTORY_PATHS",
-    '[{"name": "Features", "location": "/docs/features"}, {"name": "CoreBundle Services", "location": "/docs/classes/CommonGateway/CoreBundle/Service"}, {"name": "Docs", "location": "/docs"}, {"name": "Classes", "location": "/docs/classes"}]',
-  );
+  window.sessionStorage.setItem("GITHUB_DOCS_DIRECTORY_PATHS", '[{"name": "Features", "location": "/docs/features"}]');
 
   window.sessionStorage.setItem(
     "NAVBAR_LOGO_URL",

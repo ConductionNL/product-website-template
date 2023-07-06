@@ -11,11 +11,13 @@ interface PageTemplateProps {
 export const PageTemplate: React.FC<PageTemplateProps> = ({ pageSlug }) => {
   const { getDirectoryReadMeLocation } = useGitHubDirectories();
 
-  const getContent = useGitHub().getContent(getDirectoryReadMeLocation(pageSlug));
+  const location = getDirectoryReadMeLocation(pageSlug);
+
+  const getContent = useGitHub().getContent(location);
 
   return (
     <Container>
-      <ParsedHTML contentQuery={getContent} />
+      <ParsedHTML contentQuery={getContent} {...{ location }} />
     </Container>
   );
 };
