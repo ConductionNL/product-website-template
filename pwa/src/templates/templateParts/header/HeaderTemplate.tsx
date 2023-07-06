@@ -13,7 +13,7 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
   return (
     <PageHeader id="header" className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <Container>
-        <TopNav layoutClassName={styles.topNav} />
+        <TopNav />
       </Container>
     </PageHeader>
   );

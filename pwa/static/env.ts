@@ -13,6 +13,8 @@ export const registerEnvironment = () => {
     "https://api.github.com/repos/CommonGateway/CoreBundle/contents",
   );
 
+  window.sessionStorage.setItem("GITHUB_DOCS_DIRECTORY_PATHS", '[{"name": "Features", "location": "/docs/features"}]');
+
   //Jumbotron
 
   window.sessionStorage.setItem("JUMBOTRON_TITLE", "Common Gateway");

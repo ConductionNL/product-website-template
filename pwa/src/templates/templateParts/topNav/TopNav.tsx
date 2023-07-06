@@ -4,28 +4,28 @@ import { UnorderedList, UnorderedListItem } from "@utrecht/component-library-rea
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 import { navigate } from "gatsby";
-import { useGitHub } from "../../../hooks/gitHub";
-import Skeleton from "react-loading-skeleton";
+import { useGitHub } from "../../../hooks/resources/gitHub";
 import { GitHubLogo } from "../../../assets/svgs/Github";
 import { SlackLogo } from "../../../assets/svgs/Slack";
 import { ToolTip } from "@conduction/components";
-import clsx from "clsx";
+import { TGitHubDirectory, useGitHubDirectories } from "../../../hooks/useGitHubDirectories";
 
-interface TopNavProps {
-  layoutClassName?: string;
-}
+export const TopNav: React.FC = () => {
+  const { directories, getSlugFromName } = useGitHubDirectories();
 
-export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
   return (
-    <nav className={clsx(styles.container, layoutClassName && layoutClassName)}>
+    <nav className={styles.container}>
       <UnorderedList className={styles.list}>
         <section>
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
 
-          <UnorderedListItem onClick={() => navigate("/features")}>
-            Features
-            <FeaturesDropDown />
-          </UnorderedListItem>
+          {directories?.map((directory, idx) => (
+            <UnorderedListItem key={idx} onClick={() => navigate(`/pages/${getSlugFromName(directory.name)}`)}>
+              {directory.name}
+
+              <DetailPagesDropDown {...{ directory }} />
+            </UnorderedListItem>
+          ))}
         </section>
 
         <section>
@@ -50,32 +50,36 @@ export const TopNav: React.FC<TopNavProps> = ({ layoutClassName }) => {
   );
 };
 
-const FeaturesDropDown: React.FC = () => {
-  const getFeatures = useGitHub().getDirectoryItems("/docs/features");
+interface DetailPagesDropDownProps {
+  directory: TGitHubDirectory;
+}
+
+const DetailPagesDropDown: React.FC<DetailPagesDropDownProps> = ({ directory }) => {
+  const { getSlugFromName } = useGitHubDirectories();
+  const [detailPages, setDetailPages] = React.useState<any[]>([]);
+  const getDetailPages = useGitHub().getDirectoryItems(directory.location);
+
+  React.useEffect(() => {
+    if (!getDetailPages.data) return;
+
+    setDetailPages(getDetailPages.data.filter((detailPage) => detailPage.name !== "README"));
+  }, [getDetailPages.data]);
 
   const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>, target: string) => {
     e.stopPropagation();
 
-    navigate(`/features/${target}`);
+    navigate(`/pages/${getSlugFromName(directory.name)}/${target}`);
   };
+
+  if (!detailPages.length) return <></>;
 
   return (
     <UnorderedList className={styles.dropDownList}>
-      {getFeatures.isLoading && [1, 2, 3].map((item) => <Skeleton key={item} />)}
-
-      {getFeatures.data &&
-        getFeatures.data.map((feature, idx) => (
-          <UnorderedListItem key={idx} onClick={(e) => handleClick(e, feature.href)}>
-            {feature.name}
-          </UnorderedListItem>
-        ))}
-
-      {/* This code is for dev purposes only, it ensures that the develop does not go above the Github api limit */}
-      {/* {features.map((feature, idx) => (
-        <UnorderedListItem key={idx} onClick={(e) => handleClick(e, feature.href)}>
-          {feature.name}
+      {detailPages.map((detailPage, idx) => (
+        <UnorderedListItem key={idx} onClick={(e) => handleClick(e, detailPage.href)}>
+          {detailPage.name}
         </UnorderedListItem>
-      ))} */}
+      ))}
     </UnorderedList>
   );
 };
