@@ -2,10 +2,6 @@
   top: 0;
   position: sticky;
   padding-block: 14px;
-  background-color: #4376fc;
+  background-color: var(--utrecht-page-header-background-color);
   margin-block-end: unset !important;
-}
-
-.topNav {
-  color: white;
 }

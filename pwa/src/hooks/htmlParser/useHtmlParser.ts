@@ -78,8 +78,8 @@ export const useHtmlParser = (location: string) => {
         return getTableCell(props, children, options);
       }
 
-      if (attribs && name === "code") {
-        return getCode(props, children, options);
+      if (attribs && (name === "code" || name === "pre")) {
+        return getCode(name, props, children, options);
       }
     },
   };

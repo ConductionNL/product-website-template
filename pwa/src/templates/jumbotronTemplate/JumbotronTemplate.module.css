@@ -1,6 +1,6 @@
 .wrapper {
   padding-block: 48px;
-  background-color: #4376fc;
+  background-color: var(--utrecht-page-header-background-color) !important;
 }
 
 .container {
@@ -12,7 +12,7 @@
 }
 
 .content > * {
-  color: white !important;
+  color: var(--utrecht-page-header-color) !important;
 }
 
 .subtitle {

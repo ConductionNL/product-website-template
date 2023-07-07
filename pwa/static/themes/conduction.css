@@ -1,46 +1,224 @@
-/* :root {
-  --utrecht-heading-1-font-family: "Aldritch" !important;
-} */
-.utrecht-theme,
-.utrecht-theme ::backdrop {
-  --conduction-color-blue: #4376fc;
-  --conduction-color-white: white;
-  --conduction-color-grey: #f5f5f5;
-  --conduction-color-black: black;
+.conduction-theme,
+.conduction-theme ::backdrop {
+  /* Conduction Tokens */
+
+  /* Sizes */
+  --conduction-size-4xs: 1px;
+  --conduction-size-3xs: 2px;
+  --conduction-size-2xs: 4px;
+  --conduction-size-xs: 8px;
+  --conduction-size-sm: 14px;
+  --conduction-size-md: 18px;
+  --conduction-size-lg: 24px;
+  --conduction-size-xl: 32px;
+  --conduction-size-2xl: 48px;
+  --conduction-size-3xl: 72px;
+  --conduction-size-4xl: 96px;
+
+  /* Font sizes */
+  --conduction-font-size-4xs: 5px;
+  --conduction-font-size-3xs: 8px;
+  --conduction-font-size-2xs: 10px;
+  --conduction-font-size-xs: 12px;
+  --conduction-font-size-sm: 14px;
+  --conduction-font-size-md: 16px;
+  --conduction-font-size-lg: 20px;
+  --conduction-font-size-xl: 24px;
+  --conduction-font-size-2xl: 32px;
+  --conduction-font-size-3xl: 48px;
+  --conduction-font-size-4xl: 58px;
+
+  /* Font weights */
+  --conduction-font-weight-light: 100;
+  --conduction-font-weight-normal: 400;
+  --conduction-font-weight-bold: 700;
+
+  /* Letter Spacing */
+  --conduction-letter-spacing-normal: normal;
+
+  /* Colors */
+  --conduction-color-blue-tint-01: #81a4fd;
+  --conduction-color-blue-tint-02: #4376fc;
+  --conduction-color-blue-tint-03: #2e5ed9;
+  --conduction-color-red-tint-01: #ff4d4d;
+  --conduction-color-red-tint-02: #ff0000;
+  --conduction-color-red-tint-03: #920202;
+  --conduction-color-grey-tint-01: #f5f5f5;
+  --conduction-color-grey-tint-02: #e7ebee;
+  --conduction-color-grey-tint-03: #7a7a7a;
+  --conduction-color-grey-tint-04: #4a4a4a;
+  --conduction-color-white: #ffffff;
+  --conduction-color-black: #000000;
+
+  /* Typography */
   --conduction-typography-sans-serif-font-family: "Noto Sans", Arial, sans-serif;
-  --conduction-typography-header-font-family: "Aldritch", "Noto Sans", Arial,
-    sans-serif;
+  --conduction-typography-header-font-family: "Aldritch", "Noto Sans", Arial, sans-serif;
+  --conduction-typography-code-font-family: Monospace, "Lucida Console";
 
-  --utrecht-typography-sans-serif-font-family: var(
-    --conduction-typography-sans-serif-font-family
-  );
+  /* Utrecht Tokens */
+
+  /* Document */
+  --utrecht-document-font-family: var(--conduction-typography-sans-serif-font-family);
+  --utrecht-document-font-size: var(--conduction-font-size-md);
+  --utrecht-document-color: var(--conduction-color-black);
+  --utrecht-space-around: 1;
+
+  /* Typography */
+  --utrecht-typography-sans-serif-font-family: var(--conduction-typography-sans-serif-font-family);
+
+  /* Header */
   --utrecht-page-header-color: var(--conduction-color-white);
-  --utrecht-page-header-background-color: var(--conduction-color-blue);
-  --utrecht-heading-1-font-family: var(
-    --conduction-typography-header-font-family
-  ) !important;
-  --utrecht-heading-2-font-family: var(
-    --conduction-typography-header-font-family
-  ) !important;
-  --utrecht-heading-3-font-family: var(
-    --conduction-typography-header-font-family
-  ) !important;
-  --utrecht-heading-4-font-family: var(
-    --conduction-typography-header-font-family
-  ) !important;
-  --utrecht-heading-5-font-family: var(
-    --conduction-typography-header-font-family
-  ) !important;
-  --utrecht-page-footer-background-color: var(
-    --conduction-color-grey
-  ) !important;
-  --utrecht-page-footer-color: var(--conduction-color-black) !important;
+  --utrecht-page-header-background-color: var(--conduction-color-blue-tint-02);
+  --utrecht-page-header-padding-block-start: var(--conduction-size-sm);
+  --utrecht-page-header-padding-block-end: var(--conduction-size-sm);
 
-  --utrecht-page-footer-background-image: unset !important;
+  /* Page */
+  --utrecht-page-padding-inline-start: var(--conduction-size-lg);
+  --utrecht-page-padding-inline-end: var(--conduction-size-lg);
+
+  /* Headings */
+  --utrecht-heading-1-font-family: var(--conduction-typography-header-font-family);
+  --utrecht-heading-1-font-size: var(--conduction-font-size-2xl);
+  --utrecht-heading-1-font-weight: var(--conduction-font-weight-bold);
+  --utrecht-heading-1-letter-spacing: var(--conduction-letter-spacing-normal);
+  --utrecht-heading-1-margin-block-start: var(--conduction-size-xs);
+  --utrecht-heading-1-margin-block-end: var(--conduction-size-xs);
+
+  --utrecht-heading-2-font-family: var(--conduction-typography-header-font-family);
+  --utrecht-heading-2-font-weight: var(--conduction-font-weight-bold);
+  --utrecht-heading-2-font-size: var(--conduction-font-size-xl);
+  --utrecht-heading-2-letter-spacing: var(--conduction-letter-spacing-normal);
+  --utrecht-heading-2-margin-block-start: var(--conduction-size-lg);
+  --utrecht-heading-2-margin-block-end: var(--conduction-size-2xs);
+
+  --utrecht-heading-3-font-family: var(--conduction-typography-header-font-family);
+  --utrecht-heading-3-font-weight: var(--conduction-font-weight-normal);
+  --utrecht-heading-3-font-size: var(--conduction-font-size-lg);
+  --utrecht-heading-3-letter-spacing: var(--conduction-letter-spacing-normal);
+  --utrecht-heading-3-margin-block-start: var(--conduction-size-sm);
+  --utrecht-heading-3-margin-block-end: var(--conduction-size-2xs);
+
+  --utrecht-heading-4-font-family: var(--conduction-typography-header-font-family);
+  --utrecht-heading-4-font-size: var(--conduction-font-size-md);
+  --utrecht-heading-4-font-weight: var(--conduction-font-weight-normal);
+  --utrecht-heading-4-letter-spacing: var(--conduction-letter-spacing-normal);
+  --utrecht-heading-4-margin-block-start: var(--conduction-size-md);
+  --utrecht-heading-4-margin-block-end: var(--conduction-size-2xs);
+
+  --utrecht-heading-5-font-family: var(--conduction-typography-header-font-family);
+  --utrecht-heading-5-font-size: var(--conduction-font-size-xs);
+  --utrecht-heading-5-font-weight: var(--conduction-font-weight-light);
+  --utrecht-heading-5-letter-spacing: var(--conduction-letter-spacing-normal);
+  --utrecht-heading-5-text-transform: unset;
+  --utrecht-heading-5-margin-block-start: var(--conduction-size-sm);
+  --utrecht-heading-5-margin-block-end: var(--conductino-size-2xs);
+
+  /* Paragraph */
+  --utrecht-paragraph-color: var(--utrecht-document-color) inherit;
+  --utrecht-paragraph-font-family: var(--conduction-typography-sans-serif-font-family);
+  --utrecht-paragraph-font-size: var(--conduction-font-size-md);
+  --utrecht-paragraph-font-weight: var(--conduction-font-weight-normal);
+  --utrecht-paragraph-line-height: var(--conduction-size-lg);
+  --utrecht-paragraph-margin-block-start: var(--conduction-size-md);
+  --utrecht-paragraph-margin-block-end: 0;
+
+  /* Footer */
+  --utrecht-page-footer-color: var(--conduction-color-black);
+  --utrecht-page-footer-background-color: var(--conduction-color-grey-tint-01);
+  --utrecht-page-footer-background-image: unset;
+  --utrecht-page-footer-padding-block-start: var(--conduction-size-2xl);
+  --utrecht-page-footer-padding-block-end: var(--conduction-size-2xl);
+  --utrecht-page-footer-padding-inline-start: var(--conduction-size-sm);
+  --utrecht-page-footer-padding-inline-end: var(--conduction-size-sm);
+
+  /* List */
+  --utrecht-ordered-list-font-size: var(--utrecht-document-font-size) inherit;
+  --utrecht-ordered-list-padding-inline-start: var(--conduction-size-xl);
+  --utrecht-ordered-list-margin-block-start: var(--conduction-size-sm);
+  --utrecht-ordered-list-margin-block-end: var(--conduction-size-sm);
+
+  --utrecht-ordered-list-item-margin-block-start: var(--conduction-size-2xs);
+  --utrecht-ordered-list-item-margin-block-end: var(--conduction-size-2xs);
+  --utrecht-ordered-list-item-padding-inline-start: 1ch;
+
+  --utrecht-unordered-list-font-size: var(--utrecht-document-font-size);
+  --utrecht-unordered-list-margin-block-start: var(--conduction-size-md);
+  --utrecht-unordered-list-margin-block-end: 0;
+  --utrecht-unordered-list-padding-inline-start: 2ch;
+
+  --utrecht-unordered-list-item-margin-block-start: var(--conduction-size-xs);
+  --utrecht-unordered-list-item-margin-block-end: var(--conduction-size-xs);
+  --utrecht-unordered-list-item-padding-inline-start: 1ch;
+
+  /* Link */
+  --utrecht-link-color: var(--conduction-color-blue-tint-02);
+  --utrecht-link-visited-color: var(--conduction-color-blue-tint-02);
+  --utrecht-link-icon-size: var(--conduction-size-md);
+  --utrecht-link-text-decoration: none;
+  --utrecht-link-text-decoration-color: unset;
+  --utrecht-link-text-decoration-thickness: 0;
+  --utrecht-link-text-underline-offset: var(--conduction-size-3xs);
+
+  --utrecht-link-hover-color: var(--conduction-color-blue-tint-03);
+  --utrecht-link-hover-text-decoration: underline;
+  --utrecht-link-hover-text-decoration-thickness: var(--conduction-size-4xs);
+
+  /* Blockquote */
+  --utrecht-blockquote-content-color: var(--conduction-color-red-tint-02);
+  --utrecht-blockquote-content-font-size: var(--conduction-size-md);
+  --utrecht-blockquote-margin-inline-start: var(--conduction-size-xl);
+  --utrecht-blockquote-margin-inline-end: var(--conduction-size-xl);
+
+  /* Code */
+  --utrecht-code-color: var(--conduction-color-black);
+  --utrecht-code-background-color: var(--conduction-color-grey-tint-01);
+  --utrecht-code-font-family: var(--conduction-typography-code-font-family);
+  --utrecht-code-font-size: inherit;
+
+  --utrecht-code-block-color: var(--conduction-color-black);
+  --utrecht-code-block-background-color: var(--conduction-color-grey-tint-01);
+  --utrecht-code-block-font-family: var(--conduction-typography-code-font-family);
+  --utrecht-code-block-font-size: var(--conduction-font-size-md);
+  --utrecht-code-block-font-weight: var(--conduction-font-weight-normal);
+  --utrecht-code-block-line-height: var(--conduction-size-lg);
+  --utrecht-code-block-margin-block-start: var(--conduction-size-md);
+  --utrecht-code-block-margin-block-end: var(--conduction-size-md);
+  --utrecht-code-block-margin-inline-start: 0;
+  --utrecht-code-block-margin-inline-end: 0;
+  --utrecht-code-block-padding-block-start: var(--conduction-size-md);
+  --utrecht-code-block-padding-block-end: var(--conduction-size-md);
+  --utrecht-code-block-padding-inline-start: var(--conduction-size-md);
+  --utrecht-code-block-padding-inline-end: var(--conduction-size-md);
+
+  /* Pseudo Elements */
+  --utrecht-unordered-list-marker-color: var(--conduction-color-blue-tint-02);
+
+  /* Table */
+  --utrecht-table-border-color: var(--conduction-color-grey-tint-02);
+  --utrecht-table-border-width: var(--conduction-size-4xs);
+  --utrecht-table-font-family: var(--utrecht-document-font-family) inherit;
+  --utrecht-table-font-size: var(--utrecht-document-font-size) inherit;
+  --utrecht-table-margin-block-start: var(--conduction-size-md);
+  --utrecht-table-margin-block-end: 0;
+
+  --utrecht-table-header-color: var(--utrecht-document-color) inherit;
+  --utrecht-table-header-font-weight: var(--conduction-font-weight-bold);
+  --utrecht-table-header-text-transform: unset;
+
+  --utrecht-table-header-cell-font-size: var(--utrecht-document-font-size) inherit;
+  --utrecht-table-header-cell-font-weight: var(--conduction-font-weight-bold);
+  --utrecht-table-header-cell-text-transform: unset;
+
+  --utrecht-table-row-border-block-end-color: var(--conduction-color-grey-tint-02);
+  --utrecht-table-row-border-block-end-width: var(--conduction-size-4xs);
+
+  --utrecht-table-cell-padding-block-start: var(--conduction-size-xs);
+  --utrecht-table-cell-padding-block-end: var(--conduction-size-xs);
+  --utrecht-table-cell-padding-inline-start: var(--conduction-size-sm);
+  --utrecht-table-cell-padding-inline-end: var(--conduction-size-sm);
 }
 
 @font-face {
   font-family: "Aldritch";
-  src: url("//db.onlinewebfonts.com/t/8adb01f8db81e96685a037d275971bed.woff2")
-    format("woff2");
+  src: url("//db.onlinewebfonts.com/t/8adb01f8db81e96685a037d275971bed.woff2") format("woff2");
 }
