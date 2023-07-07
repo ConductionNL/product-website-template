@@ -13,6 +13,4 @@ export const getCode = (name: string, props: any, children: any, options: any) =
     case "pre":
       return <CodeBlock {...props}>{domToReact(children, options)}</CodeBlock>;
   }
-
-  return;
 };
