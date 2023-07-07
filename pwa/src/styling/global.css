@@ -1,6 +1,5 @@
 html,
 body {
   margin: 0;
-  --utrecht-space-around: 1;
   --conduction-container-padding-inline: 18px;
 }

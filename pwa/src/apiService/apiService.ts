@@ -22,7 +22,6 @@ export default class APIService {
       baseURL: window.sessionStorage.getItem("GITHUB_API_BASE_URL") ?? "",
       headers: {
         Accept: "application/vnd.github.html",
-        
       },
     });
   }
