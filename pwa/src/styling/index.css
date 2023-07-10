@@ -2,7 +2,7 @@
 @import "react-loading-skeleton/dist/skeleton.css";
 
 /* Design Tokens */
-@import "../../static/themes/conduction.css";
+@import "./../../node_modules/@conduction/theme/theme.css";
 
 /* Global internal styling */
 @import "./global.css";
