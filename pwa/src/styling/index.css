@@ -3,8 +3,6 @@
 
 /* Design Tokens */
 @import "../../static/themes/conduction.css";
-@import "../../node_modules/@utrecht/design-tokens/dist/theme.css";
-@import "../../node_modules/@nl-design-system-unstable/rotterdam-design-tokens/dist/index.css";
 
 /* Package includes */
 @import "react-loading-skeleton/dist/skeleton.css";

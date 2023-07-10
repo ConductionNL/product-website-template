@@ -94,8 +94,8 @@
   --utrecht-heading-1-font-size: var(--conduction-font-size-2xl);
   --utrecht-heading-1-font-weight: var(--conduction-font-weight-bold);
   --utrecht-heading-1-letter-spacing: var(--conduction-letter-spacing-normal);
-  --utrecht-heading-1-margin-block-start: var(--conduction-size-xs);
-  --utrecht-heading-1-margin-block-end: var(--conduction-size-xs);
+  --utrecht-heading-1-margin-block-start: var(--conduction-size-2xl) !important;
+  --utrecht-heading-1-margin-block-end: var(--conduction-size-2xl) !important;
 
   --utrecht-heading-2-font-family: var(--conduction-typography-header-font-family);
   --utrecht-heading-2-font-weight: var(--conduction-font-weight-bold);

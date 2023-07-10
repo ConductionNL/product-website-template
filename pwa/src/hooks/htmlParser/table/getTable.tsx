@@ -1,6 +1,6 @@
-import { Table } from "@utrecht/component-library-react/dist/css-module";
+import { UtrechtTable } from "@utrecht/web-component-library-react";
 import { domToReact } from "html-react-parser";
 
 export const getTable = (props: any, children: any, options: any) => {
-  return <Table {...props}>{domToReact(children, options)}</Table>;
+  return <UtrechtTable {...props}>{domToReact(children, options)}</UtrechtTable>;
 };

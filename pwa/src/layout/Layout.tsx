@@ -6,7 +6,7 @@ import APIService from "../apiService/apiService";
 import { defaultGlobalContext, GlobalProvider, IGlobalContext } from "../context/global";
 import { Head } from "./Head";
 import { Content } from "../Content";
-import { Document } from "@utrecht/component-library-react/dist/css-module";
+import { UtrechtDocument } from "@utrecht/web-component-library-react";
 import { Toaster } from "react-hot-toast";
 
 interface LayoutProps {
@@ -40,13 +40,13 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
       <GlobalProvider value={[globalContext, setGlobalContext]}>
         <Head />
         <APIProvider value={API}>
-          <Document className="conduction-theme">
+          <UtrechtDocument className="conduction-theme">
             <Toaster position="bottom-right" />
 
             <div className={styles.container}>
               <Content {...{ children }} />
             </div>
-          </Document>
+          </UtrechtDocument>
         </APIProvider>
       </GlobalProvider>
     </>
