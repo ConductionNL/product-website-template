@@ -1,9 +1,11 @@
+/* Package includes */
+@import "react-loading-skeleton/dist/skeleton.css";
+
+/* Design Tokens */
+@import "../../static/themes/conduction.css";
+
 /* Global internal styling */
 @import "./global.css";
 
-/* Design Tokens */
-@import "../../node_modules/@utrecht/design-tokens/dist/theme.css";
-@import "../../node_modules/@nl-design-system-unstable/rotterdam-design-tokens/dist/index.css";
-
-/* Package includes */
-@import "react-loading-skeleton/dist/skeleton.css";
+/* Theme overrides styling */
+@import "./theme-overrides.css";

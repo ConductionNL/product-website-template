@@ -1,3 +1,7 @@
 .container {
-  margin-block-start: 64px;
+  margin-block-start: var(--conduction-size-3xl);
+}
+
+.container > div > article > *:not(:last-child) {
+  margin-block-end: var(--conduction-size-md);
 }

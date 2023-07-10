@@ -3,6 +3,7 @@ import * as styles from "./HeaderTemplate.module.css";
 import { Container } from "@conduction/components";
 import { TopNav } from "../topNav/TopNav";
 import clsx from "clsx";
+import { UtrechtPageHeader } from "@utrecht/web-component-library-react";
 
 interface HeaderTemplateProps {
   layoutClassName?: string;
@@ -10,10 +11,10 @@ interface HeaderTemplateProps {
 
 export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName }) => {
   return (
-    <header id="header" className={clsx(styles.container, [layoutClassName && layoutClassName])}>
+    <UtrechtPageHeader id="header" className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <Container>
         <TopNav />
       </Container>
-    </header>
+    </UtrechtPageHeader>
   );
 };

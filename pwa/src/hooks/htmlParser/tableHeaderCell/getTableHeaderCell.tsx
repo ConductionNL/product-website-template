@@ -1,6 +1,6 @@
-import { TableHeaderCell } from "@utrecht/component-library-react/dist/css-module";
+import { UtrechtTableHeaderCell } from "@utrecht/web-component-library-react";
 import { domToReact } from "html-react-parser";
 
 export const getTableHeaderCell = (props: any, children: any, options: any) => {
-  return <TableHeaderCell {...props}>{domToReact(children, options)}</TableHeaderCell>;
+  return <UtrechtTableHeaderCell {...props}>{domToReact(children, options)}</UtrechtTableHeaderCell>;
 };

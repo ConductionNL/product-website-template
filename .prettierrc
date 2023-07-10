@@ -24,6 +24,15 @@
         "parser": "css",
         "tabWidth": 2
       }
+    },
+    {
+      "files": ["conduction.css"],
+      "options": {
+        "parser": "css",
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "printWidth": 150
+      }
     }
   ]
 }
