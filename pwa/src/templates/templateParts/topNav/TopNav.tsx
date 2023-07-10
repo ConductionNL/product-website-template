@@ -13,10 +13,19 @@ import { TGitHubDirectory, useGitHubDirectories } from "../../../hooks/useGitHub
 export const TopNav: React.FC = () => {
   const { directories, getSlugFromName } = useGitHubDirectories();
 
+  const [logoUrl, setLogoUrl] = React.useState<string>("");
+  React.useEffect(() => {
+    setLogoUrl(window.sessionStorage.getItem("NAVBAR_LOGO_URL") ?? "");
+  }, []);
+
   return (
     <nav className={styles.container}>
       <UnorderedList className={styles.list}>
         <section>
+          <UnorderedListItem>
+            <img className={styles.image} onClick={() => navigate("/")} src={logoUrl} alt={"Navbar-logo"} />
+          </UnorderedListItem>
+
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
 
           {directories?.map((directory, idx) => (

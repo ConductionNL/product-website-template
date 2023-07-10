@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export const GitHubLogo: React.FC = () => (
-  <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+  <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" style={{ verticalAlign: "middle" }}>
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="Group" fill="currentColor" fillRule="nonzero">
         <path
