@@ -25,12 +25,10 @@ export const JumbotronTemplate: React.FC = () => {
 
           <span className={styles.subtitle}>{subtitle}</span>
 
-          <UtrechtParagraph>{description}</UtrechtParagraph>
+          <UtrechtParagraph className={styles.introduction}>{description}</UtrechtParagraph>
         </div>
 
-        <div className={styles.imageContainer}>
-          <Image src={svg ?? ""} alt={`${title}-image`} className={styles.image} />
-        </div>
+        <Image src={svg ?? ""} alt={`${title}-image`} className={styles.image} />
       </Container>
     </div>
   );
