@@ -54,3 +54,9 @@
   overflow-y: scroll;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+.image {
+  max-height: 50px;
+  max-width: 200px;
+  vertical-align: middle;
+}

@@ -11,11 +11,13 @@ import { useGitHubDirectories } from "../../../hooks/useGitHubDirectories";
 
 export const FooterTemplate: React.FC = () => {
   const [logoUrl, setLogoUrl] = React.useState<string>("");
+  const [logoHref, setLogoHref] = React.useState<string>("");
 
   const { directories, getSlugFromName } = useGitHubDirectories();
 
   React.useEffect(() => {
-    setLogoUrl(window.sessionStorage.getItem("LOGO_URL") ?? "");
+    setLogoUrl(window.sessionStorage.getItem("FOOTER_LOGO_URL") ?? "");
+    setLogoHref(window.sessionStorage.getItem("FOOTER_LOGO_HREF") ?? "");
   });
 
   return (
@@ -51,7 +53,7 @@ export const FooterTemplate: React.FC = () => {
           </section>
 
           <section>
-            <img onClick={() => open("https://conduction.nl")} src={logoUrl} />
+            <img onClick={() => open(logoHref)} src={logoUrl} alt={"Footer-logo"} />
           </section>
         </UnorderedList>
       </Container>

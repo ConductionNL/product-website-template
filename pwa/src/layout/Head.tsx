@@ -8,6 +8,11 @@ import { useGatsbyContext } from "../context/gatsby";
 
 export const Head: React.FC = () => {
   const { gatsbyContext } = useGatsbyContext();
+  const [faviconUrl, setFaviconUrl] = React.useState<string>("");
+
+  React.useEffect(() => {
+    setFaviconUrl(window.sessionStorage.getItem("FAVICON_URL") ?? "");
+  }, []);
 
   React.useEffect(() => {
     registerEnvironment();
@@ -18,6 +23,7 @@ export const Head: React.FC = () => {
       <title>{`Common Gateway | ${
         getPageTitle(gatsbyContext.pageContext?.breadcrumb.crumbs, gatsbyContext.location) ?? "Error"
       }`}</title>
+      <link rel="icon" type="svg" href={faviconUrl} />
     </Helmet>
   );
 };
