@@ -55,7 +55,20 @@
   --conduction-typography-header-font-family: "Aldritch", "Noto Sans", Arial, sans-serif;
   --conduction-typography-code-font-family: Monospace, "Lucida Console";
 
-  /* Utrecht Tokens */
+  /*
+   *
+   * CONDUCTION COMPONENT OVERRIDES
+   *
+   */
+
+  /* Container */
+  --conduction-container-padding-inline: var(--conduction-size-xl);
+
+  /*
+   *
+   * UTRECHT COMPONENTS
+   *
+   */
 
   /* Document */
   --utrecht-document-font-family: var(--conduction-typography-sans-serif-font-family);
