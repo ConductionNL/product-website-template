@@ -9,3 +9,23 @@ There's one exception to this rule: the `README.md` file. Instead of becoming a 
 This feature also provides a neat trick for creating a menu item without a submenu. If you want a menu item to lead directly to a single page without any subpages, you can simply create a folder that contains only a `README.md` file. When a visitor clicks on this menu item, they'll be taken directly to the page displaying the content of the `README.md` file.
 
 By leveraging the dynamic menu, you can create a user-friendly navigation system that adapts to the structure of your content.
+
+## Configuration
+Dynamic menu items can be passed to the 
+````json
+[
+  {
+    "name": "Features", 
+    "location": "/docs/features"
+  },
+  {
+    "name": "Roadmap", 
+    "location": "/docs/roadmap"
+  }
+]
+````
+
+Keep in mind that in order to actually pass the json configuraiton trough the worflow yaml it needs to be both stringified and put to one line.
+````yaml
+  GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"},{"name": "Roadmap", "location": "/docs/roadmap"}]'
+````
