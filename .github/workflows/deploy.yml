@@ -50,14 +50,14 @@ jobs:
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
 
+      - name: List current directory
+        run: pwd
+
       - name: List al the files
         run: ls
 
       - name: List al the files
-        run: ls pwa/static
-
-      - name: List current directory
-        run: pwd
+        run: ls /pwa
 
       # With special thanxs to https://github.com/SpicyPizza/create-envfile
       - name: Make envfile
