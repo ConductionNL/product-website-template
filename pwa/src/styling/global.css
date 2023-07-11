@@ -1,3 +1,10 @@
+/*
+ *
+ * Generic, non-design-token rules only.
+ * Have a more specific rule? Add it to the theme.
+ *
+ */
+
 html,
 body {
   margin: 0;

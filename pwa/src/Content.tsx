@@ -9,10 +9,12 @@ interface ContentProps {
 
 export const Content: React.FC<ContentProps> = ({ children }) => {
   return (
-    <>
-      <HeaderTemplate />
+    <div className={styles.container}>
+      <HeaderTemplate layoutClassName={styles.header} />
+
       <div className={styles.pageContent}>{children}</div>
+
       <FooterTemplate />
-    </>
+    </div>
   );
 };

@@ -3,10 +3,10 @@ import * as styles from "./Layout.module.css";
 import "../translations/i18n";
 import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
-import { GatsbyProvider, IGatsbyContext } from "../context/gatsby";
+import { defaultGlobalContext, GlobalProvider, IGlobalContext } from "../context/global";
 import { Head } from "./Head";
 import { Content } from "../Content";
-import { Document } from "@utrecht/component-library-react/dist/css-module";
+import { UtrechtDocument } from "@utrecht/web-component-library-react";
 import { Toaster } from "react-hot-toast";
 
 interface LayoutProps {
@@ -17,31 +17,38 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   const [API, setAPI] = React.useState<APIService>(React.useContext(APIContext));
-  const [gatsbyContext, setGatsbyContext] = React.useState<IGatsbyContext>({ ...{ pageContext, location } });
+  const [globalContext, setGlobalContext] = React.useState<IGlobalContext>(defaultGlobalContext);
 
   React.useEffect(() => {
     setAPI(new APIService());
-  }, []);
+  }, [pageContext]);
 
   React.useEffect(() => {
-    setGatsbyContext({ ...{ pageContext, location } });
+    setGlobalContext((context) => ({
+      ...context,
+      initiated: true,
+      gatsby: {
+        ...{ pageContext, location, previousPath: location.pathname },
+      },
+    }));
   }, [pageContext, location]);
+
+  if (!globalContext.initiated) return <></>;
 
   return (
     <>
-      <Head />
-
-      <GatsbyProvider value={gatsbyContext}>
+      <GlobalProvider value={[globalContext, setGlobalContext]}>
+        <Head />
         <APIProvider value={API}>
-          <Document className="utrecht-theme">
+          <UtrechtDocument className="conduction-theme">
             <Toaster position="bottom-right" />
 
             <div className={styles.container}>
               <Content {...{ children }} />
             </div>
-          </Document>
+          </UtrechtDocument>
         </APIProvider>
-      </GatsbyProvider>
+      </GlobalProvider>
     </>
   );
 };
