@@ -1,19 +1,35 @@
-# Product Website Template by ConductionNL
+# Product Website Template 
 
-The [Product Website Template](https://github.com/ConductionNL/product-website-template) by ConductionNL is a powerful tool designed to alleviate the common issue faced by many open-source and Common Ground projects: the lack of a dedicated product page. This template enables users to quickly and easily set up a product page based on the contents of their repository.
+The [Product Website Template](https://github.com/ConductionNL/product-website-template) by [Conduction](https://www.conduction.nl/) is a powerful tool designed to alleviate the common issue faced by many open-source and Common Ground projects: the lack of a dedicated product page and the cost (in time) to build one. This template enables users to quickly and easily set up a product page based on the contents of their repository.
 
 The template is highly customizable, allowing users to style their product page using their organization's NL design token. This means that you can maintain a consistent look and feel across all your products and services, reinforcing your brand identity.
 
-One of the key advantages of this template is its simplicity. You can have a fully functional product page up and running in a matter of minutes, without the need to write any additional code. This not only saves time but also makes it accessible to users with varying levels of technical expertise.
+One of the key advantages of this template is its simplicity. You can have a fully functional product page up and running in a matter of minutes, without the need to write any additional code or documentation. This not only saves time but also makes it accessible to users with varying levels of technical expertise.
 
 Whether you're a seasoned developer or a newcomer to the world of open-source projects, the Product Website Template is a valuable resource that can help you showcase your work in a professional and appealing manner.
 
 ## Using this template for your own github repository
 
-1. Download [the github workflow](https://github.com/ConductionNL/product-website-template)  file 
-2. Place it in your repro in the `.github/workflows` folder (create the folder if you don't have one).
-3. Change the basic configuration of the workflow to your own personal liking
-4. Commit and Push the file to your repository
+1. **Download the GitHub Workflow File**
+   Download the [productpage workflow file ](https://github.com/ConductionNL/product-website-template/blob/main/.github/workflows/product-page-deploy.yml) on GitHub.  Download the file to your local machine. For more information on GitHub workflows, you can refer to the [GitHub Actions documentation](https://docs.github.com/en/actions).
+
+2. **Place the Workflow File in Your Repository**
+    - *In your browser*, navigate to your repository. Inside the repository, look for a folder named `.github/workflows`. If it doesn't exist, create it. When in the folder press `Add file` (top right corner ) copy paste the content of the product-page-deploy.yml into the edit screen, name the file `product-page-deploy.yml` and hit commit and push
+    - OR *On your local machine*, navigate to your repository. Inside the repository, look for a folder named `.github/workflows`. If it doesn't exist, create it. Place the downloaded workflow file into this folder. For more information on the structure of a GitHub repository, you can refer to the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-repositories).
+
+3. **Configure the Workflow File**
+   Open the workflow file in a text editor. Modify the configuration settings according to your needs. Be sure to save your changes. For more information on configuring a workflow file, refer to the [GitHub Actions documentation](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions).
+
+4. **Commit and Push the Workflow File to Your Repository**
+   Open a terminal and navigate to your repository. Use the following commands to add the workflow file to your repository, commit the changes, and push them to GitHub:
+
+   ````CLI
+   git add .github/workflows/product-page-deploy.yml
+   git commit -m "Added workflow file for product page"
+   git push
+   ````
+   
+For more information on using Git, refer to the [Git documentation](https://git-scm.com/doc).
 
 If you don't have github pages setup yet, also follow the following steps
 
