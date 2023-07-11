@@ -13,17 +13,17 @@ import { TGitHubDirectory, useGitHubDirectories } from "../../../hooks/useGitHub
 export const TopNav: React.FC = () => {
   const { directories, getSlugFromName } = useGitHubDirectories();
 
-  const [logoUrl, setLogoUrl] = React.useState<string>("");
-  React.useEffect(() => {
-    setLogoUrl(window.sessionStorage.getItem("NAVBAR_LOGO_URL") ?? "");
-  }, []);
-
   return (
     <nav className={styles.container}>
       <UnorderedList className={styles.list}>
         <section>
           <UnorderedListItem>
-            <img className={styles.image} onClick={() => navigate("/")} src={logoUrl} alt={"Navbar-logo"} />
+            <img
+              className={styles.image}
+              onClick={() => navigate("/")}
+              src={process.env.GATSBY_NAVBAR_LOGO_URL}
+              alt={"Navbar-logo"}
+            />
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
@@ -38,17 +38,17 @@ export const TopNav: React.FC = () => {
         </section>
 
         <section>
-          <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("READ_THE_DOCS_URL") ?? "#")}>
+          <UnorderedListItem onClick={() => open(process.env.GATSBY_READ_THE_DOCS_URL)}>
             <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
           </UnorderedListItem>
 
-          <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("SLACK_URL") ?? "#")}>
+          <UnorderedListItem onClick={() => open(process.env.GATSBY_SLACK_URL)}>
             <ToolTip tooltip="Slack">
               <SlackLogo />
             </ToolTip>
           </UnorderedListItem>
 
-          <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("GITHUB_REPOSITORY_URL") ?? "#")}>
+          <UnorderedListItem onClick={() => open(process.env.GATSBY_GITHUB_REPOSITORY_URL)}>
             <ToolTip tooltip="Github">
               <GitHubLogo />
             </ToolTip>
