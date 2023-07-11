@@ -2,7 +2,7 @@ name: Deploy the Product Page to GitHub Pages
 
 env: # Change these to your preferences any image url can also be a base encoded image
   # General settings
-  GITHUB_PAGES_BRANCHE: gh-page
+  GITHUB_PAGES_BRANCHE: gh-pages
   GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
   GITHUB_API_BASE_URL: https://api.github.com/repos/${{ github.repository }}/contents
   NL_DESIGN_TOKEN: "!ChangeMe!"
