@@ -38,17 +38,16 @@ jobs:
           repository: ConductionNL/product-website-template
           ref: main
 
-      - name: List current directory
-        run: pwd
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
 
-      - name: List al the files
-        run: ls
+      - name: Install dependencies
+        run: cd pwa && npm install
 
-      - name: List al the files
-        run: cd pwa && ls
-
-      - name: List al the files
-        run: cd pwa/static && ls
+      - name: Remove old Gatsby cache
+        run: rm -rf pwa/.cache
 
       # With special thanxs to https://github.com/SpicyPizza/create-envfile
       - name: Make envfile
@@ -73,17 +72,6 @@ jobs:
           file_name: .env
           fail_on_empty: false
           sort_keys: false
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Install dependencies
-        run: cd pwa && npm install
-
-      - name: Remove old Gatsby cache
-        run: rm -rf pwa/.cache
 
       - name: Build application
         run: cd pwa && npm run build
