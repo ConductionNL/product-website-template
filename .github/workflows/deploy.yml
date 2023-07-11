@@ -52,19 +52,19 @@ jobs:
         uses: SpicyPizza/create-envfile@v2.0
         with:
           GITHUB_REPOSITORY_NAME: ${{ env.GITHUB_REPOSITORY_NAME }}
-          GITHUB_API_BASE_URL: ${{ env.GITHUB_API_BASE_URL }}
-          FAVICON_URL: ${{ env.FAVICON_URL }}
-          NAVBAR_LOGO_URL: ${{ env.NAVBAR_LOGO_URL }}
-          GITHUB_DOCS_DIRECTORY_PATHS: ${{ env.GITHUB_DOCS_DIRECTORY_PATHS }}
-          READ_THE_DOCS_URL: ${{ env.READ_THE_DOCS_URL }}
-          SLACK_URL: ${{ env.SLACK_URL }}
-          GITHUB_REPOSITORY_URL: ${{ env.GITHUB_REPOSITORY_URL }}
-          JUMBOTRON_TITLE: ${{ env.JUMBOTRON_TITLE }}
-          JUMBOTRON_SUBTITLE: ${{ env.JUMBOTRON_SUBTITLE }}
-          JUMBOTRON_DESCRIPTION: ${{ env.JUMBOTRON_DESCRIPTION }}
-          JUMBOTRON_SVG: ${{ env.JUMBOTRON_SVG }}
-          FOOTER_LOGO_URL: ${{ env.FOOTER_LOGO_URL }}
-          FOOTER_LOGO_HREF: ${{ env.FOOTER_LOGO_HREF }}
+          GATSBY_GITHUB_API_BASE_URL: ${{ env.GITHUB_API_BASE_URL }}
+          GATSBY_FAVICON_URL: ${{ env.FAVICON_URL }}
+          GATSBY_NAVBAR_LOGO_URL: ${{ env.NAVBAR_LOGO_URL }}
+          GATSBY_GITHUB_DOCS_DIRECTORY_PATHS: ${{ env.GITHUB_DOCS_DIRECTORY_PATHS }}
+          GATSBY_READ_THE_DOCS_URL: ${{ env.READ_THE_DOCS_URL }}
+          GATSBY_SLACK_URL: ${{ env.SLACK_URL }}
+          GATSBY_GITHUB_REPOSITORY_URL: ${{ env.GITHUB_REPOSITORY_URL }}
+          GATSBY_JUMBOTRON_TITLE: ${{ env.JUMBOTRON_TITLE }}
+          GATSBY_JUMBOTRON_SUBTITLE: ${{ env.JUMBOTRON_SUBTITLE }}
+          GATSBY_JUMBOTRON_DESCRIPTION: ${{ env.JUMBOTRON_DESCRIPTION }}
+          GATSBY_JUMBOTRON_SVG: ${{ env.JUMBOTRON_SVG }}
+          GATSBY_FOOTER_LOGO_URL: ${{ env.FOOTER_LOGO_URL }}
+          GATSBY_FOOTER_LOGO_HREF: ${{ env.FOOTER_LOGO_HREF }}
           directory: static
           file_name: .env
           fail_on_empty: false
