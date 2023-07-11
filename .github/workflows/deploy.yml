@@ -36,7 +36,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ConductionNL/product-website-template
-          path: pwa
           ref: main
 
       - name: List current directory
