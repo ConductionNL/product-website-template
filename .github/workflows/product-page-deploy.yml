@@ -56,7 +56,6 @@ jobs:
         with:
           envkey_GITHUB_REPOSITORY_NAME: ${{ env.GITHUB_REPOSITORY_NAME }}
           envkey_GATSBY_GITHUB_API_BASE_URL: ${{ env.GITHUB_API_BASE_URL }}
-          envkey_GATSBY_NL_DESIGN_TOKEN: ${{ env.NL_DESIGN_TOKEN }}
           envkey_GATSBY_FAVICON_URL: ${{ env.FAVICON_URL }}
           envkey_GATSBY_NAVBAR_LOGO_URL: ${{ env.NAVBAR_LOGO_URL }}
           envkey_GATSBY_GITHUB_DOCS_DIRECTORY_PATHS: ${{ env.GITHUB_DOCS_DIRECTORY_PATHS }}
@@ -84,8 +83,8 @@ jobs:
       - name: Install dependencies
         run: cd pwa && npm install
 
-      - name: Install NL-Design theme package
-        run: cd pwa && npm install ${{ NL_DESIGN_THEME_NPM_PACKAGE }}
+      # - name: Install NL-Design theme package
+      #   run: cd pwa && npm install ${{ env.NL_DESIGN_THEME_NPM_PACKAGE }}
 
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
