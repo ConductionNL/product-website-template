@@ -57,7 +57,7 @@ jobs:
         run: ls paw/static
 
       - name: List current directory
-        run: dirname
+        run: pwd
 
       # With special thanxs to https://github.com/SpicyPizza/create-envfile
       - name: Make envfile
