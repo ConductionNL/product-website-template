@@ -53,6 +53,9 @@ jobs:
       - name: List al the files
         run: ls
 
+      - name: List al the files
+        run: ls paw/static
+
       - name: List current directory
         run: dirname
 
