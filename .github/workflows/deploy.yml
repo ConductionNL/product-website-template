@@ -54,7 +54,7 @@ jobs:
         run: ls
 
       - name: List al the files
-        run: ls paw/static
+        run: ls pwa/static
 
       - name: List current directory
         run: pwd
