@@ -25,6 +25,7 @@ on:
   push:
     branches:
       - development
+      - feature/GW-1532
 
 jobs:
   build:
