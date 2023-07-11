@@ -8,10 +8,6 @@ import { useGatsbyContext } from "../context/gatsby";
 export const Head: React.FC = () => {
   const { gatsbyContext } = useGatsbyContext();
 
-  React.useEffect(() => {
-    import(`./../../node_modules/${process.env.GATSBY_NL_DESIGN_THEME_CSS_PATH}`);
-  }, []);
-
   return (
     <Helmet>
       <title>{`Common Gateway | ${
