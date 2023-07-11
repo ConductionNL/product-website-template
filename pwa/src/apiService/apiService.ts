@@ -19,7 +19,7 @@ export type TSendFunction = (
 export default class APIService {
   public get gitHubClient(): AxiosInstance {
     return axios.create({
-      baseURL: process.env.GATSBY_GITHUB_API_BASE_URL ?? "",
+      baseURL: process.env.GATSBY_GITHUB_API_BASE_URL,
       headers: {
         Accept: "application/vnd.github.html",
       },
