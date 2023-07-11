@@ -21,11 +21,11 @@ export const JumbotronTemplate: React.FC = () => {
     <div className={styles.wrapper}>
       <Container layoutClassName={styles.container}>
         <div className={styles.content}>
-          <UtrechtHeading1>{title}</UtrechtHeading1>
+          <UtrechtHeading1>{${process.env.GATSBY_JUMBOTRON_TITLE}}</UtrechtHeading1>
 
-          <span className={styles.subtitle}>{subtitle}</span>
+          <span className={styles.subtitle}>{${process.env.GATSBY_JUMBOTRON_SUBTITLE}}</span>
 
-          <UtrechtParagraph className={styles.introduction}>{description}</UtrechtParagraph>
+          <UtrechtParagraph className={styles.introduction}>{${process.env.GATSBY_JUMBOTRON_DESCRIPTION}}</UtrechtParagraph>
         </div>
 
         <Image src={svg ?? ""} alt={`${title}-image`} className={styles.image} />
