@@ -2,6 +2,7 @@ name: Deploy the product page to GitHub Pages
 
 env: # Change these to your preferences any image url can also be a base encoded image
   # General settings
+  GITHUB_PAGES_BRANCHE: "product-page"
   GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
   GITHUB_API_BASE_URL: https://api.github.com/repos/${{ github.event.repository.name }}/content
   NL_DESIGN_TOKEN: ""
@@ -79,5 +80,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: product-page
+          branch: ${{ env.GITHUB_PAGES_BRANCHE }}
           folder: pwa/public
