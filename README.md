@@ -57,3 +57,63 @@ If you don't have github pages setup yet, also follow the following steps
    After saving, scroll down to the "GitHub Pages" section again. You should see a message saying "Your site is published at [link]". This link is where your GitHub Pages site can be accessed.
 
 ## Configuration
+The Product Website template is configurable trough the workfllow yaml. Or more exactly the env variable of the workflow yaml. When you open the file they should be at the top and look like this:
+
+````yaml
+env: # Change these to your preferences any image url can also be a base encoded image
+   GITHUB_PAGES_BRANCH: gh-pages
+
+   # Connected Repository
+   GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
+   GITHUB_REPOSITORY_URL: ${{ github.event.repository.url }}
+   GITHUB_API_BASE_URL: https://api.github.com/repos/${{ github.repository }}/contents
+   GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}]'
+
+   # Links
+   SLACK_URL: "https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg"
+   READ_THE_DOCS_URL: "https://commongateway.readthedocs.io/en/latest/"
+
+   # Navbar
+   NAVBAR_LOGO_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"
+
+   # Footer
+   FOOTER_LOGO_URL: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICAgICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgd2lkdGg9IjcxLjAwMDAwMHB0IiBoZWlnaHQ9IjcwLjAwMDAwMHB0IiB2aWV3Qm94PSIwIDAgNzEuMDAwMDAwIDcwLjAwMDAwMCIKICAgICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0Ij4KCiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCw3MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCiAgICAgICBmaWxsPSIjNDM3NkZDIiBzdHJva2U9Im5vbmUiPgogICAgICAgIDxwYXRoIGQ9Ik0yMTggNTkyIGwtMTM3IC03NyAwIC0xNjUgMCAtMTY1IDEzMSAtNzQgYzcyIC00MSAxMzcgLTc0IDE0MyAtNzQgNgowIDcwIDMzIDE0MyA3NCBsMTMxIDc0IDEgMTY1IDAgMTY1IC02OCAzNyBjLTM3IDIxIC05OSA1NiAtMTM3IDc3IGwtNzEgNDAKLTEzNiAtNzd6IG0yOTUgLTg1IGw1NyAtMzIgMCAtMTI1IDAgLTEyNSAtMTA2IC02MCBjLTU4IC0zMyAtMTA4IC02MCAtMTExCi01OSAtMyAwIC01MiAyNyAtMTA5IDYwIGwtMTAzIDU5IDAgMTI1IDAgMTI1IDEwNyA2MSAxMDcgNjIgNTAgLTI5IGMyNyAtMTYKNzYgLTQ0IDEwOCAtNjJ6Ii8+CiAgICAgICAgPHBhdGggZD0iTTI3OCA0NzIgbC02OCAtMzcgMCAtODUgMCAtODUgNzMgLTM5IDczIC0zOSA2MiAzNCBjMzQgMTggNjIgMzcgNjIKNDEgMCA0IC0xNCAxNSAtMzEgMjMgLTI4IDE1IC0zMyAxNSAtNTQgMSAtMzEgLTIwIC00NiAtMjAgLTg0IDIgLTI3IDE1IC0zMQoyMiAtMzEgNjIgMCA0MCA0IDQ3IDMxIDYzIDM4IDIxIDUzIDIxIDg0IDEgMjEgLTE0IDI2IC0xNCA1NCAxIDE3IDggMzEgMTkgMzEKMjMgMCA4IC0xMTMgNzIgLTEyNiA3MiAtNSAwIC0zOSAtMTcgLTc2IC0zOHoiLz4KICAgIDwvZz4KPC9zdmc+Cg=="
+   FOOTER_LOGO_HREF: "https://conduction.nl"
+
+   # Jumbotron
+   JUMBOTRON_TITLE: "Product Website Template"
+   JUMBOTRON_SUBTITLE: "Product page"
+   JUMBOTRON_DESCRIPTION: ${{ github.event.repository.description }}
+   JUMBOTRON_SVG: "https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"
+
+   # NL-Design Theme
+   NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
+   NL_DESIGN_THEME_CSS_PATH: "@conduction/theme/theme.css"
+   NL_DESIGN_THEME_NPM_PACKAGE: "@conduction/theme@1.0.2"
+
+   # Other
+   FAVICON_URL: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICAgICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgd2lkdGg9IjcxLjAwMDAwMHB0IiBoZWlnaHQ9IjcwLjAwMDAwMHB0IiB2aWV3Qm94PSIwIDAgNzEuMDAwMDAwIDcwLjAwMDAwMCIKICAgICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0Ij4KCiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCw3MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCiAgICAgICBmaWxsPSIjNDM3NkZDIiBzdHJva2U9Im5vbmUiPgogICAgICAgIDxwYXRoIGQ9Ik0yMTggNTkyIGwtMTM3IC03NyAwIC0xNjUgMCAtMTY1IDEzMSAtNzQgYzcyIC00MSAxMzcgLTc0IDE0MyAtNzQgNgowIDcwIDMzIDE0MyA3NCBsMTMxIDc0IDEgMTY1IDAgMTY1IC02OCAzNyBjLTM3IDIxIC05OSA1NiAtMTM3IDc3IGwtNzEgNDAKLTEzNiAtNzd6IG0yOTUgLTg1IGw1NyAtMzIgMCAtMTI1IDAgLTEyNSAtMTA2IC02MCBjLTU4IC0zMyAtMTA4IC02MCAtMTExCi01OSAtMyAwIC01MiAyNyAtMTA5IDYwIGwtMTAzIDU5IDAgMTI1IDAgMTI1IDEwNyA2MSAxMDcgNjIgNTAgLTI5IGMyNyAtMTYKNzYgLTQ0IDEwOCAtNjJ6Ii8+CiAgICAgICAgPHBhdGggZD0iTTI3OCA0NzIgbC02OCAtMzcgMCAtODUgMCAtODUgNzMgLTM5IDczIC0zOSA2MiAzNCBjMzQgMTggNjIgMzcgNjIKNDEgMCA0IC0xNCAxNSAtMzEgMjMgLTI4IDE1IC0zMyAxNSAtNTQgMSAtMzEgLTIwIC00NiAtMjAgLTg0IDIgLTI3IDE1IC0zMQoyMiAtMzEgNjIgMCA0MCA0IDQ3IDMxIDYzIDM4IDIxIDUzIDIxIDg0IDEgMjEgLTE0IDI2IC0xNCA1NCAxIDE3IDggMzEgMTkgMzEKMjMgMCA4IC0xMTMgNzIgLTEyNiA3MiAtNSAwIC0zOSAtMTcgLTc2IC0zOHoiLz4KICAgIDwvZz4KPC9zdmc+Cg=="
+````
+
+We currently support the following configurations option's
+
+| Variable Name | Default Value | Optional Values and Their Use |
+| --- | --- | --- |
+| `GITHUB_PAGES_BRANCH` | `gh-pages` | The branch that GitHub Pages will build from. |
+| `GITHUB_REPOSITORY_NAME` | `${{ github.event.repository.name }}` | The name of your GitHub repository. |
+| `GITHUB_REPOSITORY_URL` | `${{ github.event.repository.url }}` | The URL of your GitHub repository. |
+| `GITHUB_API_BASE_URL` | `https://api.github.com/repos/${{ github.repository }}/contents` | The base URL for the GitHub API. |
+| `GITHUB_DOCS_DIRECTORY_PATHS` | `'[{\"name\": \"Features\", \"location\": \"/docs/features\"}]'` | The paths to the directories containing your documentation. |
+| `SLACK_URL` | `"https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg"` | The URL for your Slack workspace. |
+| `READ_THE_DOCS_URL` | `"https://commongateway.readthedocs.io/en/latest/"` | The URL for your Read the Docs documentation. |
+| `NAVBAR_LOGO_URL` | `"https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"` | The URL for the logo in your navbar. |
+| `FOOTER_LOGO_URL` | `"data:image/svg+xml;base64,..."` | The URL for the logo in your footer. |
+| `FOOTER_LOGO_HREF` | `"https://conduction.nl"` | The URL that the footer logo links to. |
+| `JUMBOTRON_TITLE` | `"Product Website Template"` | The title in your jumbotron. |
+| `JUMBOTRON_SUBTITLE` | `"Product page"` | The subtitle in your jumbotron. |
+| `JUMBOTRON_DESCRIPTION` | `${{ github.event.repository.description }}` | The description in your jumbotron. |
+| `JUMBOTRON_SVG` | `"https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"` | The SVG in your jumbotron. |
+| `NL_DESIGN_THEME_CLASSNAME` | `"conduction-theme"` | The classname for your NL Design theme. |
+| `NL_DESIGN_THEME_CSS_PATH` | `"@conduction/theme/theme.css"` | The CSS path for your NL Design theme. |
+| `NL_DESIGN_THEME_NPM_PACKAGE` | `"@conduction/theme@1.0.2"` | The NPM package for your NL Design theme. |
+| `FAVICON_URL` | `"data:image/svg+xml;base64,..."` | The URL for your favicon. |
