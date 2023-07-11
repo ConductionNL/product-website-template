@@ -11,15 +11,7 @@ import { GitHubLogo } from "../../../assets/svgs/Github";
 import { useGitHubDirectories } from "../../../hooks/useGitHubDirectories";
 
 export const FooterTemplate: React.FC = () => {
-  const [logoUrl, setLogoUrl] = React.useState<string>("");
-  const [logoHref, setLogoHref] = React.useState<string>("");
-
   const { directories, getSlugFromName } = useGitHubDirectories();
-
-  React.useEffect(() => {
-    setLogoUrl(window.sessionStorage.getItem("FOOTER_LOGO_URL") ?? "");
-    setLogoHref(window.sessionStorage.getItem("FOOTER_LOGO_HREF") ?? "");
-  });
 
   return (
     <UtrechtPageFooter className={styles.footer}>
@@ -34,18 +26,18 @@ export const FooterTemplate: React.FC = () => {
               </UnorderedListItem>
             ))}
 
-            <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("READ_THE_DOCS_URL") ?? "#")}>
+            <UnorderedListItem onClick={() => open(process.env.GATSBY_READ_THE_DOCS_URL)}>
               <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
             </UnorderedListItem>
 
             <section className={styles.iconsContainer}>
-              <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("SLACK_URL") ?? "#")}>
+              <UnorderedListItem onClick={() => open(process.env.GATSBY_SLACK_URL)}>
                 <ToolTip tooltip="Slack">
                   <SlackLogo />
                 </ToolTip>
               </UnorderedListItem>
 
-              <UnorderedListItem onClick={() => open(window.sessionStorage.getItem("GITHUB_REPOSITORY_URL") ?? "#")}>
+              <UnorderedListItem onClick={() => open(process.env.GATSBY_GITHUB_REPOSITORY_URL)}>
                 <ToolTip tooltip="Github">
                   <GitHubLogo />
                 </ToolTip>
@@ -54,7 +46,11 @@ export const FooterTemplate: React.FC = () => {
           </section>
 
           <section>
-            <img onClick={() => open(logoHref)} src={logoUrl} alt={"Footer-logo"} />
+            <img
+              onClick={() => open(process.env.GATSBY_FOOTER_LOGO_HREF)}
+              src={process.env.GATSBY_FOOTER_LOGO_URL}
+              alt={"Footer-logo"}
+            />
           </section>
         </UnorderedList>
       </Container>
