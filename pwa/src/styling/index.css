@@ -1,9 +1,6 @@
 /* Package includes */
 @import "react-loading-skeleton/dist/skeleton.css";
 
-/* Design Tokens */
-@import "./../../node_modules/@conduction/theme/theme.css";
-
 /* Global internal styling */
 @import "./global.css";
 
