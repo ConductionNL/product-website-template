@@ -28,7 +28,8 @@ env: # Change these to your preferences any image url can also be a base encoded
 
   # NL-Design Theme
   NL_DESIGN_THEME_CLASSNAME: conduction-theme
-  NL_DESIGN_THEME_CSS_PATH: @conduction/theme/theme.css # path is relative from node_modules/...
+  # Path is relative to /node_modules/...path-here
+  NL_DESIGN_THEME_CSS_PATH: @conduction/theme/theme.css
   NL_DESIGN_THEME_NPM_PACKAGE: @conduction/theme@1.0.2
 
   # Other
