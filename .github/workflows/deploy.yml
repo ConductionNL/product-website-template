@@ -68,7 +68,7 @@ jobs:
           GATSBY_JUMBOTRON_SVG: ${{ env.JUMBOTRON_SVG }}
           GATSBY_FOOTER_LOGO_URL: ${{ env.FOOTER_LOGO_URL }}
           GATSBY_FOOTER_LOGO_HREF: ${{ env.FOOTER_LOGO_HREF }}
-          directory: static
+          directory: pwa/static
           file_name: .env
           fail_on_empty: false
           sort_keys: false
