@@ -57,7 +57,10 @@ jobs:
         run: ls
 
       - name: List al the files
-        run: ls /pwa
+        run: cd pwa && ls
+
+      - name: List al the files
+        run: cd pwa/static && ls
 
       # With special thanxs to https://github.com/SpicyPizza/create-envfile
       - name: Make envfile
@@ -78,7 +81,7 @@ jobs:
           envkey_GATSBY_JUMBOTRON_SVG: ${{ env.JUMBOTRON_SVG }}
           envkey_GATSBY_FOOTER_LOGO_URL: ${{ env.FOOTER_LOGO_URL }}
           envkey_GATSBY_FOOTER_LOGO_HREF: ${{ env.FOOTER_LOGO_HREF }}
-          directory: ../pwa/static
+          directory: pwa/static
           file_name: .env
           fail_on_empty: false
           sort_keys: false
