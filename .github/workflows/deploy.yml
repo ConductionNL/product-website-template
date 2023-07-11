@@ -39,6 +39,9 @@ jobs:
           repository: ConductionNL/product-website-template
           ref: main
 
+      - name: List the content
+        run: ls
+
       # With special thanxs to https://github.com/SpicyPizza/create-envfile
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v2.0
