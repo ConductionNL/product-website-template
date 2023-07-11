@@ -85,7 +85,7 @@ jobs:
         run: cd pwa && npm install
 
       - name: Install NL-Design theme package
-        run: cd pwa && npm install ${{ NL_DESIGN_THEME_NPM_PACKAGE }}
+        run: cd pwa && npm install ${{ env.NL_DESIGN_THEME_NPM_PACKAGE }}
 
       - name: Remove old Gatsby cache
         run: rm -rf pwa/.cache
