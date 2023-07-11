@@ -25,8 +25,8 @@ env: # Change these to your preferences any image url can also be a base encoded
 on:
   push:
     branches:
-      - development
-      - feature/GW-1532
+      - development #this should be main (Change afther this branche has been comitted to main)
+      - feature/GW-1532  # Remove afhter this branche has been comitted to main
 jobs:
   build:
     runs-on: ubuntu-latest
