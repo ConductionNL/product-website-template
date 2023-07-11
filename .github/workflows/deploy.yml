@@ -53,6 +53,9 @@ jobs:
       - name: List al the files
         run: ls
 
+      - name: List current directory
+        run: dirname
+
       # With special thanxs to https://github.com/SpicyPizza/create-envfile
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v2.0
