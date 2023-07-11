@@ -80,5 +80,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: ${{ env.GITHUB_PAGES_BRANCHE }}
+          branch: "product-page"
           folder: pwa/public
