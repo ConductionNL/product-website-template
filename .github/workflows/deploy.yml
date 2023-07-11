@@ -39,17 +39,6 @@ jobs:
           path: pwa
           ref: main
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Install dependencies
-        run: cd pwa && npm install
-
-      - name: Remove old Gatsby cache
-        run: rm -rf pwa/.cache
-
       - name: List current directory
         run: pwd
 
@@ -85,6 +74,17 @@ jobs:
           file_name: .env
           fail_on_empty: false
           sort_keys: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: cd pwa && npm install
+
+      - name: Remove old Gatsby cache
+        run: rm -rf pwa/.cache
 
       - name: Build application
         run: cd pwa && npm run build
