@@ -10,6 +10,17 @@ But the benefits of the NL Design System don't stop there. The system also provi
 
 By leveraging the NL Design System, the Product Website Template provides a user-centered, accessible, and customizable solution for showcasing your open-source project.
 
+## Challanges
+While the Product Website Template offers a flexible and customizable solution for creating product pages, it's not without its challenges. One of the main challenges lies in the use of NL design tokens.
+
+NL design tokens are essentially variables that store visual design attributes. They're used to maintain a consistent look and feel across different platforms and devices. In the context of the Product Website Template, you can use your organization's NL design tokens to style your product page.
+
+However, not all NL design token sets have all the tokens needed to fully utilize the template. In fact, as of now, none of the existing token sets provide a complete set of tokens that cover all aspects of the template. This means that some elements of the template might not be styled as expected when using certain NL design tokens.
+
+This challenge requires a certain level of creativity and problem-solving. You might need to create additional tokens to fill in the gaps, or find alternative ways to style certain elements of the template. It's also important to keep in mind that the NL design system is continually evolving, and more comprehensive token sets might become available in the future.
+
+Despite these challenges, the use of NL design tokens in the Product Website Template provides a powerful way to customize your product page and align it with your organization's branding. It's a testament to the flexibility and adaptability of the template, and a key feature that sets it apart in the world of open-source projects.
+
 ## Configuration
 The NL Design template can be configured (or changed) trough the workflow yaml. There are three properties governing the NL Design system
 
