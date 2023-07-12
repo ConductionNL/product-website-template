@@ -1,6 +1,6 @@
 # Product Website Template 
 
-The [Product Website Template](https://github.com/ConductionNL/product-website-template) by [Conduction](https://www.conduction.nl/) is a powerful tool designed to alleviate the common issue faced by many open source and Common Ground projects: the need for a dedicated product page and the cost (in time) to build one. This template enables users to quickly and easily set up a product page based on the contents of their repository.
+The [Product Website Template](https://github.com/ConductionNL/product-website-template) by [Conduction](https://www.conduction.nl/) is a powerful tool designed to alleviate the common issue faced by many open source and Common Ground projects: the need for a dedicated product page and the cost (in time) to build one. This template enables users to quickly and easily set up a product page based on the contents of their repository without actually making a page.
 
 The template is highly customizable, allowing users to style their product page using their organization's NL design token. This template maintains a consistent look and feel across all your products and services, reinforcing your brand identity.
 
@@ -8,6 +8,14 @@ One of the key advantages of this template is its simplicity. You can have a ful
 
 Whether you're a seasoned developer or a newcomer to open source projects, the Product Website Template is a valuable resource that can help you showcase your work professionally and appealingly.
 
+## Adventages
+- **No coding needed** just copy the workflow to your repository
+- **No server needed** github pages wil host your site
+- **No content needed** the page wil use the documentation that you already have in your repository
+- **No maintance or updates** the page will alwasy fetch the latest version of your documentation
+- **Follows your organizations style** just use your exisitng NL Design tokens to style the page
+
+All in all its a simple, quick, fire and forget solution for providing a simple product page that is always up to date.
 ## Using this template for your own GitHub repository
 
 1. **Download the GitHub Workflow File**
