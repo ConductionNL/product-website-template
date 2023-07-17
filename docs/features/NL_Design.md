@@ -11,6 +11,7 @@ But the benefits of the NL Design System don't stop there. The system also provi
 By leveraging the NL Design System, the Product Website Template provides a user-centered, accessible, and customizable solution for showcasing your open-source project.
 
 ## Challanges
+
 While the Product Website Template offers a flexible and customizable solution for creating product pages, it's not without its challenges. One of the main challenges lies in the use of NL design tokens.
 
 NL design tokens are essentially variables that store visual design attributes. They're used to maintain a consistent look and feel across different platforms and devices. In the context of the Product Website Template, you can use your organization's NL design tokens to style your product page.
@@ -22,24 +23,18 @@ This challenge requires a certain level of creativity and problem-solving. You m
 Despite these challenges, the use of NL design tokens in the Product Website Template provides a powerful way to customize your product page and align it with your organization's branding. It's a testament to the flexibility and adaptability of the template, and a key feature that sets it apart in the world of open-source projects.
 
 ## Configuration
-The NL Design template can be configured (or changed) trough the workflow yaml. There are three properties governing the NL Design system
 
-````yaml
-   # NL-Design Theme
-   NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
-   NL_DESIGN_THEME_CSS_PATH: "@conduction/theme/theme.css"
-   NL_DESIGN_THEME_NPM_PACKAGE: "@conduction/theme@1.0.2"
-````
-They can be configured as
+The NL Design template can be configured (or changed) trough the workflow yaml. There's one property governing the activated theme.
 
-| Variable Name | Default Value | Optional Values and Their Use                                                                         |
-| --- | --- |-------------------------------------------------------------------------------------------------------|
-| `NL_DESIGN_THEME_CLASSNAME` | `"conduction-theme"` | The classname for your NL Design theme.                                                               |
-| `NL_DESIGN_THEME_CSS_PATH` | `"@conduction/theme/theme.css"` | The CSS path for your NL Design theme.                                                                |
-| `NL_DESIGN_THEME_NPM_PACKAGE` | `"@conduction/theme@1.0.2"` | The NPM package for your NL Design theme.                                                             |
+```yaml
+# NL-Design Theme
+NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
+```
 
-In theory NL Design functions with any official and non-official token packadge (following the design rules). But this product page was tested with.
+The Product Website Template can be configured with any and all NL Design themes. Currently, we have the following themes readily installed, by changing the `NL_DESIGN_THEME_CLASSNAME` to one of the following values, the theme will be installed. Cannot find your organization's design tokens in this list? Send us a message and we will add them.
 
-| Organsiation | Packadge             | CSS Path        | CLASSNAME               |
-|--------------|----------------------|-----------------|-------------------------|
-| Conduction   | `"@conduction/theme@1.0.2"` | `"@conduction/theme/theme.css"` | `"conduction-theme"`    |
+| Organization | NL_DESIGN_THEME_CLASSNAME |
+| ------------ | ------------------------- |
+| Conduction   | `"conduction-theme"`      |
+| Rotterdam    | `"rotterdam-theme"`       |
+| Utrecht      | `"utrecht-theme"`         |
