@@ -47,3 +47,13 @@ Below, you'll find a list of potential features that could be added to the templ
 ### Organization Version of the Page
 **Estimated Time:** 5 days  
 **Description:** This feature would create an organization version of the product page. This would allow organizations to showcase all their products in one place without building a website.
+
+## Known Issues
+
+### No Documentation for Local Development
+**Estimated Time:** 2 days  
+**Description:** Currently, there is no documentation available for setting up and running the Product Website Template for local development. This can make it difficult for developers to test changes and new features on their local machines before pushing them to the repository. Addressing this issue would involve creating comprehensive documentation that guides developers through the process of setting up a local development environment for the template.
+
+### Build Bug Blocks the Use of NL Design Tokens
+**Estimated Time:** 1 day  
+**Description:** There is a known bug in the build process that prevents the use of NL design tokens. This bug can interfere with the customization of the product page, as it limits the ability to style the page using an organization's NL design tokens. Fixing this bug would involve identifying the cause of the issue in the build process and implementing a solution that allows for the successful use of NL design tokens.
