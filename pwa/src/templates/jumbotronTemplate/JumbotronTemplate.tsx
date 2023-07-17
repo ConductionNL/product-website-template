@@ -13,9 +13,7 @@ export const JumbotronTemplate: React.FC = () => {
 
           <span className={styles.subtitle}>{process.env.GATSBY_JUMBOTRON_SUBTITLE}</span>
 
-          <UtrechtParagraph className={styles.introduction}>
-            {process.env.GATSBY_JUMBOTRON_DESCRIPTION}
-          </UtrechtParagraph>
+          <UtrechtParagraph>{process.env.GATSBY_JUMBOTRON_DESCRIPTION}</UtrechtParagraph>
         </div>
 
         <Image

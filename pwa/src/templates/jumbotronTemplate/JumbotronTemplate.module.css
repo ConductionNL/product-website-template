@@ -5,7 +5,7 @@
 
 .container {
   display: flex;
-  gap: var(--conduction-size-xl);
+  gap: var(--utrecht-space-inline-xl);
 }
 
 .content > * {
@@ -16,8 +16,9 @@
 .subtitle {
   position: relative;
   font-style: italic;
-  top: calc(var(--conduction-size-sm) * -1);
-  font-size: var(--conduction-font-size-lg);
+  display: block;
+  margin-block-end: var(--utrecht-space-block-md);
+  font-size: var(--utrecht-heading-4-font-size);
 }
 
 .image {
