@@ -40,7 +40,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
       <GlobalProvider value={[globalContext, setGlobalContext]}>
         <Head />
         <APIProvider value={API}>
-          <UtrechtDocument className="conduction-theme">
+          <UtrechtDocument className={process.env.GATSBY_NL_DESIGN_THEME_CLASSNAME}>
             <Toaster position="bottom-right" />
 
             <div className={styles.container}>
