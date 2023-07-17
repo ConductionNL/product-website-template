@@ -1,6 +1,7 @@
 .container {
   top: 0;
   position: sticky;
-  background-color: var(--utrecht-page-header-background-color);
   margin-block-end: unset !important;
+
+  --utrecht-page-max-inline-size: none !important;
 }
