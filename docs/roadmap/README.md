@@ -21,39 +21,58 @@ Below, you'll find a list of potential features that could be added to the templ
 ## Potential Features for the Product Website Template
 
 ### NL Design Template for a New Organization
+
 **Estimated Time:** 4 days  
 **Description:** This feature would provide a new NL Design template specifically tailored for a new organization. It would allow new organizations to quickly and easily set up a product page that aligns with their branding.
 
 ### News/Blog Option
+
 **Estimated Time:** 2 days  
 **Description:** This feature would add a news or blog section to the product page. It would provide a platform for sharing updates, announcements, and other news related to the product.
 
 ### Roadmap Generated Based on Repository Milestones
+
 **Estimated Time:** 5 days  
 **Description:** This feature would generate a product roadmap based on the milestones in the repository. It would provide a visual representation of the product's development plan and progress.
 
 ### More Information About the Repository in the Footer
+
 **Estimated Time:** 2 days  
 **Description:** This feature would add more information about the repository to the footer of the product page. This could include the number of stars, the languages used in the project, and other relevant details.
 
 ### More Navigation Menu Options
+
 **Estimated Time:** 2 days  
 **Description:** This feature would expand the options available in the navigation menu. This could include the addition of icons and external links.
 
+### Single page navigation items
+
+**Estimated Time:** 1 day
+**Description:** Currently, the Product Page Website always expects the route to a directory in order to create (a) navigation item(s). The overview page will search for the `README.md` for its content, and it will generate child-pages based on all other `.md` files within the directory. However, we want to make creating single pages (without child-pages) easier.
+
 ### Option Not to Use the Jumbotron
+
 **Estimated Time:** 1 day  
 **Description:** This feature would provide an option to not use the jumbotron on the product page. This would give users more flexibility in designing their product page.
 
 ### Organization Version of the Page
+
 **Estimated Time:** 5 days  
 **Description:** This feature would create an organization version of the product page. This would allow organizations to showcase all their products in one place without building a website.
 
 ## Known Issues
 
 ### No Documentation for Local Development
+
 **Estimated Time:** 2 days  
 **Description:** Currently, there is no documentation available for setting up and running the Product Website Template for local development. This can make it difficult for developers to test changes and new features on their local machines before pushing them to the repository. Addressing this issue would involve creating comprehensive documentation that guides developers through the process of setting up a local development environment for the template.
 
-### Build Bug Blocks the Use of NL Design Tokens
+### Build Bug Blocks the Use of dynamic NL Design Themes
+
 **Estimated Time:** 1 day  
-**Description:** There is a known bug in the build process that prevents the use of NL design tokens. This bug can interfere with the customization of the product page, as it limits the ability to style the page using an organization's NL design tokens. Fixing this bug would involve identifying the cause of the issue in the build process and implementing a solution that allows for the successful use of NL design tokens.
+**Description:** There is a known bug in the build process that prevents implementing custom themes that are not installed by Conduction. This does _not_ apply to the already implemented themes that can be configured via the environment variables. Fixing this bug would involve identifying the cause of the issue in the build process and implementing a solution that allows for the successful use of dynamic themes.
+
+### Finalize (relative) links generated from .MD files
+
+**Estimated Time:** 2 days
+**Description:** Currently, _most_ links work. However, there are instances where the Product Website Template does not know where a relative should land and they can therefore break.
