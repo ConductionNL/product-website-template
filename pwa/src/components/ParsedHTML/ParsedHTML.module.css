@@ -1,7 +1,7 @@
 .container {
-  margin-block-start: var(--conduction-size-3xl);
+  margin-block-start: var(--utrecht-space-block-4xl);
 }
 
 .container > div > article > *:not(:last-child) {
-  margin-block-end: var(--conduction-size-md);
+  margin-block-end: var(--utrecht-space-block-2xl);
 }

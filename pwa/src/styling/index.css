@@ -3,6 +3,7 @@
 
 /* Design Tokens */
 @import "./../../node_modules/@conduction/theme/theme.css";
+@import "../../node_modules/@utrecht/design-tokens/dist/theme.css";
 
 /* Global internal styling */
 @import "./global.css";
