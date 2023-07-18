@@ -33,8 +33,34 @@ NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
 
 The Product Website Template can be configured with any and all NL Design themes. Currently, we have the following themes readily installed, by changing the `NL_DESIGN_THEME_CLASSNAME` to one of the following values, the theme will be installed. Cannot find your organization's design tokens in this list? Send us a message and we will add them.
 
-| Organization | NL_DESIGN_THEME_CLASSNAME |
-| ------------ | ------------------------- |
-| Conduction   | `"conduction-theme"`      |
-| Rotterdam    | `"rotterdam-theme"`       |
-| Utrecht      | `"utrecht-theme"`         |
+> Note: most themes are directly installed from the [nl-design-system repository](https://github.com/nl-design-system/themes/tree/main/proprietary), is your theme incomplete? Please create a pull request.
+
+| Organization           | NL_DESIGN_THEME_CLASSNAME |
+| ---------------------- | ------------------------- |
+| Conduction (default)   | `"conduction-theme"`      |
+| Bodegraven             | `"bodegraven-theme"`      |
+| Borne                  | `"borne-theme"`           |
+| Buren                  | `"buren-theme"`           |
+| Demodam                | `"demodam-theme"`         |
+| Drechterland           | `"drechterland-theme"`    |
+| Duiven                 | `"duiven-theme"`          |
+| Enkhuizen              | `"enkhuizen-theme"`       |
+| Groningen              | `"groningen-theme"`       |
+| Haarlem                | `"haarlem-theme"`         |
+| Haarlemmermeer         | `"haarlemmermeer-theme"`  |
+| Hoorn                  | `"hoorn-theme"`           |
+| Horstaandemaas         | `"horstaandemaas-theme"`  |
+| Leiden                 | `"leiden-theme"`          |
+| Leidschendam Voorburg  | `"leidschendam-theme"`    |
+| Nijmegen               | `"nijmegen-theme"`        |
+| Noordoostpolder        | `"noordoostpolder-theme"` |
+| Provincie Zuid Holland | `"pzh-theme"`             |
+| Rotterdam              | `"rotterdam-theme"`       |
+| Stedebroec             | `"stedebroec-theme"`      |
+| Tilburg                | `"tilburg-theme"`         |
+| Utrecht                | `"utrecht-theme"`         |
+| Venray                 | `"venray-theme"`          |
+| Vught                  | `"vught-theme"`           |
+| Westervoort            | `"westervoort-theme"`     |
+| Zevenaar               | `"zevenaar-theme"`        |
+| Zwolle                 | `"zwolle-theme"`          |
