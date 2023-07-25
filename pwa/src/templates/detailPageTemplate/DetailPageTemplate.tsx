@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Container } from "@conduction/components";
 import { useGitHub } from "../../hooks/resources/gitHub";
 import { ParsedHTML } from "../../components/ParsedHTML/ParsedHTML";
 import { useGitHubDirectories } from "../../hooks/useGitHubDirectories";
+import { Page, PageContent } from "@utrecht/component-library-react/dist/css-module";
 
 interface DetailPageTemplateProps {
   pageSlug: string;
@@ -17,8 +17,10 @@ export const DetailPageTemplate: React.FC<DetailPageTemplateProps> = ({ pageSlug
   const getContent = useGitHub().getContent(location);
 
   return (
-    <Container>
-      <ParsedHTML contentQuery={getContent} {...{ location }} />
-    </Container>
+    <Page>
+      <PageContent>
+        <ParsedHTML contentQuery={getContent} {...{ location }} />
+      </PageContent>
+    </Page>
   );
 };

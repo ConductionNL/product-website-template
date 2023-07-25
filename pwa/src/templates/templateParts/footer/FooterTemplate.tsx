@@ -1,8 +1,11 @@
 import * as React from "react";
 import * as styles from "./FooterTemplate.module.css";
-import { Container } from "@conduction/components";
-import { UnorderedList, UnorderedListItem } from "@utrecht/component-library-react/dist/css-module";
-import { PageFooter } from "@utrecht/component-library-react/dist/css-module";
+import {
+  UnorderedList,
+  UnorderedListItem,
+  PageFooter,
+  PageContent,
+} from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +18,7 @@ export const FooterTemplate: React.FC = () => {
 
   return (
     <PageFooter className={styles.footer}>
-      <Container>
+      <PageContent>
         <UnorderedList className={styles.list}>
           <section className={styles.linksContainer}>
             <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
@@ -47,7 +50,7 @@ export const FooterTemplate: React.FC = () => {
             />
           </section>
         </UnorderedList>
-      </Container>
+      </PageContent>
     </PageFooter>
   );
 };
