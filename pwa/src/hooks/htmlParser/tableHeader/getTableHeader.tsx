@@ -1,6 +1,6 @@
-import { UtrechtTableHeader } from "@utrecht/web-component-library-react";
+import { TableHeader } from "@utrecht/component-library-react/dist/css-module";
 import { domToReact } from "html-react-parser";
 
 export const getTableHeader = (props: any, children: any, options: any) => {
-  return <UtrechtTableHeader {...props}>{domToReact(children, options)}</UtrechtTableHeader>;
+  return <TableHeader {...props}>{domToReact(children, options)}</TableHeader>;
 };

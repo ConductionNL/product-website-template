@@ -2,7 +2,7 @@ import * as React from "react";
 import * as styles from "./FooterTemplate.module.css";
 import { Container } from "@conduction/components";
 import { UnorderedList, UnorderedListItem } from "@utrecht/component-library-react/dist/css-module";
-import { UtrechtPageFooter } from "@utrecht/web-component-library-react";
+import { PageFooter } from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
@@ -14,7 +14,7 @@ export const FooterTemplate: React.FC = () => {
   const { directories, getSlugFromName } = useGitHubDirectories();
 
   return (
-    <UtrechtPageFooter className={styles.footer}>
+    <PageFooter className={styles.footer}>
       <Container>
         <UnorderedList className={styles.list}>
           <section className={styles.linksContainer}>
@@ -48,6 +48,6 @@ export const FooterTemplate: React.FC = () => {
           </section>
         </UnorderedList>
       </Container>
-    </UtrechtPageFooter>
+    </PageFooter>
   );
 };
