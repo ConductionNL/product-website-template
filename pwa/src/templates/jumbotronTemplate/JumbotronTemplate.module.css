@@ -13,7 +13,7 @@
 }
 
 .content > * {
-  color: var(--utrecht-page-header-color);
+  color: var(--utrecht-page-header-color) !important;
   --utrecht-heading-1-color: var(--utrecht-page-header-color);
 }
 
