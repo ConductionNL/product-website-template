@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { UtrechtLink } from "@utrecht/web-component-library-react";
+import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
 import { domToReact } from "html-react-parser";
 import { TGitHubDirectory } from "../../useGitHubDirectories";
@@ -50,7 +50,7 @@ export const getAnchor = (
     onClick: handleClick,
   };
 
-  return <UtrechtLink {...attributes}>{domToReact(children, options)}</UtrechtLink>;
+  return <Link {...attributes}>{domToReact(children, options)}</Link>;
 };
 
 const handleInternalLinks = (props: any, targetFile: string, location: string, directories: TGitHubDirectory[]) => {

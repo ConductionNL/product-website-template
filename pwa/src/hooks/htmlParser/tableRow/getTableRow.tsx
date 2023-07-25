@@ -1,6 +1,6 @@
-import { UtrechtTableRow } from "@utrecht/web-component-library-react";
+import { TableRow } from "@utrecht/component-library-react/dist/css-module";
 import { domToReact } from "html-react-parser";
 
 export const getTableRow = (props: any, children: any, options: any) => {
-  return <UtrechtTableRow {...props}>{domToReact(children, options)}</UtrechtTableRow>;
+  return <TableRow {...props}>{domToReact(children, options)}</TableRow>;
 };

@@ -5,11 +5,15 @@
 
 .container {
   display: flex;
+  margin: auto;
+  max-inline-size: var(--utrecht-page-max-inline-size);
+  padding-inline-end: var(--utrecht-page-padding-inline-end);
+  padding-inline-start: var(--utrecht-page-padding-inline-start);
   gap: var(--utrecht-space-inline-xl);
 }
 
 .content > * {
-  color: var(--utrecht-page-header-color);
+  color: var(--utrecht-page-header-color) !important;
   --utrecht-heading-1-color: var(--utrecht-page-header-color);
 }
 
