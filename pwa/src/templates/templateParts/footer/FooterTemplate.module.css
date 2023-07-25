@@ -23,8 +23,3 @@
 .list > section li::marker {
   content: "" !important;
 }
-
-.iconsContainer {
-  display: flex;
-  gap: 16px;
-}

@@ -7,7 +7,6 @@ import { navigate } from "gatsby";
 import { useGitHub } from "../../../hooks/resources/gitHub";
 import { GitHubLogo } from "../../../assets/svgs/Github";
 import { SlackLogo } from "../../../assets/svgs/Slack";
-import { ToolTip } from "@conduction/components";
 import { TGitHubDirectory, useGitHubDirectories } from "../../../hooks/useGitHubDirectories";
 
 export const TopNav: React.FC = () => {
@@ -43,15 +42,11 @@ export const TopNav: React.FC = () => {
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(process.env.GATSBY_SLACK_URL)}>
-            <ToolTip tooltip="Slack">
-              <SlackLogo />
-            </ToolTip>
+            <SlackLogo /> Slack
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => open(process.env.GATSBY_GITHUB_REPOSITORY_URL)}>
-            <ToolTip tooltip="Github">
-              <GitHubLogo />
-            </ToolTip>
+            <GitHubLogo /> GitHub
           </UnorderedListItem>
         </section>
       </UnorderedList>
