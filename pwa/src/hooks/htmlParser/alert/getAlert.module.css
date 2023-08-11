@@ -1,0 +1,27 @@
+.info svg {
+  fill: var(--utrecht-alert-icon-info-color) !important;
+}
+.info p {
+  color: var(--utrecht-alert-info-color) !important;
+}
+
+.warning svg {
+  fill: var(--utrecht-alert-icon-warning-color) !important;
+}
+.warning p {
+  color: var(--utrecht-alert-warning-color) !important;
+}
+
+.error svg {
+  fill: var(--utrecht-alert-icon-error-color) !important;
+}
+.error p {
+  color: var(--utrecht-alert-error-color) !important;
+}
+
+.ok svg {
+  fill: var(--utrecht-alert-icon-ok-color) !important;
+}
+.ok p {
+  color: var(--utrecht-alert-ok-color) !important;
+}
