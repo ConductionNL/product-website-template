@@ -28,5 +28,7 @@ export const getAlert = (children: any, options: any, type: any) => {
           {domToReact(children, options)}
         </Alert>
       );
+    default:
+      return <Alert type="info">{domToReact(children, options)}</Alert>;
   }
 };
