@@ -33,7 +33,7 @@ NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
 
 The Product Website Template can be configured with any and all NL Design themes. Currently, we have the following themes readily installed, by changing the `NL_DESIGN_THEME_CLASSNAME` to one of the following values, the theme will be installed. Cannot find your organization's design tokens in this list? Send us a message and we will add them.
 
-> Note: most themes are directly installed from the [nl-design-system repository](https://github.com/nl-design-system/themes/tree/main/proprietary), is your theme incomplete? Please create a pull request.
+> Note: most themes are directly installed from the [nl-design-system repository](https://github.com/nl-design-system/themes/tree/main/proprietary), is your theme incomplete or missin? Please create a pull request. Or contact us at [info@conduction.nl](info@conduction.nl) for help with making and maintaining your theme.
 
 | Organization           | NL_DESIGN_THEME_CLASSNAME |
 | ---------------------- | ------------------------- |
