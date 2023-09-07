@@ -1,8 +1,8 @@
 .info svg {
-  fill: var(--utrecht-alert-icon-info-color);
+  fill: var(--utrecht-alert-icon-color);
 }
 .info p {
-  color: var(--utrecht-alert-info-color);
+  color: var(--utrecht-alert-color);
 }
 
 .warning svg {
@@ -25,4 +25,3 @@
 .ok p {
   color: var(--utrecht-alert-ok-color);
 }
-

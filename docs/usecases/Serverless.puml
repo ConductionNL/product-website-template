@@ -1,0 +1,16 @@
+@startuml
+
+!define MAIN_ENTITY #E2EFDA-Lime
+!define SECONDARY_ENTITY #D4E6C1-DarkSeaGreen
+
+entity "commonground.nu" as domain MAIN_ENTITY
+entity "Cloudflare (Pro Version)" as cloudflare SECONDARY_ENTITY
+entity "GitHub Pages" as github SECONDARY_ENTITY
+entity "Central CDN" as cdn SECONDARY_ENTITY
+
+domain -> cloudflare : SSL Offloading
+cloudflare -> github : Fetch Static Data
+cloudflare -> cdn : Fetch NL Design Tokens
+github -> cdn : Shared Codebase
+
+@enduml
