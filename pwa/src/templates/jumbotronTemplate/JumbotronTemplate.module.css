@@ -6,15 +6,18 @@
 .container {
   display: flex;
   margin: auto;
-  max-inline-size: var(--utrecht-page-max-inline-size);
-  padding-inline-end: var(--utrecht-page-padding-inline-end);
-  padding-inline-start: var(--utrecht-page-padding-inline-start);
+  justify-content: space-between;
   gap: var(--utrecht-space-inline-xl);
+  align-items: center;
 }
 
 .content > * {
   color: var(--utrecht-page-header-color) !important;
   --utrecht-heading-1-color: var(--utrecht-page-header-color);
+}
+
+.header {
+  margin-block-end: var(--utrecht-space-block-md);
 }
 
 .subtitle {
@@ -27,6 +30,5 @@
 
 .image {
   width: 50% !important;
-  max-height: 400px;
   object-fit: contain;
 }
