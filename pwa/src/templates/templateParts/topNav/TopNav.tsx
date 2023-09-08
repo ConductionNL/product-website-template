@@ -17,12 +17,14 @@ export const TopNav: React.FC = () => {
       <UnorderedList className={styles.list}>
         <section>
           <UnorderedListItem>
-            <img
-              className={styles.image}
-              onClick={() => navigate("/")}
-              src={process.env.GATSBY_NAVBAR_LOGO_URL}
-              alt={"Navbar-logo"}
-            />
+            <div className={styles.imageContainer}>
+              <img
+                className={styles.image}
+                onClick={() => navigate("/")}
+                src={process.env.GATSBY_NAVBAR_LOGO_URL}
+                alt={"Navbar-logo"}
+              />
+            </div>
           </UnorderedListItem>
 
           <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
