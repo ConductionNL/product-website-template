@@ -3,12 +3,19 @@
   --utrecht-unordered-list-padding-inline-start: 0;
   --utrecht-unordered-list-item-margin-block-end: 0;
   --utrecht-unordered-list-item-margin-block-start: 0;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: var(--utrecht-page-footer-background-position);
+  min-height: var(--utrecht-page-footer-min-height);
 }
 
 .list {
+  margin: auto;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
+  justify-content: space-between;
+  max-inline-size: var(--utrecht-page-max-inline-size);
 }
 
 .list > .linksContainer > *:not(:last-child) {
@@ -22,9 +29,4 @@
 
 .list > section li::marker {
   content: "" !important;
-}
-
-.iconsContainer {
-  display: flex;
-  gap: 16px;
 }

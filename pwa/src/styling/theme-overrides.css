@@ -2,3 +2,8 @@
 svg.octicon {
   margin-inline-end: 8px;
 }
+
+/* Handles token defaults that are not set in themes */
+:root {
+  --utrecht-page-max-inline-size: 1140px;
+}

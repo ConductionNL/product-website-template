@@ -13,6 +13,7 @@ import { getTableHeaderCell } from "./tableHeaderCell/getTableHeaderCell";
 import { getTableBody } from "./tableBody/getTableBody";
 import { getTableCell } from "./tableCell/getTableCell";
 import { getCode } from "./code/getCode";
+import { getAlert } from "./alert/getAlert";
 import { useGitHubDirectories } from "../useGitHubDirectories";
 
 export const useHtmlParser = (location: string) => {
@@ -52,6 +53,10 @@ export const useHtmlParser = (location: string) => {
 
       if (attribs && name === "blockquote") {
         return getBlockquote(children, options);
+      }
+
+      if (attribs && name === "div" && attribs.class?.includes("markdown-alert")) {
+        return getAlert(children, options, attribs.class);
       }
 
       if (attribs && name === "table") {

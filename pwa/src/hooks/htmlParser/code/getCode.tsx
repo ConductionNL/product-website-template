@@ -1,11 +1,11 @@
-import { UtrechtCode, UtrechtCodeBlock } from "@utrecht/web-component-library-react";
+import { Code, CodeBlock } from "@utrecht/component-library-react/dist/css-module";
 import { domToReact } from "html-react-parser";
 
 export const getCode = (name: string, props: any, children: any, options: any) => {
   switch (name) {
     case "code":
-      return <UtrechtCode {...props}>{domToReact(children, options)}</UtrechtCode>;
+      return <Code {...props}>{domToReact(children, options)}</Code>;
     case "pre":
-      return <UtrechtCodeBlock {...props}>{domToReact(children, options)}</UtrechtCodeBlock>;
+      return <CodeBlock {...props}>{domToReact(children, options)}</CodeBlock>;
   }
 };

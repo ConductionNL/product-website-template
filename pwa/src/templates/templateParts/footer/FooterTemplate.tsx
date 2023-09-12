@@ -1,8 +1,11 @@
 import * as React from "react";
 import * as styles from "./FooterTemplate.module.css";
-import { Container, ToolTip } from "@conduction/components";
-import { UnorderedList, UnorderedListItem } from "@utrecht/component-library-react/dist/css-module";
-import { UtrechtPageFooter } from "@utrecht/web-component-library-react";
+import {
+  UnorderedList,
+  UnorderedListItem,
+  PageFooter,
+  PageContent,
+} from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
@@ -14,8 +17,8 @@ export const FooterTemplate: React.FC = () => {
   const { directories, getSlugFromName } = useGitHubDirectories();
 
   return (
-    <UtrechtPageFooter className={styles.footer}>
-      <Container>
+    <PageFooter className={styles.footer}>
+      <PageContent>
         <UnorderedList className={styles.list}>
           <section className={styles.linksContainer}>
             <UnorderedListItem onClick={() => navigate("/")}>Home</UnorderedListItem>
@@ -30,19 +33,13 @@ export const FooterTemplate: React.FC = () => {
               <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
             </UnorderedListItem>
 
-            <section className={styles.iconsContainer}>
-              <UnorderedListItem onClick={() => open(process.env.GATSBY_SLACK_URL)}>
-                <ToolTip tooltip="Slack">
-                  <SlackLogo />
-                </ToolTip>
-              </UnorderedListItem>
+            <UnorderedListItem onClick={() => open(process.env.GATSBY_SLACK_URL)}>
+              <SlackLogo /> Slack
+            </UnorderedListItem>
 
-              <UnorderedListItem onClick={() => open(process.env.GATSBY_GITHUB_REPOSITORY_URL)}>
-                <ToolTip tooltip="Github">
-                  <GitHubLogo />
-                </ToolTip>
-              </UnorderedListItem>
-            </section>
+            <UnorderedListItem onClick={() => open(process.env.GATSBY_GITHUB_REPOSITORY_URL)}>
+              <GitHubLogo /> GitHub
+            </UnorderedListItem>
           </section>
 
           <section>
@@ -53,7 +50,7 @@ export const FooterTemplate: React.FC = () => {
             />
           </section>
         </UnorderedList>
-      </Container>
-    </UtrechtPageFooter>
+      </PageContent>
+    </PageFooter>
   );
 };
