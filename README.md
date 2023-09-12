@@ -110,25 +110,42 @@ env: # Change these to your preferences any image url can also be a base encoded
 
 We currently support the following configurations option's
 
-| Variable Name                               | Default Value                                                                                      | Optional Values and Their Use                                                                         |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | --------- |
-| `GITHUB_PAGES_BRANCH`                       | `gh-pages`                                                                                         | The branch that GitHub Pages will build to.                                                           |
-| `USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX` | `true`                                                                                             | Uses the repository name as the Gatsby URL prefix, options: `"true"`                                  | `"false"` |
-| `GITHUB_REPOSITORY_NAME`                    | `${{ github.event.repository.name }}`                                                              | The name of your GitHub repository.                                                                   |
-| `GITHUB_REPOSITORY_URL`                     | `${{ github.event.repository.url }}`                                                               | The URL of your GitHub repository.                                                                    |
-| `GITHUB_API_BASE_URL`                       | `https://api.github.com/repos/${{ github.repository }}/contents`                                   | The base URL for the GitHub API.                                                                      |
-| `GITHUB_DOCS_DIRECTORY_PATHS`               | `'[{\"name\": \"Features\", \"location\": \"/docs/features\"}]'`                                   | The paths to the directories containing your documentation.                                           |
-| `SLACK_URL`                                 | `"https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg"` | The URL for your Slack workspace.                                                                     |
-| `READ_THE_DOCS_URL`                         | `"https://commongateway.readthedocs.io/en/latest/"`                                                | The URL for your Read the Docs documentation.                                                         |
-| `NAVBAR_LOGO_URL`                           | `"https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"`                  | The URL for the logo in your navbar.                                                                  |
-| `FOOTER_LOGO_URL`                           | `"data:image/svg+xml;base64,..."`                                                                  | The URL for the logo in your footer.                                                                  |
-| `FOOTER_LOGO_HREF`                          | `"https://conduction.nl"`                                                                          | The URL that the footer logo links to.                                                                |
-| `JUMBOTRON_TITLE`                           | `"Product Website Template"`                                                                       | The title in your jumbotron. If you do not alter this it wil display the repository name              |
-| `JUMBOTRON_SUBTITLE`                        | `${{ github.event.repository.url }}`                                                               | The subtitle in your jumbotron. If you do not alter this it wil display the repository url            |
-| `JUMBOTRON_DESCRIPTION`                     | `${{ github.event.repository.description }}`                                                       | The description in your jumbotron. If you do not alter this it wil display the repository description |
-| `JUMBOTRON_SVG`                             | `"https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"`   | The SVG in your jumbotron.                                                                            |
-| `NL_DESIGN_THEME_CLASSNAME`                 | `"conduction-theme"`                                                                               | The classname for your NL Design theme.                                                               |
-| `FAVICON_URL`                               | `"data:image/svg+xml;base64,..."`                                                                  | The URL for your favicon.                                                                             |
+| Variable Name | Default Value | Optional Values and Their Use |
+| ------------- | ------------- | ----------------------------- |
+
+| `GITHUB_PAGES_BRANCH` | `gh-pages` | The branch that GitHub Pages will build to. |
+
+| `USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX` | `true` | Uses the repository name as the Gatsby URL prefix, options: `"true"` or `"false"` |
+
+| `GITHUB_REPOSITORY_NAME` | `${{ github.event.repository.name }}` | The name of your GitHub repository. |
+
+| `GITHUB_REPOSITORY_URL` | `${{ github.event.repository.url }}` | The URL of your GitHub repository. |
+
+| `GITHUB_API_BASE_URL` | `https://api.github.com/repos/${{ github.repository }}/contents` | The base URL for the GitHub API. |
+
+| `GITHUB_DOCS_DIRECTORY_PATHS` | `'[{\"name\": \"Features\", \"location\": \"/docs/features\"}]'` | The paths to the directories containing your documentation. |
+
+| `SLACK_URL` | `"https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg"` | The URL for your Slack workspace. |
+
+| `READ_THE_DOCS_URL` | `"https://commongateway.readthedocs.io/en/latest/"` | The URL for your Read the Docs documentation. |
+
+| `NAVBAR_LOGO_URL` | `"https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"` | The URL for the logo in your navbar. |
+
+| `FOOTER_LOGO_URL` | `"data:image/svg+xml;base64,..."` | The URL for the logo in your footer. |
+
+| `FOOTER_LOGO_HREF` | `"https://conduction.nl"` | The URL that the footer logo links to. |
+
+| `JUMBOTRON_TITLE` | `"Product Website Template"` | The title in your jumbotron. If you do not alter this it wil display the repository name |
+
+| `JUMBOTRON_SUBTITLE` | `${{ github.event.repository.url }}` | The subtitle in your jumbotron. If you do not alter this it wil display the repository url |
+
+| `JUMBOTRON_DESCRIPTION` | `${{ github.event.repository.description }}` | The description in your jumbotron. If you do not alter this it wil display the repository description |
+
+| `JUMBOTRON_SVG` | `"https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"` | The SVG in your jumbotron. |
+
+| `NL_DESIGN_THEME_CLASSNAME` | `"conduction-theme"` | The classname for your NL Design theme. |
+
+| `FAVICON_URL` | `"data:image/svg+xml;base64,..."` | The URL for your favicon. |
 
 ## Conclusion
 
