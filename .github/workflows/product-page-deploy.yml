@@ -38,7 +38,7 @@ env: # Change these to your preferences any image url can also be a base encoded
 on:
   push:
     branches:
-      - main
+      - bugfix/OC-818/product-page-url
 
 jobs:
   build:
