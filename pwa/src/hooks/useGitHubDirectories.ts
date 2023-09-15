@@ -3,6 +3,7 @@ import * as React from "react";
 export type TGitHubDirectory = {
   name: string;
   location: string;
+  imagePath: string;
 };
 
 export const useGitHubDirectories = () => {

@@ -3,11 +3,19 @@ import { Image } from "@utrecht/component-library-react/dist/css-module";
 export const getImage = (props: any) => {
   let src = props.src;
 
+  const gitHubDirectoryPathsString: string | undefined = process.env.GATSBY_GITHUB_DOCS_DIRECTORY_PATHS;
+  const directories = gitHubDirectoryPathsString && JSON.parse(gitHubDirectoryPathsString);
+
+  const getPath = () => {
+    const pathname = window.location.pathname.replace("/pages/", "").split("/")[0];
+    return pathname;
+  };
+
   if (!props.src.includes("https://" || "http://")) {
     const sessionUrl = process.env.GATSBY_GITHUB_REPOSITORY_URL;
     const url = sessionUrl?.replace("https://github.com/", "");
-
-    src = `https://raw.githubusercontent.com/${url}/master/docs/features/${props.src}`;
+    const directory = directories.find((directory: any) => directory.name === getPath());
+    src = `https://raw.githubusercontent.com/${url}/master${directory.imagePath ?? ""}/${props.src}`;
   }
 
   let alt = props.alt;
