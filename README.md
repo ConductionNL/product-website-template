@@ -130,7 +130,7 @@ We currently support the following configurations option's
 | `JUMBOTRON_SVG`                             | `"https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"` | The SVG in your jumbotron.                                                                                                 |
 | `NL_DESIGN_THEME_CLASSNAME`                 | `"conduction-theme"`                                                                             | The classname for your NL Design theme.                                                                                    |
 | `FAVICON_URL`                               | `"data:image/svg+xml;base64,..."`                                                                | The URL for your favicon.                                                                                                  |
-| `PAGE_TITLE`                                | `"Product Page"`                                                                                 | The tile of your page. The title of the page wil allways look like `"PAGE_TITLE(Product Page)" \| "{page_location}(Home)"` |
+| `PAGE_TITLE`                                | `"Product Page"`                                                                                 | The title of your page. The title of the page wil allways look like `"PAGE_TITLE(Product Page)" \| "{page_location}(Home)"` |
 
 ## Conclusion
 
