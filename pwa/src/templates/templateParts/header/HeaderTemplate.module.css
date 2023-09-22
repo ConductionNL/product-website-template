@@ -3,7 +3,5 @@
   position: sticky;
   margin-block-end: unset !important;
 
-  --utrecht-page-max-inline-size: none !important;
-
   background-color: var(--utrecht-page-header-background-color);
 }
