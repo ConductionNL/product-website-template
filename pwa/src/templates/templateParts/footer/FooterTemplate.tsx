@@ -29,13 +29,17 @@ export const FooterTemplate: React.FC = () => {
               </UnorderedListItem>
             ))}
 
-            <UnorderedListItem onClick={() => open(process.env.GATSBY_READ_THE_DOCS_URL)}>
-              <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
-            </UnorderedListItem>
+            {process.env.GATSBY_READ_THE_DOCS_URL !== "false" && (
+              <UnorderedListItem onClick={() => open(process.env.GATSBY_READ_THE_DOCS_URL)}>
+                <FontAwesomeIcon icon={faExternalLinkSquare} /> Documentation
+              </UnorderedListItem>
+            )}
 
-            <UnorderedListItem onClick={() => open(process.env.GATSBY_SLACK_URL)}>
-              <SlackLogo /> Slack
-            </UnorderedListItem>
+            {process.env.GATSBY_SLACK_URL !== "false" && (
+              <UnorderedListItem onClick={() => open(process.env.GATSBY_SLACK_URL)}>
+                <SlackLogo /> Slack
+              </UnorderedListItem>
+            )}
 
             <UnorderedListItem onClick={() => open(process.env.GATSBY_GITHUB_REPOSITORY_URL)}>
               <GitHubLogo /> GitHub
