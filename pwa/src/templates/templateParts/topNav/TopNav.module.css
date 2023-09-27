@@ -1,8 +1,9 @@
 .container {
-  color: var(--utrecht-page-header-color);
-  padding-inline-start: var(--utrecht-page-padding-inline-start);
-  padding-inline-end: var(--utrecht-page-padding-inline-end);
+  margin: auto;
+  box-sizing: border-box;
   max-inline-size: var(--utrecht-page-max-inline-size);
+  padding-inline-start: var(--utrecht-page-margin-inline-start);
+  padding-inline-end: var(--utrecht-page-margin-inline-end);
 }
 
 .container,
@@ -57,7 +58,6 @@
   overflow-y: scroll;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-
 
 .imageContainer {
   height: var(--utrecht-page-header-logo-max-height);
