@@ -15,6 +15,7 @@ import { getTableCell } from "./tableCell/getTableCell";
 import { getCode } from "./code/getCode";
 import { getAlert } from "./alert/getAlert";
 import { useGitHubDirectories } from "../useGitHubDirectories";
+import { getSvg } from "./svg/getSvg";
 
 export const useHtmlParser = (location: string) => {
   const { directories } = useGitHubDirectories();
@@ -81,6 +82,10 @@ export const useHtmlParser = (location: string) => {
 
       if (attribs && name === "td") {
         return getTableCell(props, children, options);
+      }
+
+      if (attribs && name === "svg") {
+        return getSvg(props, children, options);
       }
 
       if (attribs && (name === "code" || name === "pre")) {
