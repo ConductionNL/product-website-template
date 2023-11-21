@@ -1,0 +1,237 @@
+[
+  {
+    "title": "Contact",
+    "items": [
+      {
+        "ariaLabel": "Phone number",
+        "value": "+31 (0)85 3036840",
+        "link": "tel:+31 (0)85 3036840",
+        "icon": { "prefix": "fas", "icon": "phone", "placement": "left" }
+      },
+      {
+        "ariaLabel": "Email address",
+        "value": "info@conduction.nl",
+        "link": "mailto:info@conduction.nl",
+        "icon": { "prefix": "fas", "icon": "envelope", "placement": "left" }
+      },
+      {
+        "label": "Address",
+        "ariaLabel": "Address",
+        "value": "Lauriergracht 14h"
+      }
+    ]
+  },
+  {
+    "title": "Features",
+    "items": [
+      {
+        "ariaLabel": "API",
+        "value": "API",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "API"
+        }
+      },
+      {
+        "ariaLabel": "Action Handlers",
+        "value": "Action Handlers",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Action_handlers"
+        }
+      },
+      {
+        "ariaLabel": "Architecture",
+        "value": "Architecture",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Architecture"
+        }
+      },
+      {
+        "ariaLabel": "Authentication",
+        "value": "Authentication",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Authentication"
+        }
+      },
+      {
+        "ariaLabel": "Code Quality",
+        "value": "Code Quality",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Code_quality"
+        }
+      },
+      {
+        "ariaLabel": "Commands",
+        "value": "Commands",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Commands"
+        }
+      },
+      {
+        "ariaLabel": "Cronjobs",
+        "value": "Cronjobs",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Cronjobs"
+        }
+      },
+      {
+        "ariaLabel": "Datalayer",
+        "value": "Datalayer",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Datalayer"
+        }
+      },
+      {
+        "ariaLabel": "Design Decisions",
+        "value": "Design Decisions",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Design_decisions"
+        }
+      },
+      {
+        "ariaLabel": "Endpoints",
+        "value": "Endpoints",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Endpoints"
+        }
+      },
+      {
+        "ariaLabel": "Events",
+        "value": "Events",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Events"
+        }
+      },
+      {
+        "ariaLabel": "Features",
+        "value": "Features",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Features"
+        }
+      },
+      {
+        "ariaLabel": "Federalization",
+        "value": "Federalization",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Federalization"
+        }
+      },
+      {
+        "ariaLabel": "ImportExport",
+        "value": "ImportExport",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "ImportExport"
+        }
+      },
+      {
+        "ariaLabel": "Installation",
+        "value": "Installation",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Installation"
+        }
+      },
+      {
+        "ariaLabel": "Logging",
+        "value": "Logging",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Logging"
+        }
+      },
+      {
+        "ariaLabel": "Mappings",
+        "value": "Mappings",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Mappings"
+        }
+      },
+      {
+        "ariaLabel": "Monitoring",
+        "value": "Monitoring",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Monitoring"
+        }
+      },
+      {
+        "ariaLabel": "Notifications",
+        "value": "Notifications",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Notifications"
+        }
+      },
+      {
+        "ariaLabel": "Plugins",
+        "value": "Plugins",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Plugins"
+        }
+      },
+      {
+        "ariaLabel": "README",
+        "value": "README",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "README"
+        }
+      },
+      {
+        "ariaLabel": "Schemas",
+        "value": "Schemas",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Schemas"
+        }
+      },
+      {
+        "ariaLabel": "Security",
+        "value": "Security",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Security"
+        }
+      },
+      {
+        "ariaLabel": "Sources",
+        "value": "Sources",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Sources"
+        }
+      },
+      {
+        "ariaLabel": "Synchronizations",
+        "value": "Synchronizations",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Synchronizations"
+        }
+      },
+      {
+        "ariaLabel": "Twig",
+        "value": "Twig",
+        "markdownLink": {
+          "directoryName": "Features",
+          "fileName": "Twig"
+        }
+      }
+    ]
+  }
+]
