@@ -1,32 +1,148 @@
+.container {
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  max-inline-size: var(--utrecht-page-max-inline-size);
+  padding-inline-start: var(--utrecht-page-margin-inline-start);
+  padding-inline-end: var(--utrecht-page-margin-inline-end);
+}
+
 .footer {
-  --utrecht-unordered-list-item-padding-inline-start: 0;
-  --utrecht-unordered-list-padding-inline-start: 0;
-  --utrecht-unordered-list-item-margin-block-end: 0;
-  --utrecht-unordered-list-item-margin-block-start: 0;
+  display: flex;
   align-items: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: var(--utrecht-page-footer-background-size);
   background-position: var(--utrecht-page-footer-background-position);
   min-height: var(--utrecht-page-footer-min-height);
 }
 
-.list {
-  margin: auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  max-inline-size: var(--utrecht-page-max-inline-size);
+.imageContainer {
+  height: var(--utrecht-page-footer-logo-max-height);
+  width: var(--utrecht-page-footer-logo-max-width);
 }
 
-.list > .linksContainer > *:not(:last-child) {
-  margin-block-end: 16px;
+.image {
+  vertical-align: middle;
+  margin-inline-end: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.list > section > *:hover {
+.image:hover {
   cursor: pointer;
-  text-decoration: underline;
 }
 
-.list > section li::marker {
-  content: "" !important;
+.link:hover {
+  cursor: pointer;
+  color: var(--utrecht-page-footer-link-hover-color, inherit) !important;
+  text-decoration-line: var(
+    --utrecht-page-footer-link-hover-text-decoration,
+    inherit
+  ) !important;
+  text-decoration-thickness: var(
+    --utrecht-page-footer-link-hover-text-decoration-thickness,
+    inherit
+  ) !important;
+}
+
+.link {
+  color: var(--utrecht-page-footer-link-color, inherit) !important;
+  text-decoration-line: var(
+    --utrecht-page-footer-link-text-decoration,
+    inherit
+  ) !important;
+  text-decoration-color: var(
+    --utrecht-page-footer-link-text-decoration-color,
+    inherit
+  ) !important;
+  text-decoration-thickness: var(
+    --utrecht-page-footer-link-text-decoration-thickness,
+    inherit
+  ) !important;
+  text-underline-offset: var(
+    --utrecht-page-footer-link-text-underline-offset,
+    inherit
+  ) !important;
+}
+
+.withLoveConductionLink {
+  display: inline-block;
+}
+
+.withLoveConductionLink:hover {
+  margin-inline-start: 10px;
+}
+
+.withLoveLink:hover > :first-child {
+  transform: scale(1.2);
+}
+
+.withLoveLink > :first-child {
+  transition: all 1s;
+  transform-origin: 50% 50%;
+  margin-inline-end: unset;
+}
+
+.contentGrid {
+  gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dynamicSectionTitle {
+  margin-block-end: 18px !important;
+  color: var(--utrecht-page-footer-heading-color, inherit) !important;
+}
+
+.dynamicSectionContent {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 12px;
+}
+
+.logoAndConduction {
+  margin-top: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconLeft {
+  margin-inline-end: var(--utrecht-icon-gap);
+  color: var(--utrecht-page-footer-icon-color, inherit);
+}
+
+.iconRight {
+  margin-inline-start: var(--utrecht-icon-gap);
+  color: var(--utrecht-page-footer-icon-color, inherit);
+}
+
+@media only screen and (max-width: 992px) {
+  /* Tablet */
+  .contentGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  /* Mobile */
+  .footer {
+    background-position: var(
+      --utrecht-page-footer-mobile-background-position,
+      var(--utrecht-page-footer-background-position)
+    );
+  }
+
+  .contentGrid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .imageContainer {
+    margin-block-end: 15px;
+  }
+
+  .logoAndConduction {
+    display: block;
+  }
 }
