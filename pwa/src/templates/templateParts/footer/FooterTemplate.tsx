@@ -66,19 +66,15 @@ export const FooterTemplate: React.FC = () => {
     <PageFooter className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.contentGrid}>
-          {footerContent?.map((content, idx) => (
-            <DynamicSection key={idx} {...{ content }} />
-          ))}
+          {footerContent?.map((content, idx) => <DynamicSection key={idx} {...{ content }} />)}
         </div>
 
         <div className={styles.logoAndConduction}>
-          {window.sessionStorage.getItem("FOOTER_LOGO_URL") !== "false" && (
+          {process.env.GATSBY_FOOTER_LOGO_URL !== "false" && (
             <Logo
               variant="footer"
               onClick={() =>
-                window.sessionStorage.getItem("FOOTER_LOGO_HREF")
-                  ? open(window.sessionStorage.getItem("FOOTER_LOGO_HREF") ?? "")
-                  : navigate("/")
+                process.env.GATSBY_FOOTER_LOGO_HREF ? open(process.env.GATSBY_FOOTER_LOGO_HREF ?? "") : navigate("/")
               }
             />
           )}
@@ -95,7 +91,7 @@ const DynamicSection: React.FC<{ content: TDynamicContentItem }> = ({ content })
 
   return (
     <section>
-      <DynamicSectionHeading heading={window.sessionStorage.getItem("FOOTER_CONTENT_HEADER") ?? ""} {...{ content }} />
+      <DynamicSectionHeading heading={process.env.GATSBY_FOOTER_CONTENT_HEADER ?? ""} {...{ content }} />
 
       {content.items.map((item, idx) => (
         <div key={idx} className={styles.dynamicSectionContent}>

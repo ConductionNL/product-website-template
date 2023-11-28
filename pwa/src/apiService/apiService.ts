@@ -32,7 +32,7 @@ export default class APIService {
 
   public get FooterContentClient(): AxiosInstance {
     return axios.create({
-      baseURL: removeFileNameFromUrl(window.sessionStorage.getItem("FOOTER_CONTENT") ?? DEFAULT_FOOTER_CONTENT_URL),
+      baseURL: removeFileNameFromUrl(process.env.GATSBY_FOOTER_CONTENT ?? DEFAULT_FOOTER_CONTENT_URL),
     });
   }
 
