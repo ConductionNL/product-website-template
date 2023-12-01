@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as styles from "./Layout.module.css";
 import "../translations/i18n";
-import clsx from "clsx";
 import APIContext, { APIProvider } from "../apiService/apiContext";
 import APIService from "../apiService/apiService";
 import { defaultGlobalContext, GlobalProvider, IGlobalContext } from "../context/global";
