@@ -111,19 +111,30 @@
 .iconLeft {
   margin-inline-end: var(--utrecht-icon-gap);
   color: var(--utrecht-page-footer-icon-color, inherit);
+  fill: var(--utrecht-page-footer-icon-color, var(--utrecht-page-footer-color));
 }
 
 .iconRight {
   margin-inline-start: var(--utrecht-icon-gap);
   color: var(--utrecht-page-footer-icon-color, inherit);
-}
-
-.customIcon > svg > path {
   fill: var(--utrecht-page-footer-icon-color, var(--utrecht-page-footer-color));
 }
 
+.customIcon > svg > path {
+  fill: var(
+    --utrecht-page-footer-icon-color,
+    var(--utrecht-page-footer-link-color, var(--utrecht-page-footer-color))
+  );
+}
+
 a:hover .customIcon > svg > path {
-  fill: var(--utrecht-page-footer-link-hover-color, var(--utrecht-page-footer-color));
+  fill: var(
+    --utrecht-page-footer-icon-hover-color,
+    var(
+      --utrecht-page-footer-link-hover-color,
+      var(--utrecht-page-footer-color)
+    )
+  );
 }
 
 @media only screen and (max-width: 992px) {
