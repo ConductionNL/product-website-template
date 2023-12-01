@@ -1,3 +1,11 @@
+.headerContainer {
+  padding-block-start: unset !important;
+  margin-block-end: unset !important;
+  position: sticky;
+  top: 0;
+  background-color: var(--utrecht-page-header-background-color);
+}
+
 .headerMiddleBar {
   background-color: var(--conduction-primary-top-nav-background-color, inherit);
   box-shadow: 0px 10px 13px -14px #000000;
@@ -43,11 +51,6 @@
 
 .logoContainer > *:not(:last-child) {
   margin-inline-end: 24px;
-}
-
-.headerContainer {
-  padding-block-start: unset !important;
-  margin-block-end: unset !important;
 }
 
 @media only screen and (min-width: 992px) {
