@@ -9,7 +9,7 @@ import { Head } from "./Head";
 import { Content } from "../Content";
 import { Document, Surface } from "@utrecht/component-library-react/dist/css-module";
 import { Toaster } from "react-hot-toast";
-import { IconDefinition, IconPack, library, dom } from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition, IconPack, library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
@@ -32,8 +32,6 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   const [screenSize, setScreenSize] = React.useState<TScreenSize>("mobile");
 
   library.add(fas, fab as IconPack, far as IconPack, faReadTheDocs as IconDefinition);
-
-  dom.watch();
 
   React.useEffect(() => {
     // initiate API Service

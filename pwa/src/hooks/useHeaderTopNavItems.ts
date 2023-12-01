@@ -17,10 +17,6 @@ export type THeaderTopNavItem = {
   showToolTip?: boolean;
   handleClick?: {
     link: string;
-    setFilter?: {
-      filterKey: string;
-      value: string;
-    };
   };
 };
 
