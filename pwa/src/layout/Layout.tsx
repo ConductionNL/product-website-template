@@ -7,12 +7,18 @@ import APIService from "../apiService/apiService";
 import { defaultGlobalContext, GlobalProvider, IGlobalContext } from "../context/global";
 import { Head } from "./Head";
 import { Content } from "../Content";
-import { Document } from "@utrecht/component-library-react/dist/css-module";
+import { Document, Surface } from "@utrecht/component-library-react/dist/css-module";
 import { Toaster } from "react-hot-toast";
-import { IconPack, library } from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition, IconPack, library, dom } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
+import { TScreenSize } from "../context/gatsby";
+import { getScreenSize } from "../services/getScreenSize";
+import { faReadTheDocs } from "../assets/customIcons";
+import { ToolTip } from "@conduction/components";
+
+export const TOOLTIP_ID = "cb8f47c3-7151-4a46-954d-784a531b01e6";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,22 +29,34 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   const [API, setAPI] = React.useState<APIService>(React.useContext(APIContext));
   const [globalContext, setGlobalContext] = React.useState<IGlobalContext>(defaultGlobalContext);
+  const [screenSize, setScreenSize] = React.useState<TScreenSize>("mobile");
 
-  library.add(fas, fab as IconPack, far as IconPack);
+  library.add(fas, fab as IconPack, far as IconPack, faReadTheDocs as IconDefinition);
+
+  dom.watch();
 
   React.useEffect(() => {
+    // initiate API Service
     setAPI(new APIService());
-  }, [pageContext]);
+
+    // initiate screen size watcher
+    const handleWindowResize = () => {
+      setScreenSize(getScreenSize(window.innerWidth));
+    };
+    window.addEventListener("resize", handleWindowResize);
+
+    () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   React.useEffect(() => {
     setGlobalContext((context) => ({
       ...context,
       initiated: true,
       gatsby: {
-        ...{ pageContext, location, previousPath: location.pathname },
+        ...{ pageContext, location, previousPath: location.pathname, screenSize: getScreenSize(window.innerWidth) },
       },
     }));
-  }, [pageContext, location]);
+  }, [pageContext, location, screenSize]);
 
   if (!globalContext.initiated) return <></>;
 
@@ -47,13 +65,17 @@ const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
       <GlobalProvider value={[globalContext, setGlobalContext]}>
         <Head />
         <APIProvider value={API}>
-          <Document className={clsx(process.env.GATSBY_NL_DESIGN_THEME_CLASSNAME, styles.document)}>
-            <Toaster position="bottom-right" />
+          <Surface>
+            <Document>
+              <ToolTip id={TOOLTIP_ID} />
 
-            <div className={styles.container}>
-              <Content {...{ children }} />
-            </div>
-          </Document>
+              <Toaster position="bottom-right" />
+
+              <div className={styles.container}>
+                <Content {...{ children }} />
+              </div>
+            </Document>
+          </Surface>
         </APIProvider>
       </GlobalProvider>
     </>
