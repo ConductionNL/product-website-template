@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as styles from "./FooterTemplate.module.css";
 import parse from "html-react-parser";
+import clsx from "clsx";
 import {
   PageFooter,
   Link,
@@ -187,7 +188,7 @@ const ExternalLink: React.FC<LinkComponentProps> = ({ item }) => {
       aria-label={`${t(item.ariaLabel)}, ${t("Opens a new window")}`}
     >
       {item.customIcon && item.customIcon.placement === "left" && (
-        <Icon className={styles.iconLeft}>{parse(item.customIcon.icon)}</Icon>
+        <Icon className={clsx(styles.iconLeft, styles.customIcon)}>{parse(item.customIcon.icon)}</Icon>
       )}
 
       {item.icon && item.icon.placement === "left" && (
@@ -261,7 +262,7 @@ const InternalMarkdownLink: React.FC<LinkComponentProps> = ({ item }) => {
       )}
 
       {item.customIcon && item.customIcon.placement === "left" && (
-        <Icon className={styles.iconLeft}>{parse(item.customIcon.icon)}</Icon>
+        <Icon className={clsx(styles.iconLeft, styles.customIcon)}>{parse(item.customIcon.icon)}</Icon>
       )}
 
       {t(item.value)}
@@ -271,7 +272,7 @@ const InternalMarkdownLink: React.FC<LinkComponentProps> = ({ item }) => {
       )}
 
       {item.customIcon && item.customIcon.placement === "right" && (
-        <Icon className={styles.iconRight}>{parse(item.customIcon.icon)}</Icon>
+        <Icon className={clsx(styles.iconRight, styles.customIcon)}>{parse(item.customIcon.icon)}</Icon>
       )}
     </Link>
   );

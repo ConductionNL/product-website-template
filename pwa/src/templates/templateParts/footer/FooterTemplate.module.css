@@ -118,6 +118,14 @@
   color: var(--utrecht-page-footer-icon-color, inherit);
 }
 
+.customIcon > svg > path {
+  fill: var(--utrecht-page-footer-icon-color, var(--utrecht-page-footer-color));
+}
+
+a:hover .customIcon > svg > path {
+  fill: var(--utrecht-page-footer-link-hover-color, var(--utrecht-page-footer-color));
+}
+
 @media only screen and (max-width: 992px) {
   /* Tablet */
   .contentGrid {
