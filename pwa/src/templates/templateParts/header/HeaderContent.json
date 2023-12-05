@@ -1,0 +1,358 @@
+[
+  {
+    "label": "Home",
+    "type": "internal",
+    "current": {
+      "pathname": "/"
+    },
+    "handleClick": {
+      "link": "/"
+    }
+  },
+  {
+    "label": "Features",
+    "current": {
+      "pathname": "/Features"
+    },
+    "subItems": [
+      {
+        "label": "API",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/API"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "API"
+          }
+        }
+      },
+      {
+        "label": "Action Handlers",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Action_handlers"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Action_handlers"
+          }
+        }
+      },
+      {
+        "label": "Architecture",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Architecture"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Architecture"
+          }
+        }
+      },
+      {
+        "label": "Authentication",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Authentication"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Authentication"
+          }
+        }
+      },
+      {
+        "label": "Code Quality",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Code_quality"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Code_quality"
+          }
+        }
+      },
+      {
+        "label": "Commands",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Commands"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Commands"
+          }
+        }
+      },
+      {
+        "label": "Cronjobs",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Cronjobs"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Cronjobs"
+          }
+        }
+      },
+      {
+        "label": "Datalayer",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Datalayer"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Datalayer"
+          }
+        }
+      },
+      {
+        "label": "Design Decisions",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Design_decisions"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Design_decisions"
+          }
+        }
+      },
+      {
+        "label": "Endpoints",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Endpoints"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Endpoints"
+          }
+        }
+      },
+      {
+        "label": "Events",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Events"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Events"
+          }
+        }
+      },
+      {
+        "label": "Features",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Features"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Features"
+          }
+        }
+      },
+      {
+        "label": "Federalization",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Federalization"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Federalization"
+          }
+        }
+      },
+      {
+        "label": "ImportExport",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/ImportExport"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "ImportExport"
+          }
+        }
+      },
+      {
+        "label": "Installation",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Installation"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Installation"
+          }
+        }
+      },
+      {
+        "label": "Logging",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Logging"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Logging"
+          }
+        }
+      },
+      {
+        "label": "Mappings",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Mappings"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Mappings"
+          }
+        }
+      },
+      {
+        "label": "Monitoring",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Monitoring"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Monitoring"
+          }
+        }
+      },
+      {
+        "label": "Notifications",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Notifications"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Notifications"
+          }
+        }
+      },
+      {
+        "label": "Plugins",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Plugins"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Plugins"
+          }
+        }
+      },
+      {
+        "label": "README",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/README"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "README"
+          }
+        }
+      },
+      {
+        "label": "Schemas",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Schemas"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Schemas"
+          }
+        }
+      },
+      {
+        "label": "Security",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Security"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Security"
+          }
+        }
+      },
+      {
+        "label": "Sources",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Sources"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Sources"
+          }
+        }
+      },
+      {
+        "label": "Synchronizations",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Synchronizations"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Synchronizations"
+          }
+        }
+      },
+      {
+        "label": "Twig",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Twig"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Twig"
+          }
+        }
+      }
+    ]
+  }
+]
