@@ -75,7 +75,6 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
                 <Logo variant="navbar" />
               </div>
             }
-            layoutClassName={styles.test}
             items={topNavItems}
           />
         </Container>
