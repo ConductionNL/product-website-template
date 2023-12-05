@@ -16,7 +16,6 @@ export type THeaderTopNavItem = {
     };
   };
   icon?: JSX.Element;
-  showToolTip?: boolean;
   handleClick?: {
     link: string;
   };
@@ -38,8 +37,10 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
   React.useEffect(() => {
     if (!getHeaderContent.data) return;
 
-    const headerTopNavItems = [...getHeaderContent.data, ...(optionalData ?? [])].map((item: any) => {
-      const isCurrent = (current: any) => {
+    const rawHeaderTopNavItems = [...getHeaderContent.data, ...(optionalData ?? [])];
+
+    const headerTopNavItems = rawHeaderTopNavItems.map((item: any) => {
+      const getIsCurrent = (current: any) => {
         const prefixedPathname =
           process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true"
             ? `/${process.env.GATSBY_GITHUB_REPOSITORY_NAME}${current.pathname}`
@@ -86,7 +87,7 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
         }
       };
 
-      const setSubItems = (subItems: ITopNavItem[]) => {
+      const getSubItems = (subItems: ITopNavItem[]) => {
         if (!subItems) return;
         const subItemsArray: ITopNavItem[] = [];
 
@@ -94,7 +95,7 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
           subItemsArray.push({
             label: t(item.label),
             type: item.type,
-            current: item.current ? isCurrent(item.current) : false,
+            current: item.current ? getIsCurrent(item.current) : false,
             handleClick: () => getOnClick(item.handleClick, item.type, item.label),
           });
         });
@@ -108,9 +109,9 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
         label: t(item.label),
         type: item.type,
         icon: item.icon,
-        current: item.current ? isCurrent(item.current) : false,
+        current: item.current ? getIsCurrent(item.current) : false,
         handleClick: () => getOnClick(item.handleClick, item.type, item.label),
-        subItems: setSubItems(item.subItems),
+        subItems: getSubItems(item.subItems),
       };
     });
 

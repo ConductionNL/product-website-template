@@ -19,44 +19,46 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
 
   const optionalNavItems: THeaderTopNavItem[] = [];
 
-  process.env.GATSBY_READ_THE_DOCS_URL !== "false" &&
-    optionalNavItems.push({
-      label: t("Documentation"),
-      type: "external",
-      current: {
-        pathname: "/documentation",
-      },
-      handleClick: {
-        link: process.env.GATSBY_READ_THE_DOCS_URL ?? "",
-      },
-      icon: <FontAwesomeIcon icon={faReadTheDocs as IconDefinition} />,
-    });
+  React.useEffect(() => {
+    process.env.GATSBY_READ_THE_DOCS_URL !== "false" &&
+      optionalNavItems.push({
+        label: t("Documentation"),
+        type: "external",
+        current: {
+          pathname: "/documentation",
+        },
+        handleClick: {
+          link: process.env.GATSBY_READ_THE_DOCS_URL ?? "",
+        },
+        icon: <FontAwesomeIcon icon={faReadTheDocs as IconDefinition} />,
+      });
 
-  process.env.GATSBY_SLACK_URL !== "false" &&
-    optionalNavItems.push({
-      label: t("Slack"),
-      type: "external",
-      current: {
-        pathname: "/slack",
-      },
-      handleClick: {
-        link: process.env.GATSBY_SLACK_URL ?? "",
-      },
-      icon: <FontAwesomeIcon icon={faSlack} />,
-    });
+    process.env.GATSBY_SLACK_URL !== "false" &&
+      optionalNavItems.push({
+        label: t("Slack"),
+        type: "external",
+        current: {
+          pathname: "/slack",
+        },
+        handleClick: {
+          link: process.env.GATSBY_SLACK_URL ?? "",
+        },
+        icon: <FontAwesomeIcon icon={faSlack} />,
+      });
 
-  process.env.GATSBY_GITHUB_REPOSITORY_URL &&
-    optionalNavItems.push({
-      label: t("GitHub"),
-      type: "external",
-      current: {
-        pathname: "/github",
-      },
-      handleClick: {
-        link: process.env.GATSBY_GITHUB_REPOSITORY_URL ?? "",
-      },
-      icon: <FontAwesomeIcon icon={faGithub} />,
-    });
+    process.env.GATSBY_GITHUB_REPOSITORY_URL &&
+      optionalNavItems.push({
+        label: t("GitHub"),
+        type: "external",
+        current: {
+          pathname: "/github",
+        },
+        handleClick: {
+          link: process.env.GATSBY_GITHUB_REPOSITORY_URL ?? "",
+        },
+        icon: <FontAwesomeIcon icon={faGithub} />,
+      });
+  }, []);
 
   const { topNavItems } = useHeaderTopNavItems(optionalNavItems);
 

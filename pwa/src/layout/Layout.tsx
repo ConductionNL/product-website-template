@@ -12,8 +12,6 @@ import { IconDefinition, IconPack, library } from "@fortawesome/fontawesome-svg-
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
-import { TScreenSize } from "../context/gatsby";
-import { getScreenSize } from "../services/getScreenSize";
 import { faReadTheDocs } from "../assets/customIcons";
 import { ToolTip } from "@conduction/components";
 
@@ -28,32 +26,22 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, pageContext, location }) => {
   const [API, setAPI] = React.useState<APIService>(React.useContext(APIContext));
   const [globalContext, setGlobalContext] = React.useState<IGlobalContext>(defaultGlobalContext);
-  const [screenSize, setScreenSize] = React.useState<TScreenSize>("mobile");
 
   library.add(fas, fab as IconPack, far as IconPack, faReadTheDocs as IconDefinition);
 
   React.useEffect(() => {
-    // initiate API Service
     setAPI(new APIService());
-
-    // initiate screen size watcher
-    const handleWindowResize = () => {
-      setScreenSize(getScreenSize(window.innerWidth));
-    };
-    window.addEventListener("resize", handleWindowResize);
-
-    () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+  }, [pageContext]);
 
   React.useEffect(() => {
     setGlobalContext((context) => ({
       ...context,
       initiated: true,
       gatsby: {
-        ...{ pageContext, location, previousPath: location.pathname, screenSize: getScreenSize(window.innerWidth) },
+        ...{ pageContext, location, previousPath: location.pathname },
       },
     }));
-  }, [pageContext, location, screenSize]);
+  }, [pageContext, location]);
 
   if (!globalContext.initiated) return <></>;
 
