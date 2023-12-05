@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { DEFAULT_FOOTER_CONTENT_URL } from "../templates/templateParts/footer/FooterTemplate";
 import { removeFileNameFromUrl } from "../services/FileNameFromUrl";
-import { DEFAULT_HEADER_CONTENT_URL } from "../templates/templateParts/header/HeaderTemplate";
+import footerDefaults from "../templates/templateParts/footer/Defaults.json"
+import headerDefaults from "../templates/templateParts/header/Defaults.json"
 import toast from "react-hot-toast";
 
 // Resources
@@ -34,13 +34,13 @@ export default class APIService {
 
   public get FooterContentClient(): AxiosInstance {
     return axios.create({
-      baseURL: removeFileNameFromUrl(process.env.GATSBY_FOOTER_CONTENT ?? DEFAULT_FOOTER_CONTENT_URL),
+      baseURL: removeFileNameFromUrl(process.env.GATSBY_FOOTER_CONTENT ?? footerDefaults.FOOTER_CONTENT_URL),
     });
   }
 
   public get HeaderContentClient(): AxiosInstance {
     return axios.create({
-      baseURL: removeFileNameFromUrl(process.env.GATSBY_HEADER_CONTENT ?? DEFAULT_HEADER_CONTENT_URL),
+      baseURL: removeFileNameFromUrl(process.env.GATSBY_HEADER_CONTENT ?? headerDefaults.HEADER_CONTENT_URL),
     });
   }
 

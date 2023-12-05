@@ -1,9 +1,9 @@
 import * as React from "react";
-import { useQuery } from "react-query";
 import APIService from "../apiService/apiService";
 import APIContext from "../apiService/apiContext";
+import headerDefaults from "../templates/templateParts/header/Defaults.json";
+import { useQuery } from "react-query";
 import { getFileNameFromUrl } from "../services/FileNameFromUrl";
-import { DEFAULT_HEADER_CONTENT_URL } from "../templates/templateParts/header/HeaderTemplate";
 
 export const useHeaderContent = () => {
   const API: APIService | null = React.useContext(APIContext);
@@ -11,7 +11,7 @@ export const useHeaderContent = () => {
   const fileName = getFileNameFromUrl(
     process.env.GATSBY_HEADER_CONTENT !== undefined && process.env.GATSBY_HEADER_CONTENT.length !== 0
       ? process.env.GATSBY_HEADER_CONTENT
-      : DEFAULT_HEADER_CONTENT_URL,
+      : headerDefaults.HEADER_CONTENT_URL,
   );
 
   const getContent = () =>

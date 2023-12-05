@@ -5,17 +5,10 @@ import { useTranslation } from "react-i18next";
 import { Container, Logo, PrimaryTopNav } from "@conduction/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { useGatsbyContext } from "../../../context/gatsby";
 import { PageHeader } from "@utrecht/component-library-react";
-import { ITopNavItem } from "@conduction/components/lib/components/topNav/primaryTopNav/PrimaryTopNav";
-import { useHeaderContent } from "../../../hooks/headerContent";
 import { THeaderTopNavItem, useHeaderTopNavItems } from "../../../hooks/useHeaderTopNavItems";
 import { faGithub, faSlack } from "@fortawesome/free-brands-svg-icons";
 import { faReadTheDocs } from "../../../assets/customIcons";
-import { TOOLTIP_ID } from "../../../layout/Layout";
-
-export const DEFAULT_HEADER_CONTENT_URL =
-  "https://raw.githubusercontent.com/ConductionNL/product-website-template/f62359452725aa45c94a348b13d041af63646503/pwa/src/templates/templateParts/header/HeaderContent.json";
 
 interface HeaderTemplateProps {
   layoutClassName?: string;
@@ -23,11 +16,6 @@ interface HeaderTemplateProps {
 
 export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName }) => {
   const { t } = useTranslation();
-  const [topNavItems, setTopNavItems] = React.useState<ITopNavItem[]>([]);
-  const { gatsbyContext } = useGatsbyContext();
-
-  const _useHeaderContent = useHeaderContent();
-  const getHeaderContent = _useHeaderContent.getContent();
 
   const optionalNavItems: THeaderTopNavItem[] = [];
 
@@ -70,13 +58,7 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
       icon: <FontAwesomeIcon icon={faGithub} />,
     });
 
-  const { headerTopNavItems } = useHeaderTopNavItems(
-    getHeaderContent.isSuccess && getHeaderContent.data.concat(optionalNavItems),
-  );
-
-  React.useEffect(() => {
-    setTopNavItems(headerTopNavItems);
-  }, [gatsbyContext.location.pathname, gatsbyContext.pageContext?.breadcrumb.crumbs]);
+  const { topNavItems } = useHeaderTopNavItems(optionalNavItems);
 
   return (
     <PageHeader className={clsx(styles.headerContainer, layoutClassName && layoutClassName)}>
@@ -91,7 +73,6 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
                 <Logo variant="navbar" />
               </div>
             }
-            tooltipId={TOOLTIP_ID}
             layoutClassName={styles.test}
             items={topNavItems}
           />

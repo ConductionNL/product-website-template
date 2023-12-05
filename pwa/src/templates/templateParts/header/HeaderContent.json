@@ -34,7 +34,6 @@
         "current": {
           "pathname": "/Features/Action_handlers"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -48,7 +47,6 @@
         "current": {
           "pathname": "/Features/Architecture"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -62,7 +60,6 @@
         "current": {
           "pathname": "/Features/Authentication"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -76,7 +73,6 @@
         "current": {
           "pathname": "/Features/Code_quality"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -90,7 +86,6 @@
         "current": {
           "pathname": "/Features/Commands"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -104,7 +99,6 @@
         "current": {
           "pathname": "/Features/Cronjobs"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -118,7 +112,6 @@
         "current": {
           "pathname": "/Features/Datalayer"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -132,7 +125,6 @@
         "current": {
           "pathname": "/Features/Design_decisions"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -146,7 +138,6 @@
         "current": {
           "pathname": "/Features/Endpoints"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -160,7 +151,6 @@
         "current": {
           "pathname": "/Features/Events"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -174,7 +164,6 @@
         "current": {
           "pathname": "/Features/Features"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -188,7 +177,6 @@
         "current": {
           "pathname": "/Features/Federalization"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -202,7 +190,6 @@
         "current": {
           "pathname": "/Features/ImportExport"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -216,7 +203,6 @@
         "current": {
           "pathname": "/Features/Installation"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -230,7 +216,6 @@
         "current": {
           "pathname": "/Features/Logging"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -244,7 +229,6 @@
         "current": {
           "pathname": "/Features/Mappings"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -258,7 +242,6 @@
         "current": {
           "pathname": "/Features/Monitoring"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -272,7 +255,6 @@
         "current": {
           "pathname": "/Features/Notifications"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -286,7 +268,6 @@
         "current": {
           "pathname": "/Features/Plugins"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -300,7 +281,6 @@
         "current": {
           "pathname": "/Features/README"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -314,7 +294,6 @@
         "current": {
           "pathname": "/Features/Schemas"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -328,7 +307,6 @@
         "current": {
           "pathname": "/Features/Security"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -342,7 +320,6 @@
         "current": {
           "pathname": "/Features/Sources"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
@@ -356,7 +333,6 @@
         "current": {
           "pathname": "/Features/Synchronizations"
         },
-        "showToolTip": "true",
         "handleClick": {
           "internalMarkdown": {
             "directoryName": "Features",
