@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as styles from "./FooterTemplate.module.css";
 import parse from "html-react-parser";
+import clsx from "clsx";
 import {
   PageFooter,
   Link,
@@ -18,9 +19,6 @@ import { useTranslation } from "react-i18next";
 import { Logo } from "@conduction/components";
 import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
 import { useFooterContent } from "../../../hooks/footerContent";
-
-export const DEFAULT_FOOTER_CONTENT_URL =
-  "https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/footer/FooterContent.json";
 
 type TDynamicContentItem = {
   title: string;
@@ -66,19 +64,15 @@ export const FooterTemplate: React.FC = () => {
     <PageFooter className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.contentGrid}>
-          {footerContent?.map((content, idx) => (
-            <DynamicSection key={idx} {...{ content }} />
-          ))}
+          {footerContent?.map((content, idx) => <DynamicSection key={idx} {...{ content }} />)}
         </div>
 
         <div className={styles.logoAndConduction}>
-          {window.sessionStorage.getItem("FOOTER_LOGO_URL") !== "false" && (
+          {process.env.GATSBY_FOOTER_LOGO_URL !== "false" && (
             <Logo
               variant="footer"
               onClick={() =>
-                window.sessionStorage.getItem("FOOTER_LOGO_HREF")
-                  ? open(window.sessionStorage.getItem("FOOTER_LOGO_HREF") ?? "")
-                  : navigate("/")
+                process.env.GATSBY_FOOTER_LOGO_HREF ? open(process.env.GATSBY_FOOTER_LOGO_HREF ?? "") : navigate("/")
               }
             />
           )}
@@ -95,7 +89,7 @@ const DynamicSection: React.FC<{ content: TDynamicContentItem }> = ({ content })
 
   return (
     <section>
-      <DynamicSectionHeading heading={window.sessionStorage.getItem("FOOTER_CONTENT_HEADER") ?? ""} {...{ content }} />
+      <DynamicSectionHeading heading={process.env.GATSBY_FOOTER_CONTENT_HEADER ?? ""} {...{ content }} />
 
       {content.items.map((item, idx) => (
         <div key={idx} className={styles.dynamicSectionContent}>
@@ -191,7 +185,7 @@ const ExternalLink: React.FC<LinkComponentProps> = ({ item }) => {
       aria-label={`${t(item.ariaLabel)}, ${t("Opens a new window")}`}
     >
       {item.customIcon && item.customIcon.placement === "left" && (
-        <Icon className={styles.iconLeft}>{parse(item.customIcon.icon)}</Icon>
+        <Icon className={clsx(styles.iconLeft, styles.customIcon)}>{parse(item.customIcon.icon)}</Icon>
       )}
 
       {item.icon && item.icon.placement === "left" && (
@@ -265,7 +259,7 @@ const InternalMarkdownLink: React.FC<LinkComponentProps> = ({ item }) => {
       )}
 
       {item.customIcon && item.customIcon.placement === "left" && (
-        <Icon className={styles.iconLeft}>{parse(item.customIcon.icon)}</Icon>
+        <Icon className={clsx(styles.iconLeft, styles.customIcon)}>{parse(item.customIcon.icon)}</Icon>
       )}
 
       {t(item.value)}
@@ -275,7 +269,7 @@ const InternalMarkdownLink: React.FC<LinkComponentProps> = ({ item }) => {
       )}
 
       {item.customIcon && item.customIcon.placement === "right" && (
-        <Icon className={styles.iconRight}>{parse(item.customIcon.icon)}</Icon>
+        <Icon className={clsx(styles.iconRight, styles.customIcon)}>{parse(item.customIcon.icon)}</Icon>
       )}
     </Link>
   );
