@@ -33,7 +33,7 @@
   object-fit: contain;
 }
 
-  @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   /* Mobile */
   .container {
     display: block;
