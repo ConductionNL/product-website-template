@@ -7,7 +7,7 @@ import { useGatsbyContext } from "../context/gatsby";
 
 export const Head: React.FC = () => {
   const { gatsbyContext } = useGatsbyContext();
-  const theme = "zutphen-theme" ?? "conduction-theme";
+  const theme = process.env.GATSBY_NL_DESIGN_THEME_CLASSNAME ?? "conduction-theme";
 
   return (
     <Helmet
