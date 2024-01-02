@@ -32,7 +32,8 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
   getHeaderContent.isSuccess && getHeaderContent.data.concat(optionalData);
 
   // For development
-  // const getHeaderContent = {data: require("../templates/templateParts/header/HeaderContent.json")};
+  // const getHeaderContent = { data: require("../templates/templateParts/header/HeaderContent.json") };
+  // getHeaderContent.data.concat(optionalData);
 
   React.useEffect(() => {
     if (!getHeaderContent.data) return;

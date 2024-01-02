@@ -9,6 +9,7 @@ import { PageHeader } from "@utrecht/component-library-react";
 import { THeaderTopNavItem, useHeaderTopNavItems } from "../../../hooks/useHeaderTopNavItems";
 import { faGithub, faSlack } from "@fortawesome/free-brands-svg-icons";
 import { faReadTheDocs } from "../../../assets/customIcons";
+import { Breadcrumbs } from "../../../components/breadcrumbs/Breadcrumbs";
 
 interface HeaderTemplateProps {
   layoutClassName?: string;
@@ -63,22 +64,26 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
   const { topNavItems } = useHeaderTopNavItems(optionalNavItems);
 
   return (
-    <PageHeader className={clsx(styles.headerContainer, layoutClassName && layoutClassName)}>
-      <div className={styles.headerMiddleBar}>
-        <Container layoutClassName={styles.primaryNavContainer}>
-          <div className={clsx(styles.logoContainer, styles.logoDesktop)}>
-            <Logo variant="navbar" />
-          </div>
-          <PrimaryTopNav
-            mobileLogo={
-              <div className={clsx(styles.logoContainer, styles.logoMobile)}>
-                <Logo variant="navbar" />
-              </div>
-            }
-            items={topNavItems}
-          />
-        </Container>
-      </div>
-    </PageHeader>
+    <>
+      <PageHeader className={clsx(styles.headerContainer, layoutClassName && layoutClassName)}>
+        <div className={styles.headerMiddleBar}>
+          <Container layoutClassName={styles.primaryNavContainer}>
+            <div className={clsx(styles.logoContainer, styles.logoDesktop)}>
+              <Logo variant="navbar" />
+            </div>
+            <PrimaryTopNav
+              mobileLogo={
+                <div className={clsx(styles.logoContainer, styles.logoMobile)}>
+                  <Logo variant="navbar" />
+                </div>
+              }
+              items={topNavItems}
+            />
+          </Container>
+        </div>
+      </PageHeader>
+
+      <Breadcrumbs />
+    </>
   );
 };
