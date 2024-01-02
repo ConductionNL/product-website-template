@@ -2,10 +2,13 @@ import * as React from "react";
 import * as styles from "./JumbotronTemplate.module.css";
 import { Image } from "@utrecht/component-library-react/dist/css-module";
 import { Heading1, Paragraph, Page, PageContent } from "@utrecht/component-library-react/dist/css-module";
+import { useTranslation } from "react-i18next";
 
 export const JumbotronTemplate: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className={styles.wrapper}>
+    <div aria-label={t("Jumbotron")} role="contentinfo" className={styles.wrapper}>
       <Page>
         <PageContent>
           <div className={styles.container}>

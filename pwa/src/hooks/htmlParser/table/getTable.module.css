@@ -1,3 +1,4 @@
 .table {
   background-color: var(--utrecht-table-background-color) !important;
+  border-collapse: var(--utrecht-table-border-collapse);
 }
