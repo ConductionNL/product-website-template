@@ -16,22 +16,16 @@ export const Breadcrumbs: React.FC = () => {
   const { gatsbyContext } = useGatsbyContext();
 
   const pageSlugLabel = () => {
-    if (process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true") {
-      const stringLabel = location.pathname.split("/")[3];
-      return stringLabel?.replaceAll("_", " ");
-    }
+    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 3 : 2;
 
-    const stringLabel = location.pathname.split("/")[2];
+    const stringLabel = location.pathname.split("/")[splitNumber];
     return stringLabel?.replaceAll("_", " ");
   };
 
   const detailPageSlugLabel = () => {
-    if (process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true") {
-      const stringLabel = location.pathname.split("/")[4];
-      return stringLabel?.replaceAll("_", " ");
-    }
+    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 4 : 3;
 
-    const stringLabel = location.pathname.split("/")[3];
+    const stringLabel = location.pathname.split("/")[splitNumber];
     return stringLabel?.replaceAll("_", " ");
   };
 
