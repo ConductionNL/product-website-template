@@ -9,22 +9,16 @@
         "icon": { "prefix": "fas", "icon": "home", "placement": "left" }
       },
       {
-        "ariaLabel": "Documentation",
-        "value": "Documentation",
-        "link": "https://commongateway.readthedocs.io/en/latest/",
-        "icon": { "prefix": "fab", "icon": "readthedocs", "placement": "left" }
-      },
-      {
-        "ariaLabel": "Slack",
-        "value": "Slack",
-        "link": "#",
-        "icon": { "prefix": "fab", "icon": "slack", "placement": "left" }
-      },
-      {
         "ariaLabel": "Github",
         "value": "Github",
-        "link": "https://github.com/CommonGateway/CoreBundle",
+        "link": "https://github.com/ConductionNL/product-website-template",
         "icon": { "prefix": "fab", "icon": "github", "placement": "left" }
+      },
+      {
+        "ariaLabel": "Roadmap",
+        "value": "Roadmap",
+        "link": "/pages/Roadmap",
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       }
     ]
   },
@@ -32,212 +26,66 @@
     "title": "Features",
     "items": [
       {
-        "ariaLabel": "API",
-        "value": "API",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "API"
-        }
-      },
-      {
-        "ariaLabel": "Action Handlers",
-        "value": "Action Handlers",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Action_handlers"
-        }
-      },
-      {
-        "ariaLabel": "Architecture",
-        "value": "Architecture",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Architecture"
-        }
-      },
-      {
-        "ariaLabel": "Authentication",
-        "value": "Authentication",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Authentication"
-        }
-      },
-      {
-        "ariaLabel": "Code Quality",
-        "value": "Code Quality",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Code_quality"
-        }
-      },
-      {
-        "ariaLabel": "Commands",
-        "value": "Commands",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Commands"
-        }
-      },
-      {
-        "ariaLabel": "Cronjobs",
-        "value": "Cronjobs",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Cronjobs"
-        }
-      },
-      {
-        "ariaLabel": "Datalayer",
-        "value": "Datalayer",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Datalayer"
-        }
-      },
-      {
-        "ariaLabel": "Design Decisions",
-        "value": "Design Decisions",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Design_decisions"
-        }
-      },
-      {
-        "ariaLabel": "Endpoints",
-        "value": "Endpoints",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Endpoints"
-        }
-      },
-      {
-        "ariaLabel": "Events",
-        "value": "Events",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Events"
-        }
-      },
-      {
-        "ariaLabel": "Features",
-        "value": "Features",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Features"
-        }
-      },
-      {
-        "ariaLabel": "Federalization",
-        "value": "Federalization",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Federalization"
-        }
-      },
-      {
-        "ariaLabel": "ImportExport",
-        "value": "ImportExport",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "ImportExport"
-        }
-      },
-      {
-        "ariaLabel": "Installation",
-        "value": "Installation",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Installation"
-        }
-      },
-      {
-        "ariaLabel": "Logging",
-        "value": "Logging",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Logging"
-        }
-      },
-      {
-        "ariaLabel": "Mappings",
-        "value": "Mappings",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Mappings"
-        }
-      },
-      {
-        "ariaLabel": "Monitoring",
-        "value": "Monitoring",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Monitoring"
-        }
-      },
-      {
-        "ariaLabel": "Notifications",
-        "value": "Notifications",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Notifications"
-        }
-      },
-      {
-        "ariaLabel": "Plugins",
-        "value": "Plugins",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Plugins"
-        }
-      },
-      {
-        "ariaLabel": "README",
+        "ariaLabel": "Features README",
         "value": "README",
-        "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "README"
-        }
+        "link": "/pages/Features",
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {
-        "ariaLabel": "Schemas",
-        "value": "Schemas",
+        "ariaLabel": "Dynamic Content",
+        "value": "Dynamic Content",
         "internalMarkdown": {
           "directoryName": "Features",
-          "fileName": "Schemas"
-        }
+          "fileName": "Dynamic_content"
+        },
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {
-        "ariaLabel": "Security",
-        "value": "Security",
+        "ariaLabel": "Dynamic Menu",
+        "value": "Dynamic Menu",
         "internalMarkdown": {
           "directoryName": "Features",
-          "fileName": "Security"
-        }
+          "fileName": "Dynamic_menu"
+        },
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {
-        "ariaLabel": "Sources",
-        "value": "Sources",
+        "ariaLabel": "Jumbotron",
+        "value": "Jumbotron",
         "internalMarkdown": {
           "directoryName": "Features",
-          "fileName": "Sources"
-        }
+          "fileName": "Jumbotron"
+        },
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {
-        "ariaLabel": "Synchronizations",
-        "value": "Synchronizations",
+        "ariaLabel": "NL Design",
+        "value": "NL Design",
         "internalMarkdown": {
           "directoryName": "Features",
-          "fileName": "Synchronizations"
-        }
+          "fileName": "NL_Design"
+        },
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
+      }
+    ]
+  },
+  {
+    "title": "Usecases",
+    "items": [
+      {
+        "ariaLabel": "Usecases README",
+        "value": "README",
+        "link": "/pages/Usecases",
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {
-        "ariaLabel": "Twig",
-        "value": "Twig",
+        "ariaLabel": "Serverless",
+        "value": "Serverless",
         "internalMarkdown": {
-          "directoryName": "Features",
-          "fileName": "Twig"
-        }
+          "directoryName": "Usecases",
+          "fileName": "Serverless"
+        },
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       }
     ]
   },

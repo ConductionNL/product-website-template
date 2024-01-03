@@ -56,7 +56,7 @@ export const FooterTemplate: React.FC = () => {
 
   // For development
   // React.useEffect(() => {
-  //   const data = require("./FooterContent.json");
+  //   const data = require("../../../data/DevFooterContent.json");
   //   setFooterContent(data);
   // }, []);
 

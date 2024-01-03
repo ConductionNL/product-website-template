@@ -8,6 +8,7 @@ import { navigate } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import { isHomepage } from "../../services/isHomepage";
 
 export const Breadcrumbs: React.FC = () => {
   const { t } = useTranslation();
@@ -15,11 +16,21 @@ export const Breadcrumbs: React.FC = () => {
   const { gatsbyContext } = useGatsbyContext();
 
   const pageSlugLabel = () => {
+    if (process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true") {
+      const stringLabel = location.pathname.split("/")[3];
+      return stringLabel?.replaceAll("_", " ");
+    }
+
     const stringLabel = location.pathname.split("/")[2];
     return stringLabel?.replaceAll("_", " ");
   };
 
   const detailPageSlugLabel = () => {
+    if (process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true") {
+      const stringLabel = location.pathname.split("/")[4];
+      return stringLabel?.replaceAll("_", " ");
+    }
+
     const stringLabel = location.pathname.split("/")[3];
     return stringLabel?.replaceAll("_", " ");
   };
@@ -43,7 +54,7 @@ export const Breadcrumbs: React.FC = () => {
     navigate(pathname);
   };
 
-  if (gatsbyContext.location.pathname !== "/")
+  if (!isHomepage(gatsbyContext.location.pathname))
     return (
       <Container layoutClassName={styles.breadcrumbsContainer}>
         <BreadcrumbNav className={styles.breadcrumbs} label={t("Breadcrumbs")}>
