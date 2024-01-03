@@ -3,14 +3,13 @@ name: Deploy the Product Page to GitHub Pages
 env: # Change these to your preferences any image url can also be a base encoded image
   GITHUB_PAGES_BRANCH: gh-pages
 
-  # options: "true" | "false"
-  USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX: "true"
-
   # Connected Repository
   GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
+  # options: "true" | "false"
+  USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX: "true"
   GITHUB_REPOSITORY_URL: ${{ github.event.repository.url }}
   GITHUB_API_BASE_URL: https://api.github.com/repos/${{ github.repository }}/contents
-  GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"},{"name": "Roadmap", "location": "/docs/roadmap"}]'
+  GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'
 
   # Links
   SLACK_URL: "https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg"
@@ -62,8 +61,8 @@ jobs:
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v2.0
         with:
-          envkey_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX: ${{ env.USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX }}
-          envkey_GITHUB_REPOSITORY_NAME: ${{ env.GITHUB_REPOSITORY_NAME }}
+          envkey_GATSBY_GITHUB_REPOSITORY_NAME: ${{ env.GITHUB_REPOSITORY_NAME }}
+          envkey_GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX: ${{ env.USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX }}
           envkey_GATSBY_GITHUB_REPOSITORY_URL: ${{ env.GITHUB_REPOSITORY_URL }}
           envkey_GATSBY_GITHUB_API_BASE_URL: ${{ env.GITHUB_API_BASE_URL }}
           envkey_GATSBY_GITHUB_DOCS_DIRECTORY_PATHS: ${{ env.GITHUB_DOCS_DIRECTORY_PATHS }}
