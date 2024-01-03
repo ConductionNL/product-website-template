@@ -19,7 +19,7 @@ env: # Change these to your preferences any image url can also be a base encoded
   NAVBAR_LOGO_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"
 
   # Header
-  HEADER_CONTENT: "https://raw.githubusercontent.com/ConductionNL/product-website-template/f62359452725aa45c94a348b13d041af63646503/pwa/src/templates/templateParts/header/HeaderContent.json"
+  HEADER_CONTENT: "https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/header/HeaderContent.json"
 
   # Footer
   # options: "true" | "false"
