@@ -75,29 +75,25 @@ You can configure the Product Website template through the workflow yaml file, s
 env: # Change these to your preferences any image url can also be a base encoded image
   GITHUB_PAGES_BRANCH: gh-pages
 
-  # Connected Repository
-  GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
   # options: "true" | "false"
   USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX: "true"
+
+  # Connected Repository
+  GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
   GITHUB_REPOSITORY_URL: ${{ github.event.repository.url }}
   GITHUB_API_BASE_URL: https://api.github.com/repos/${{ github.repository }}/contents
-  GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'
+  GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}]'
 
   # Links
-  SLACK_URL: "https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg"
-  READ_THE_DOCS_URL: "https://commongateway.readthedocs.io/en/latest/"
+  SLACK_URL: "false"
+  READ_THE_DOCS_URL: "false"
 
   # Navbar
   NAVBAR_LOGO_URL: "https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"
 
-  # Header
-  HEADER_CONTENT: "https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/header/HeaderContent.json"
-
   # Footer
-  # options: "true" | "false"
-  FOOTER_LOGO: "true"
+  FOOTER_LOGO_URL: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICAgICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgd2lkdGg9IjcxLjAwMDAwMHB0IiBoZWlnaHQ9IjcwLjAwMDAwMHB0IiB2aWV3Qm94PSIwIDAgNzEuMDAwMDAwIDcwLjAwMDAwMCIKICAgICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0Ij4KCiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCw3MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCiAgICAgICBmaWxsPSIjNDM3NkZDIiBzdHJva2U9Im5vbmUiPgogICAgICAgIDxwYXRoIGQ9Ik0yMTggNTkyIGwtMTM3IC03NyAwIC0xNjUgMCAtMTY1IDEzMSAtNzQgYzcyIC00MSAxMzcgLTc0IDE0MyAtNzQgNgowIDcwIDMzIDE0MyA3NCBsMTMxIDc0IDEgMTY1IDAgMTY1IC02OCAzNyBjLTM3IDIxIC05OSA1NiAtMTM3IDc3IGwtNzEgNDAKLTEzNiAtNzd6IG0yOTUgLTg1IGw1NyAtMzIgMCAtMTI1IDAgLTEyNSAtMTA2IC02MCBjLTU4IC0zMyAtMTA4IC02MCAtMTExCi01OSAtMyAwIC01MiAyNyAtMTA5IDYwIGwtMTAzIDU5IDAgMTI1IDAgMTI1IDEwNyA2MSAxMDcgNjIgNTAgLTI5IGMyNyAtMTYKNzYgLTQ0IDEwOCAtNjJ6Ii8+CiAgICAgICAgPHBhdGggZD0iTTI3OCA0NzIgbC02OCAtMzcgMCAtODUgMCAtODUgNzMgLTM5IDczIC0zOSA2MiAzNCBjMzQgMTggNjIgMzcgNjIKNDEgMCA0IC0xNCAxNSAtMzEgMjMgLTI4IDE1IC0zMyAxNSAtNTQgMSAtMzEgLTIwIC00NiAtMjAgLTg0IDIgLTI3IDE1IC0zMQoyMiAtMzEgNjIgMCA0MCA0IDQ3IDMxIDYzIDM4IDIxIDUzIDIxIDg0IDEgMjEgLTE0IDI2IC0xNCA1NCAxIDE3IDggMzEgMTkgMzEKMjMgMCA4IC0xMTMgNzIgLTEyNiA3MiAtNSAwIC0zOSAtMTcgLTc2IC0zOHoiLz4KICAgIDwvZz4KPC9zdmc+Cg=="
   FOOTER_LOGO_HREF: "https://conduction.nl"
-  FOOTER_CONTENT: "https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/footer/FooterContent.json"
 
   # Jumbotron
   JUMBOTRON_TITLE: "Product Website Template"
@@ -105,38 +101,36 @@ env: # Change these to your preferences any image url can also be a base encoded
   JUMBOTRON_DESCRIPTION: ${{ github.event.repository.description }}
   JUMBOTRON_SVG: "https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"
 
+  # NL-Design Theme
+  NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
+
   # Other
   FAVICON_URL: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICAgICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgd2lkdGg9IjcxLjAwMDAwMHB0IiBoZWlnaHQ9IjcwLjAwMDAwMHB0IiB2aWV3Qm94PSIwIDAgNzEuMDAwMDAwIDcwLjAwMDAwMCIKICAgICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0Ij4KCiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCw3MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCiAgICAgICBmaWxsPSIjNDM3NkZDIiBzdHJva2U9Im5vbmUiPgogICAgICAgIDxwYXRoIGQ9Ik0yMTggNTkyIGwtMTM3IC03NyAwIC0xNjUgMCAtMTY1IDEzMSAtNzQgYzcyIC00MSAxMzcgLTc0IDE0MyAtNzQgNgowIDcwIDMzIDE0MyA3NCBsMTMxIDc0IDEgMTY1IDAgMTY1IC02OCAzNyBjLTM3IDIxIC05OSA1NiAtMTM3IDc3IGwtNzEgNDAKLTEzNiAtNzd6IG0yOTUgLTg1IGw1NyAtMzIgMCAtMTI1IDAgLTEyNSAtMTA2IC02MCBjLTU4IC0zMyAtMTA4IC02MCAtMTExCi01OSAtMyAwIC01MiAyNyAtMTA5IDYwIGwtMTAzIDU5IDAgMTI1IDAgMTI1IDEwNyA2MSAxMDcgNjIgNTAgLTI5IGMyNyAtMTYKNzYgLTQ0IDEwOCAtNjJ6Ii8+CiAgICAgICAgPHBhdGggZD0iTTI3OCA0NzIgbC02OCAtMzcgMCAtODUgMCAtODUgNzMgLTM5IDczIC0zOSA2MiAzNCBjMzQgMTggNjIgMzcgNjIKNDEgMCA0IC0xNCAxNSAtMzEgMjMgLTI4IDE1IC0zMyAxNSAtNTQgMSAtMzEgLTIwIC00NiAtMjAgLTg0IDIgLTI3IDE1IC0zMQoyMiAtMzEgNjIgMCA0MCA0IDQ3IDMxIDYzIDM4IDIxIDUzIDIxIDg0IDEgMjEgLTE0IDI2IC0xNCA1NCAxIDE3IDggMzEgMTkgMzEKMjMgMCA4IC0xMTMgNzIgLTEyNiA3MiAtNSAwIC0zOSAtMTcgLTc2IC0zOHoiLz4KICAgIDwvZz4KPC9zdmc+Cg=="
-  PAGE_TITLE: "Common Gateway"
-
-  # NL Design Theme
-  NL_DESIGN_THEME_CLASSNAME: "conduction-theme"
+  PAGE_TITLE: "Product Page"
 ```
 
 We currently support the following configurations option's
 
-| Variable Name                               | Default Value                                                                                                                                                  | Optional Values and Their Use                                                                                               |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `GITHUB_PAGES_BRANCH`                       | `gh-pages`                                                                                                                                                     | The branch that GitHub Pages will build to.                                                                                 |
-| `GITHUB_REPOSITORY_NAME`                    | `${{ github.event.repository.name }}`                                                                                                                          | The name of your GitHub repository.                                                                                         |
-| `USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX` | `true`                                                                                                                                                         | Uses the repository name as the Gatsby URL prefix, options: `"true"` or `"false"`                                           |
-| `GITHUB_REPOSITORY_URL`                     | `${{ github.event.repository.url }}`                                                                                                                           | The URL of your GitHub repository.                                                                                          |
-| `GITHUB_API_BASE_URL`                       | `https://api.github.com/repos/${{ github.repository }}/contents`                                                                                               | The base URL for the GitHub API.                                                                                            |
-| `GITHUB_DOCS_DIRECTORY_PATHS`               | `'[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'` | The paths to the directories containing your documentation.                                                                 |
-| `SLACK_URL`                                 | `"false"`                                                                                                                                                      | The URL for your Slack workspace. If left `"false"` then the Slack link will not be shown.                                  |
-| `READ_THE_DOCS_URL`                         | `"false"`                                                                                                                                                      | The URL for your Read the Docs documentation. If left `"false"` then the documentation link will not be shown.              |
-| `NAVBAR_LOGO_URL`                           | `"https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"`                                                                              | The URL for the logo in your navbar.                                                                                        |
-| `HEADER_CONTENT`                            | `"https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/header/HeaderContent.json"`                     | The URL for the content of your navbar.                                                                                     |
-| `FOOTER_LOGO`                               | `"true"`                                                                                                                                                       | Shows your logo in the footer, options: `"true"` or `"false"`                                                               |
-| `FOOTER_LOGO_HREF`                          | `"https://conduction.nl"`                                                                                                                                      | The URL that the footer logo links to.                                                                                      |
-| `FOOTER_CONTENT`                            | `"https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/footer/FooterContent.json"`                     | The URL for the content of your footer.                                                                                     |
-| `JUMBOTRON_TITLE`                           | `"Product Website Template"`                                                                                                                                   | The title in your jumbotron. If you do not alter this it wil display the repository name                                    |
-| `JUMBOTRON_SUBTITLE`                        | `${{ github.event.repository.url }}`                                                                                                                           | The subtitle in your jumbotron. If you do not alter this it wil display the repository url                                  |
-| `JUMBOTRON_DESCRIPTION`                     | `${{ github.event.repository.description }}`                                                                                                                   | The description in your jumbotron. If you do not alter this it wil display the repository description                       |
-| `JUMBOTRON_SVG`                             | `"https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"`                                                               | The SVG in your jumbotron.                                                                                                  |
-| `FAVICON_URL`                               | `"data:image/svg+xml;base64,..."`                                                                                                                              | The URL for your favicon.                                                                                                   |
-| `PAGE_TITLE`                                | `"Product Page"`                                                                                                                                               | The title of your page. The title of the page wil allways look like `"PAGE_TITLE(Product Page)" \| "{page_location}(Home)"` |
-| `NL_DESIGN_THEME_CLASSNAME`                 | `"conduction-theme"`                                                                                                                                           | The classname for your NL Design theme.                                                                                     |
+| Variable Name                               | Default Value                                                                                    | Optional Values and Their Use                                                                                               |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `GITHUB_PAGES_BRANCH`                       | `gh-pages`                                                                                       | The branch that GitHub Pages will build to.                                                                                 |
+| `USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX` | `true`                                                                                           | Uses the repository name as the Gatsby URL prefix, options: `"true"` or `"false"`                                           |
+| `GITHUB_REPOSITORY_NAME`                    | `${{ github.event.repository.name }}`                                                            | The name of your GitHub repository.                                                                                         |
+| `GITHUB_REPOSITORY_URL`                     | `${{ github.event.repository.url }}`                                                             | The URL of your GitHub repository.                                                                                          |
+| `GITHUB_API_BASE_URL`                       | `https://api.github.com/repos/${{ github.repository }}/contents`                                 | The base URL for the GitHub API.                                                                                            |
+| `GITHUB_DOCS_DIRECTORY_PATHS`               | `'[{\"name\": \"Features\", \"location\": \"/docs/features\"}]'`                                 | The paths to the directories containing your documentation.                                                                 |
+| `SLACK_URL`                                 | `"false"`                                                                                        | The URL for your Slack workspace. If left `"false"` then the Slack link will not be shown.                                  |
+| `READ_THE_DOCS_URL`                         | `"false"`                                                                                        | The URL for your Read the Docs documentation. If left `"false"` then the documentation link will not be shown.              |
+| `NAVBAR_LOGO_URL`                           | `"https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png"`                | The URL for the logo in your navbar.                                                                                        |
+| `FOOTER_LOGO_URL`                           | `"data:image/svg+xml;base64,..."`                                                                | The URL for the logo in your footer.                                                                                        |
+| `FOOTER_LOGO_HREF`                          | `"https://conduction.nl"`                                                                        | The URL that the footer logo links to.                                                                                      |
+| `JUMBOTRON_TITLE`                           | `"Product Website Template"`                                                                     | The title in your jumbotron. If you do not alter this it wil display the repository name                                    |
+| `JUMBOTRON_SUBTITLE`                        | `${{ github.event.repository.url }}`                                                             | The subtitle in your jumbotron. If you do not alter this it wil display the repository url                                  |
+| `JUMBOTRON_DESCRIPTION`                     | `${{ github.event.repository.description }}`                                                     | The description in your jumbotron. If you do not alter this it wil display the repository description                       |
+| `JUMBOTRON_SVG`                             | `"https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"` | The SVG in your jumbotron.                                                                                                  |
+| `NL_DESIGN_THEME_CLASSNAME`                 | `"conduction-theme"`                                                                             | The classname for your NL Design theme.                                                                                     |
+| `FAVICON_URL`                               | `"data:image/svg+xml;base64,..."`                                                                | The URL for your favicon.                                                                                                   |
+| `PAGE_TITLE`                                | `"Product Page"`                                                                                 | The title of your page. The title of the page wil allways look like `"PAGE_TITLE(Product Page)" \| "{page_location}(Home)"` |
 
 ## Conclusion
 
