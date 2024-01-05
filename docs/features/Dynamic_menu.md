@@ -14,18 +14,51 @@ By leveraging the dynamic menu, you can create a user-friendly navigation system
 Dynamic menu items can be passed to the 
 ````json
 [
-  {
-    "name": "Features", 
-    "location": "/docs/features"
+ {
+    "label": "Home",
+    "type": "internal",
+    "current": {
+      "pathname": "/"
+    },
+    "handleClick": {
+      "link": "/"
+    }
   },
   {
-    "name": "Roadmap", 
-    "location": "/docs/roadmap"
-  }
+    "label": "Roadmap",
+    "type": "internal",
+    "current": {
+      "pathname": "/pages/Roadmap"
+    },
+    "handleClick": {
+      "link": "/pages/Roadmap"
+    }
+  },
+   {
+    "label": "Features",
+    "current": {
+      "pathname": "/pages/Features"
+    },
+    "subItems": [
+      {
+        "label": "README",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/pages/Features/README"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "README"
+          }
+        }
+      },
+    ]
+   }
 ]
 ````
 
 Keep in mind that in order to actually pass the json configuraiton trough the worflow yaml it needs to be both stringified and put to one line.
 ````yaml
-  GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"},{"name": "Roadmap", "location": "/docs/roadmap"}]'
+  GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'
 ````
