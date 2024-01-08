@@ -84,7 +84,7 @@ env: # Change these to your preferences any image url can also be a base encoded
   GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'
 
   # Links
-  SLACK_URL: "https://join.slack.com/t/conductionworkspace/shared_invite/zt-1y5kerime-amWEvljvnLvo5S3YfU_jzg"
+  SLACK_URL: "https://slack.com/"
   READ_THE_DOCS_URL: "https://commongateway.readthedocs.io/en/latest/"
 
   # Navbar
