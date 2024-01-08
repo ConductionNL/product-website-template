@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import clsx from "clsx";
 import { useHtmlParser } from "../../hooks/htmlParser/useHtmlParser";
+import _ from "lodash";
 
 interface ParsedHTMLProps {
   contentQuery: UseQueryResult<any, Error>;
@@ -33,6 +34,8 @@ export const ParsedHTML: React.FC<ParsedHTMLProps> = ({ contentQuery, location, 
         </Alert>
       </div>
     );
+
+  if (_.isArray(contentQuery.data)) return;
 
   return (
     <div className={clsx(styles.container, layoutClassName && layoutClassName)}>
