@@ -23,7 +23,7 @@ jobs:
           read_the_docs_url: https://commongateway.readthedocs.io/en/latest/
           navbar_content: "https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/header/HeaderContent.json"
           footer_show_logo: true
-          footer_logo_url: https://conduction.nl
+          footer_logo_href: https://conduction.nl
           footer_content: "https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/footer/FooterContent.json"
           footer_content_header: "heading-3"
           jumbotron_title: "Product Website Template"
