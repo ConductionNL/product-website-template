@@ -13,10 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create an Open Catalogi page
+      - name: Create the Product Page
         uses: OpenCatalogi/productpage-action@1.0.8
         with:
-          github_repository_name_as_prefix: false
+          github_repository_name_as_prefix: true
           nl_design_theme_classname: "commonground-theme"
           pull_from_branche: "development"
           footer_content: "https://raw.githubusercontent.com/ConductionNL/product-website-template/main/pwa/src/templates/templateParts/footer/FooterContent.json"
