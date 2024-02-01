@@ -40,7 +40,7 @@ export default class APIService {
 
   public get HeaderContentClient(): AxiosInstance {
     return axios.create({
-      baseURL: removeFileNameFromUrl(process.env.GATSBY_HEADER_CONTENT ?? headerDefaults.HEADER_CONTENT_URL),
+      baseURL: removeFileNameFromUrl(process.env.GATSBY_NAVBAR_CONTENT ?? headerDefaults.NAVBAR_CONTENT_URL),
     });
   }
 

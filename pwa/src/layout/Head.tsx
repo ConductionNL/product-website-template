@@ -18,7 +18,7 @@ export const Head: React.FC = () => {
       <title>{`${process.env.GATSBY_PAGE_TITLE ? `${process.env.GATSBY_PAGE_TITLE}` : "Product Page"} | ${
         getPageTitle(gatsbyContext.pageContext?.breadcrumb.crumbs, gatsbyContext.location) ?? "Error"
       }`}</title>
-      <link rel="icon" type="svg" href={process.env.GATSBY_FAVICON_URL} />
+      <link rel="icon" type="svg" href={process.env.GATSBY_FAVICON_IMAGE} />
     </Helmet>
   );
 };
