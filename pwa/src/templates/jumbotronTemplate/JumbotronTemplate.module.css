@@ -1,5 +1,6 @@
 .wrapper {
-  padding-block: 48px;
+  padding-block-start: 48px;
+  padding-block-end: 48px;
   background-color: var(--utrecht-page-header-background-color) !important;
 }
 
@@ -33,8 +34,19 @@
   object-fit: contain;
 }
 
+@media only screen and (max-width: 992px) {
+  /* Tablet */
+  .wrapper {
+    padding-block-start: 120px;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   /* Mobile */
+  .wrapper {
+    padding-block-start: 72px;
+  }
+
   .container {
     display: block;
   }
