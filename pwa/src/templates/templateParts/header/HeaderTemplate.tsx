@@ -2,6 +2,7 @@ import * as React from "react";
 import * as styles from "./HeaderTemplate.module.css";
 import clsx from "clsx";
 import _ from "lodash";
+import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { Container, Logo, PrimaryTopNav } from "@conduction/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -74,12 +75,12 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
         <div className={styles.headerMiddleBar}>
           <Container layoutClassName={styles.primaryNavContainer}>
             <div className={clsx(styles.logoContainer, styles.logoDesktop)}>
-              <Logo variant="navbar" />
+              <Logo onClick={() => navigate("/")} variant="navbar" />
             </div>
             <PrimaryTopNav
               mobileLogo={
                 <div className={clsx(styles.logoContainer, styles.logoMobile)}>
-                  <Logo variant="navbar" />
+                  <Logo onClick={() => navigate("/")} variant="navbar" />
                 </div>
               }
               items={topNavItems}

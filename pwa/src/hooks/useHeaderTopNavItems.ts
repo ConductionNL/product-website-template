@@ -32,6 +32,7 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
   getHeaderContent.isSuccess && getHeaderContent.data.concat(optionalData);
 
   // For development
+  // optionalData may not be visible during initialization while developing
   // const getHeaderContent = { data: require("../data/DevHeaderContent.json") };
   // getHeaderContent.data.concat(optionalData);
 
@@ -83,7 +84,7 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
 
         if (!onClick.link && onClick.internalMarkdown) {
           if (type === "internalMarkdown") {
-            navigate(`/pages/${onClick.internalMarkdown.directoryName}/${onClick.internalMarkdown.fileName}`);
+            navigate(`/${onClick.internalMarkdown.directoryName}/${onClick.internalMarkdown.fileName}`);
           }
         }
       };

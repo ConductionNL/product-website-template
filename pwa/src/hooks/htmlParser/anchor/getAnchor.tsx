@@ -57,7 +57,7 @@ const handleInternalLinks = (props: any, targetFile: string, location: string, d
   // Internal Links: same directory
   if (!props.href.includes("/")) {
     const targetDirectory = _.upperFirst(location.split("/").reverse()[1]);
-    navigate(`/pages/${targetDirectory}/${targetFile}`);
+    navigate(`/${targetDirectory}/${targetFile}`);
 
     return; // ensure no other flow is triggered
   }
@@ -66,7 +66,7 @@ const handleInternalLinks = (props: any, targetFile: string, location: string, d
   if (props.href.includes("/") && location === "/") {
     const directoryFound = directories.some((directory) => directory.location === props.href);
 
-    if (directoryFound) navigate(`/pages/${targetFile}`);
+    if (directoryFound) navigate(`/${targetFile}`);
 
     return; // ensure no other flow is triggered
   }
@@ -80,7 +80,7 @@ const handleInternalLinks = (props: any, targetFile: string, location: string, d
 
     // Internal Link exists: redirect to page
     if (directoryFound) {
-      navigate(`/pages/${_.upperFirst(targetDirectory)}/${targetFile}`);
+      navigate(`/${_.upperFirst(targetDirectory)}/${targetFile}`);
     }
 
     // Internal Link does not exist: redirect to online GitHub environment (TODO)
