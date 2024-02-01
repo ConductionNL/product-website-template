@@ -261,12 +261,12 @@ const InternalMarkdownLink: React.FC<LinkComponentProps> = ({ item }) => {
     <Link
       className={styles.link}
       onClick={(e: any) => {
-        e.preventDefault(), navigate(`/pages/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`);
+        e.preventDefault(), navigate(`/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`);
       }}
       tabIndex={0}
       aria-label={`${t(item.ariaLabel)}, ${t(item.internalMarkdown)}`}
       role="button"
-      href={`/pages/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`}
+      href={`/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`}
     >
       {item.icon && item.icon.placement === "left" && (
         <FontAwesomeIcon className={styles.iconLeft} icon={[item.icon.prefix, item.icon.icon]} />
