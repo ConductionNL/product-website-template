@@ -16,7 +16,7 @@ export const Breadcrumbs: React.FC = () => {
   const { gatsbyContext } = useGatsbyContext();
 
   const pageSlugLabel = () => {
-    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 3 : 1;
+    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 2 : 1;
 
     const stringLabel = location.pathname.split("/")[splitNumber];
     return stringLabel?.replaceAll("_", " ");
