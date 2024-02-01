@@ -17,7 +17,7 @@
       {
         "ariaLabel": "Roadmap",
         "value": "Roadmap",
-        "link": "/pages/Roadmap",
+        "link": "/Roadmap",
         "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       }
     ]
@@ -28,7 +28,7 @@
       {
         "ariaLabel": "Features README",
         "value": "README",
-        "link": "/pages/Features",
+        "link": "/Features",
         "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {
@@ -75,7 +75,7 @@
       {
         "ariaLabel": "Usecases README",
         "value": "README",
-        "link": "/pages/Usecases",
+        "link": "/Usecases",
         "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {

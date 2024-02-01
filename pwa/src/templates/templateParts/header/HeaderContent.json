@@ -13,23 +13,23 @@
     "label": "Roadmap",
     "type": "internal",
     "current": {
-      "pathname": "/pages/Roadmap"
+      "pathname": "/Roadmap"
     },
     "handleClick": {
-      "link": "/pages/Roadmap"
+      "link": "/Roadmap"
     }
   },
   {
     "label": "Features",
     "current": {
-      "pathname": "/pages/Features"
+      "pathname": "/Features"
     },
     "subItems": [
       {
         "label": "README",
         "type": "internalMarkdown",
         "current": {
-          "pathname": "/pages/Features/README"
+          "pathname": "/Features/README"
         },
         "handleClick": {
           "internalMarkdown": {
