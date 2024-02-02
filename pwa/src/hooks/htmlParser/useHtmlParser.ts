@@ -61,7 +61,7 @@ export const useHtmlParser = (location: string) => {
       }
 
       if (attribs && name === "img") {
-        return getImage(props);
+        return getImage(props, parent);
       }
 
       if (attribs && name === "blockquote") {
