@@ -1,6 +1,6 @@
 import { Image } from "@utrecht/component-library-react/dist/css-module";
 
-export const getImage = (props: any) => {
+export const getImage = (props: any, parent: any) => {
   let src = props.src;
 
   if (!props.src.includes("https://" || "http://")) {
@@ -24,8 +24,13 @@ export const getImage = (props: any) => {
     alt,
     href: "",
     onClick: (e: MouseEvent) => {
-      e.stopPropagation();
-      open(src);
+      if (parent.name === "a") {
+        e.preventDefault();
+      }
+      if (parent.name !== "a") {
+        e.stopPropagation();
+        open(src);
+      }
     },
   };
   return <Image {...attributes} />;

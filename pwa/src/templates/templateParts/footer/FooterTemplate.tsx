@@ -16,7 +16,7 @@ import { navigate } from "gatsby-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
-import { Logo } from "@conduction/components";
+import { Logo as LogoComponent } from "@conduction/components";
 import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
 import { useFooterContent } from "../../../hooks/footerContent";
 
@@ -56,7 +56,7 @@ export const FooterTemplate: React.FC = () => {
 
   // For development
   // React.useEffect(() => {
-  //   const data = require("./FooterContent.json");
+  //   const data = require("../../../data/DevFooterContent.json");
   //   setFooterContent(data);
   // }, []);
 
@@ -68,15 +68,7 @@ export const FooterTemplate: React.FC = () => {
         </div>
 
         <div className={styles.logoAndConduction}>
-          {process.env.GATSBY_FOOTER_LOGO_URL !== "false" && (
-            <Logo
-              variant="footer"
-              onClick={() =>
-                process.env.GATSBY_FOOTER_LOGO_HREF ? open(process.env.GATSBY_FOOTER_LOGO_HREF ?? "") : navigate("/")
-              }
-            />
-          )}
-
+          <Logo />
           <WithLoveByConduction />
         </div>
       </div>
@@ -130,7 +122,29 @@ const DynamicSectionHeading: React.FC<{ content: TDynamicContentItem; heading?: 
   }
 };
 
+const Logo: React.FC = () => {
+  if (process.env.GATSBY_FOOTER_SHOW_LOGO === "false") return <></>;
+
+  const { t } = useTranslation();
+
+  return (
+    <div className={styles.imageContainer}>
+      <LogoComponent
+        onClick={() =>
+          process.env.envkey_GATSBY_FOOTER_LOGO_HREF
+            ? open(process.env.envkey_GATSBY_FOOTER_LOGO_HREF ?? "/")
+            : navigate("/")
+        }
+        aria-label={`${t("Footer-logo")}, ${t("Can open a new window")}`}
+        variant="footer"
+      />
+    </div>
+  );
+};
+
 const WithLoveByConduction: React.FC = () => {
+  if (process.env.GATSBY_FOOTER_SHOW_CREATOR === "false") return <></>;
+
   const { t } = useTranslation();
 
   return (
@@ -247,12 +261,12 @@ const InternalMarkdownLink: React.FC<LinkComponentProps> = ({ item }) => {
     <Link
       className={styles.link}
       onClick={(e: any) => {
-        e.preventDefault(), navigate(`/pages/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`);
+        e.preventDefault(), navigate(`/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`);
       }}
       tabIndex={0}
       aria-label={`${t(item.ariaLabel)}, ${t(item.internalMarkdown)}`}
       role="button"
-      href={`/pages/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`}
+      href={`/${item.internalMarkdown.directoryName}/${item.internalMarkdown.fileName}`}
     >
       {item.icon && item.icon.placement === "left" && (
         <FontAwesomeIcon className={styles.iconLeft} icon={[item.icon.prefix, item.icon.icon]} />

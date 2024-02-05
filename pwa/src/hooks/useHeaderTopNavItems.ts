@@ -32,7 +32,9 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
   getHeaderContent.isSuccess && getHeaderContent.data.concat(optionalData);
 
   // For development
-  // const getHeaderContent = {data: require("../templates/templateParts/header/HeaderContent.json")};
+  // optionalData may not be visible during initialization while developing
+  // const getHeaderContent = { data: require("../data/DevHeaderContent.json") };
+  // getHeaderContent.data.concat(optionalData);
 
   React.useEffect(() => {
     if (!getHeaderContent.data) return;
@@ -82,7 +84,7 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
 
         if (!onClick.link && onClick.internalMarkdown) {
           if (type === "internalMarkdown") {
-            navigate(`/pages/${onClick.internalMarkdown.directoryName}/${onClick.internalMarkdown.fileName}`);
+            navigate(`/${onClick.internalMarkdown.directoryName}/${onClick.internalMarkdown.fileName}`);
           }
         }
       };

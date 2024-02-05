@@ -1,0 +1,37 @@
+.breadcrumbsContainer {
+  margin-block-start: 96px;
+  padding-block-start: 14px;
+  padding-block-end: 14px;
+}
+
+.breadcrumbs {
+  background-color: var(--utrecht-breadcrumb-nav-background-color);
+  border-radius: var(--utrecht-breadcrumb-nav-border-radius);
+}
+
+.breadcrumbNavLink:hover {
+  --utrecht-link-hover-color: var(
+    --utrecht-breadcrumb-link-hover-color
+  ) !important;
+}
+
+.breadcrumbDisabled {
+  color: var(--utrecht-link-placeholder-color, #eff4f6) !important;
+}
+
+.breadcrumbDisabled:hover {
+  color: var(--utrecht-link-placeholder-color, #eff4f6) !important;
+  user-select: none !important;
+}
+
+.breadcrumbs > ol {
+  align-items: baseline;
+}
+
+@media only screen and (min-width: 992px) {
+  .breadcrumbsContainer {
+    margin-block-start: 14px;
+    padding-block-start: 14px;
+    padding-block-end: 14px;
+  }
+}

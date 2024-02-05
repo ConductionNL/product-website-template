@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as styles from "./HeaderTemplate.module.css";
 import clsx from "clsx";
+import _ from "lodash";
+import { navigate } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { Container, Logo, PrimaryTopNav } from "@conduction/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +11,7 @@ import { PageHeader } from "@utrecht/component-library-react";
 import { THeaderTopNavItem, useHeaderTopNavItems } from "../../../hooks/useHeaderTopNavItems";
 import { faGithub, faSlack } from "@fortawesome/free-brands-svg-icons";
 import { faReadTheDocs } from "../../../assets/customIcons";
+import { Breadcrumbs } from "../../../components/breadcrumbs/Breadcrumbs";
 
 interface HeaderTemplateProps {
   layoutClassName?: string;
@@ -17,11 +20,13 @@ interface HeaderTemplateProps {
 export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName }) => {
   const { t } = useTranslation();
 
-  const optionalNavItems: THeaderTopNavItem[] = [];
+  const [optionalNavItems, setOptionalNavItems] = React.useState<THeaderTopNavItem[]>([]);
 
   React.useEffect(() => {
+    let optionalNavItemsArray: THeaderTopNavItem[] = [];
+
     process.env.GATSBY_READ_THE_DOCS_URL !== "false" &&
-      optionalNavItems.push({
+      optionalNavItemsArray.push({
         label: t("Documentation"),
         type: "external",
         current: {
@@ -34,7 +39,7 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
       });
 
     process.env.GATSBY_SLACK_URL !== "false" &&
-      optionalNavItems.push({
+      optionalNavItemsArray.push({
         label: t("Slack"),
         type: "external",
         current: {
@@ -46,8 +51,8 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
         icon: <FontAwesomeIcon icon={faSlack} />,
       });
 
-    process.env.GATSBY_GITHUB_REPOSITORY_URL &&
-      optionalNavItems.push({
+    process.env.GATSBY_GITHUB_REPOSITORY_URL !== "false" &&
+      optionalNavItemsArray.push({
         label: t("GitHub"),
         type: "external",
         current: {
@@ -58,27 +63,33 @@ export const HeaderTemplate: React.FC<HeaderTemplateProps> = ({ layoutClassName 
         },
         icon: <FontAwesomeIcon icon={faGithub} />,
       });
+
+    setOptionalNavItems(optionalNavItemsArray);
   }, []);
 
-  const { topNavItems } = useHeaderTopNavItems(optionalNavItems);
+  const { topNavItems } = useHeaderTopNavItems(_.uniqBy(optionalNavItems, "label"));
 
   return (
-    <PageHeader className={clsx(styles.headerContainer, layoutClassName && layoutClassName)}>
-      <div className={styles.headerMiddleBar}>
-        <Container layoutClassName={styles.primaryNavContainer}>
-          <div className={clsx(styles.logoContainer, styles.logoDesktop)}>
-            <Logo variant="navbar" />
-          </div>
-          <PrimaryTopNav
-            mobileLogo={
-              <div className={clsx(styles.logoContainer, styles.logoMobile)}>
-                <Logo variant="navbar" />
-              </div>
-            }
-            items={topNavItems}
-          />
-        </Container>
-      </div>
-    </PageHeader>
+    <>
+      <PageHeader className={clsx(styles.headerContainer, layoutClassName && layoutClassName)}>
+        <div className={styles.headerMiddleBar}>
+          <Container layoutClassName={styles.primaryNavContainer}>
+            <div className={clsx(styles.logoContainer, styles.logoDesktop)}>
+              <Logo onClick={() => navigate("/")} variant="navbar" />
+            </div>
+            <PrimaryTopNav
+              mobileLogo={
+                <div className={clsx(styles.logoContainer, styles.logoMobile)}>
+                  <Logo onClick={() => navigate("/")} variant="navbar" />
+                </div>
+              }
+              items={topNavItems}
+            />
+          </Container>
+        </div>
+      </PageHeader>
+
+      <Breadcrumbs />
+    </>
   );
 };
