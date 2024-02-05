@@ -16,28 +16,28 @@ export const Breadcrumbs: React.FC = () => {
   const { gatsbyContext } = useGatsbyContext();
 
   const pageSlugLabel = () => {
-    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 3 : 2;
+    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 2 : 1;
 
     const stringLabel = location.pathname.split("/")[splitNumber];
     return stringLabel?.replaceAll("_", " ");
   };
 
   const detailPageSlugLabel = () => {
-    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 4 : 3;
+    const splitNumber = process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true" ? 3 : 2;
 
     const stringLabel = location.pathname.split("/")[splitNumber];
     return stringLabel?.replaceAll("_", " ");
   };
 
   const translatedCrumbs = gatsbyContext.pageContext.breadcrumb.crumbs.map((crumb: any) => {
-    if (crumb.pathname === "/pages/[pageSlug]") {
-      return { ...crumb, crumbLabel: t(pageSlugLabel()), pathname: `/pages/${t(pageSlugLabel())}` };
+    if (crumb.pathname === "/[pageSlug]") {
+      return { ...crumb, crumbLabel: t(pageSlugLabel()), pathname: `/${t(pageSlugLabel())}` };
     }
-    if (crumb.pathname === "/pages/[pageSlug]/[detailPageSlug]") {
+    if (crumb.pathname === "/[pageSlug]/[detailPageSlug]") {
       return {
         ...crumb,
         crumbLabel: t(detailPageSlugLabel()),
-        pathname: `/pages/${t(pageSlugLabel())}/${t(detailPageSlugLabel())}`,
+        pathname: `/${t(pageSlugLabel())}/${t(detailPageSlugLabel())}`,
       };
     } else return { ...crumb, crumbLabel: t(_.upperFirst(crumb.crumbLabel)) };
   });

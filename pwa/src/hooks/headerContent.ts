@@ -9,9 +9,9 @@ export const useHeaderContent = () => {
   const API: APIService | null = React.useContext(APIContext);
 
   const fileName = getFileNameFromUrl(
-    process.env.GATSBY_HEADER_CONTENT !== undefined && process.env.GATSBY_HEADER_CONTENT.length !== 0
-      ? process.env.GATSBY_HEADER_CONTENT
-      : headerDefaults.HEADER_CONTENT_URL,
+    process.env.GATSBY_NAVBAR_CONTENT !== undefined && process.env.GATSBY_NAVBAR_CONTENT.length !== 0
+      ? process.env.GATSBY_NAVBAR_CONTENT
+      : headerDefaults.NAVBAR_CONTENT_URL,
   );
 
   const getContent = () =>

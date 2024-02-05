@@ -21,7 +21,7 @@ export const JumbotronTemplate: React.FC = () => {
             </div>
 
             <Image
-              src={process.env.GATSBY_JUMBOTRON_SVG}
+              src={process.env.GATSBY_JUMBOTRON_IMAGE}
               alt={`${process.env.GATSBY_JUMBOTRON_TITLE}-image`}
               className={styles.image}
             />
