@@ -11,6 +11,9 @@ export const Head: React.FC = () => {
 
   return (
     <Helmet
+      htmlAttributes={{
+        lang: "nl-NL",
+      }}
       bodyAttributes={{
         class: theme,
       }}
