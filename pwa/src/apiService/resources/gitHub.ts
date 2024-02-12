@@ -11,6 +11,10 @@ export default class GitHub {
   }
 
   public getContent = async (filePath: string): Promise<any> => {
+    // For Development
+    // To test edited documentation paste name of the branch with the edited documentation
+    // filePath += `?ref=feature/example`;
+
     const { data } = await this._send(this._instance, "GET", filePath);
 
     return data;
