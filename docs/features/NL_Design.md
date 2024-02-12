@@ -41,10 +41,15 @@ The Product Website Template can be configured with any and all NL Design themes
 | Bodegraven             | `"bodegraven-theme"`      |
 | Borne                  | `"borne-theme"`           |
 | Buren                  | `"buren-theme"`           |
+| Commonground           | `"commonground-theme"`    |
 | Demodam                | `"demodam-theme"`         |
+| Dimpact                | `"dimpact-theme"`         |
+| Dinkelland             | `"dinkelland-theme"`      |
 | Drechterland           | `"drechterland-theme"`    |
 | Duiven                 | `"duiven-theme"`          |
 | Enkhuizen              | `"enkhuizen-theme"`       |
+| Epe                    | `"epe-theme"`             |
+| Gouda                  | `"gouda-theme"`           |
 | Groningen              | `"groningen-theme"`       |
 | Haarlem                | `"haarlem-theme"`         |
 | Haarlemmermeer         | `"haarlemmermeer-theme"`  |
@@ -53,14 +58,21 @@ The Product Website Template can be configured with any and all NL Design themes
 | Leiden                 | `"leiden-theme"`          |
 | Leidschendam Voorburg  | `"leidschendam-theme"`    |
 | Nijmegen               | `"nijmegen-theme"`        |
+| Noaberkracht           | `"noaberkracht-theme"`    |
 | Noordoostpolder        | `"noordoostpolder-theme"` |
+| Noordwijk              | `"noordwijk-theme"`       |
 | Provincie Zuid Holland | `"pzh-theme"`             |
 | Rotterdam              | `"rotterdam-theme"`       |
+| Sloterburg             | `"sloterburg-theme"`      |
 | Stedebroec             | `"stedebroec-theme"`      |
 | Tilburg                | `"tilburg-theme"`         |
+| Tubbergen              | `"tubbergen-theme"`       |
 | Utrecht                | `"utrecht-theme"`         |
 | Venray                 | `"venray-theme"`          |
 | Vught                  | `"vught-theme"`           |
 | Westervoort            | `"westervoort-theme"`     |
+| XXLLNC                 | `"xxllnc-theme"`          |
 | Zevenaar               | `"zevenaar-theme"`        |
+| Zuiddrecht             | `"zuiddrecht-theme"`      |
+| Zutphen                | `"zutphen-theme"`         |
 | Zwolle                 | `"zwolle-theme"`          |
