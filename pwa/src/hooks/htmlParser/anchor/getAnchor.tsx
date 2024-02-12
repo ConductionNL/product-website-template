@@ -62,15 +62,6 @@ const handleInternalLinks = (props: any, targetFile: string, location: string, d
     return; // ensure no other flow is triggered
   }
 
-  // Internal Links: homepage
-  if (props.href.includes("/") && location === "/") {
-    const directoryFound = directories.some((directory) => directory.location === props.href);
-
-    if (directoryFound) navigate(`/${targetFile}`);
-
-    return; // ensure no other flow is triggered
-  }
-
   // Internal Links: different directory
   if (props.href.includes("/")) {
     const targetDirectory = props.href.split("/").reverse()[1];

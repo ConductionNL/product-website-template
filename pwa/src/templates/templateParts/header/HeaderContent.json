@@ -65,6 +65,19 @@
         }
       },
       {
+        "label": "Dynamic Footer",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Features/Dynamic_footer"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Features",
+            "fileName": "Dynamic_footer"
+          }
+        }
+      },
+      {
         "label": "Jumbotron",
         "type": "internalMarkdown",
         "current": {
