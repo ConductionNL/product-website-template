@@ -19,7 +19,7 @@ A column on the footer consists of the following properties
 | `items.link`                           | `string`          | The url that the item wil be linked to when clicked.                                                                                                  |
 | `items.internalMarkdown`               | `object`          | An object that contains the directoryName and fileName to internally link to.                                                                         |
 | `items.internalMarkdown.directoryName` | `string`          | The directory name set the `github_docs_directory_paths` variable e.g. `Features`.                                                                    |
-| `items.internalMarkdown.fileName`      | `string`          | The file name thats in the directory set at `directoryName` e.g. `README` [Read more](#warning).                                                                            |
+| `items.internalMarkdown.fileName`      | `string`          | The file name thats in the directory set at `directoryName` e.g. `README` [Read more](#directoryName).                                                |
 | `items.icon`                           | `object`          | The object of the icon containing de properties of a [Font Awesome](https://fontawesome.com/) icon.                                                   |
 | `items.icon.prefix`                    | `fas`/`fab`/`far` | The prefix of the Font Awesome icon (`fas` Solid icon), (`fab` Brand icon), (`far` Regular icon).                                                     |
 | `items.icon.icon`                      | `string`          | The name of the Font Awesome icon e.g. `github`.                                                                                                      |
@@ -28,9 +28,13 @@ A column on the footer consists of the following properties
 | `items.customIcon.icon`                | `string`          | The full lenght string of an icon e.g. `"<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.0\" ........ -2 0 -27 -23 -54 -50z\" /> </g> </svg>"`. |
 | `items.customIcon.placement`           | `left`/`right`    | The placement of the Font Awesome icon on the `left` or `right`.                                                                                      |
 
-> [!WARNING]  
-> The directoryName must be equal to the a name set in the `GITHUB_DOCS_DIRECTORY_PATHS`.
+> [!WARNING]
+>
+> #### directoryName
+>
+> The directoryName must be equal to the a name set in the `GITHUB_DOCS_DIRECTORY_PATHS`. <br />
 > e.g.: `Features`. If not set correctly the requested files can not be found and will result in a `404` error.
+> <br />
 >
 > ```yaml
 > GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'
