@@ -46,7 +46,7 @@ export const useHeaderTopNavItems = (optionalData?: THeaderTopNavItem[]) => {
         const prefixedPathname =
           process.env.GATSBY_USE_GITHUB_REPOSITORY_NAME_AS_PATH_PREFIX === "true"
             ? `/${process.env.GATSBY_GITHUB_REPOSITORY_NAME}${current.pathname}`
-            : `${current.pathname}/`;
+            : `${current.pathname}${current.pathname !== "/" ? "/" : ""}`;
 
         const isCurrentRoute = (): boolean => {
           if (prefixedPathname === gatsbyContext.location.pathname) return true;
