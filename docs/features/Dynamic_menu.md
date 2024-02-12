@@ -19,15 +19,25 @@ A menu item consists of the following properties
 | `handleClick`                                | `object`               | An object that tells the menu item what to do when clicked on.                                                                                             |
 | `handleClick.link`                           | `string`               | The url to link to.                                                                                                                                        |
 | `handleClick.internalMarkdown`               | `object`               | An object that contains the directoryName and fileName to internally link to.                                                                              |
-| `handleClick.internalMarkdown.directoryName` | `string`               | The directory name set the `github_docs_directory_paths` variable e.g. `Roadmap`.                                                                          |
+| `handleClick.internalMarkdown.directoryName` | `string`               | The directory name set the `github_docs_directory_paths` variable e.g. `Features` [Read more](#directoryname).                                             |
 | `handleClick.internalMarkdown.fileName`      | `string`               | The file name thats in the directory set at `directoryName` e.g. `README`.                                                                                 |
 | `subItems`                                   | `object`               | The subItems object contains all the previous properties.                                                                                                  |
 
 By leveraging the dynamic menu, you can create a user-friendly navigation system that adapts to the structure of your content.
 
+##### directoryName
+
+> [!WARNING]
+> The directoryName must be equal to the a name set in the `GITHUB_DOCS_DIRECTORY_PATHS`. <br />
+> e.g.: `Features`. If not set correctly the requested files can not be found and will result in a `404` error.
+
+```yaml
+GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'
+```
+
 ## Configuration
 
-Dynamic menu items can be passed to the
+Dynamic menu items can be passed to the json file like this:
 
 ```json
 [
@@ -89,10 +99,4 @@ Dynamic menu items can be passed to the
     ]
   }
 ]
-```
-
-Keep in mind that in order to actually pass the json configuraiton trough the worflow yaml it needs to be both stringified and put to one line.
-
-```yaml
-GITHUB_DOCS_DIRECTORY_PATHS: '[{"name": "Features", "location": "/docs/features"}, {"name": "Roadmap", "location": "/docs/roadmap"}, {"name": "Usecases", "location": "/docs/usecases"}]'
 ```
