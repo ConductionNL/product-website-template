@@ -50,6 +50,15 @@
         "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
       },
       {
+        "ariaLabel": "Dynamic Footer",
+        "value": "Dynamic Footer",
+        "internalMarkdown": {
+          "directoryName": "Features",
+          "fileName": "Dynamic_footer"
+        },
+        "icon": { "prefix": "fas", "icon": "arrow-right", "placement": "left" }
+      },
+      {
         "ariaLabel": "Jumbotron",
         "value": "Jumbotron",
         "internalMarkdown": {
