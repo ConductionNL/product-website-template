@@ -23,3 +23,9 @@ export const wrapRootElement = ({ element }) => {
     </QueryClientProvider>
   );
 };
+
+export const onRenderBody = ({ setHeadComponents }) => {
+  const HeadComponents = [<title key={0}>Product Pagina</title>];
+
+  setHeadComponents(HeadComponents);
+};
