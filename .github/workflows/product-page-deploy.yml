@@ -39,8 +39,8 @@ jobs:
 
           # Jumbotron
           jumbotron_title: "Product Website Template"
-          jumbotron_subtitle: "Product page"
-          jumbotron_description: "Conduction's Product Website Template: a quick, customizable solution for creating dedicated product pages from repository contents, ideal for open-source projects."
+          jumbotron_subtitle: "De Product Page Bouwer is een gebruiksvriendelijke en efficiënte tool om snel professionele productpagina's te genereren"
+          jumbotron_description: "Met de Product Page Bouwer kunt u binnen enkele minuten een aantrekkelijke en informatieve productpagina lanceren, zonder dat u zich zorgen hoeft te maken over webhosting, codering of het up-to-date houden van uw content. Deze tool haalt automatisch de meest recente documentatie en projectinformatie uit uw GitHub-repository, waardoor u zich kunt concentreren op het ontwikkelen van uw product terwijl uw gebruikers altijd toegang hebben tot de nieuwste informatie. Ideaal voor open-source projecten en Common Ground initiatieven die hun zichtbaarheid willen vergroten zonder extra overhead."
           jumbotron_image: "https://www.conduction.nl/wp-content/uploads/2021/07/cropped-Conduction_HOME_0000_afb1-1.png"
 
           # Nl-Desgin Theme
